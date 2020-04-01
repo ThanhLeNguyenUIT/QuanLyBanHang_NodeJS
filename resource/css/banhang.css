@@ -1,0 +1,127 @@
+.container-product {
+    color: #fff;
+}
+
+.body_content {
+    margin-top: 36px;
+}
+
+.category {
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.cagetory_heading-page {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 36px;
+    padding-left: 12px;
+    margin: 0;
+    text-transform: uppercase;
+    cursor: default;
+    color: var(--black-color);
+}
+
+.cagetory-item {
+    position: relative;
+}
+
+.cagetory-list {
+    margin-bottom: 15px;
+    background-color: #fff;
+    position: relative;
+    padding: 10px 0;
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, .4);
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.category-list_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+    padding: 0 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #121212;
+    background-color: transparent;
+    margin: 0;
+}
+
+.cagetory-list_item {
+    list-style: none;
+    padding-left: 0;
+}
+
+.category-item_link {
+    position: relative;
+    text-decoration: none;
+    color: var(--black-color);
+    font-size: 1.2rem;
+    padding: 7px 36px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    z-index: 0;
+    margin: 0;
+    line-height: 16px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.category-item_link:hover {
+    background-color: #b6b4b4;
+}
+
+.search_froduct {
+    display: flex;
+    position: relative;
+}
+
+.search_froduct-wrap {
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    height: 36px;
+    border: 1px solid #6b6b6b;
+    width: 50rem;
+    border-radius: 3px;
+    margin-left: 36px;
+}
+
+.search_product-input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    color: var(--black-color);
+    padding-left: 16px;
+    border-radius: 3px;
+}
+
+.search_product-btn {
+    background-color: var(--primary-color);
+    border: none;
+    height: 100%;
+    width: 90px;
+    outline: none;
+    cursor: pointer;
+}
+
+.search_froduct-btn-icon {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white-color);
+}
+
+.search_product-btn:hover {
+    opacity: 0.7;
+}
+
+.btn-add_product {
+    position: absolute;
+    right: 20%;
+}

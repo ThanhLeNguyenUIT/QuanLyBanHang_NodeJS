@@ -1,37 +1,45 @@
-html{
+html {
     font-family: Arial;
 }
-body{
+
+body {
     margin: 0;
 }
-.header{
+
+.header {
     position: relative;
     width: 100%;
     height: 90px;
     background-color: #029FE3;
 }
 
+
 /* Header Container 1*/
-.header_container-1{
+
+.header_container-1 {
     position: absolute;
     width: 100%;
     height: 53px;
     background-color: rgb(255, 255, 255);
     z-index: 2;
 }
+
 .header_brand {
     display: inline-block;
     font-size: 21px;
     bottom: 40px;
 }
-.header_brand.agency{
+
+.header_brand.agency {
     color: #0776B0;
     margin-left: 110px;
 }
-.header_brand.company{
+
+.header_brand.company {
     color: #49CC3F;
 }
-.header_user{
+
+.header_user {
     position: absolute;
     display: inline-block;
     background-color: transparent;
@@ -40,66 +48,81 @@ body{
     right: 111px;
     top: 15px;
 }
-.header_user-link{
+
+.header_user-link {
     text-decoration: none;
     font-size: 14px;
     color: black;
 }
-.header_user-link:hover{
+
+.header_user-link:hover {
     color: #0776B0;
 }
-.fa-user{
+
+.fa-user {
     margin-right: 2px;
     font-size: 15px;
 }
-.address{
+
+.address {
     margin-left: 400px;
     font-size: 15px;
     font-weight: 20px;
 }
 
+
 /* Header Container 2*/
-.header_container-2{
+
+.header_container-2 {
     position: absolute;
     width: 100%;
     height: 40px;
     margin-top: 52px;
     background-color: #029FE3;
 }
-.header_navbar{
+
+.header_navbar {
     display: flex;
     justify-content: space-between;
 }
-.header_navbar-list{
+
+.header_navbar-list {
     list-style: none;
 }
-.header_navbar-item{
+
+.header_navbar-item {
     display: inline-block;
     margin: 0 45px;
     font-size: 15px;
 }
-.header_navbar-item-all{
+
+.header_navbar-item-all {
     margin-left: 72px;
 }
-.header__navbar-item-link{
+
+.header__navbar-item-link {
     display: inline-block;
     color: var(--white-color);
     text-decoration: none;
 }
-.header__navbar-item-link:hover{
+
+.header__navbar-item-link:hover {
     cursor: pointer;
     color: rgb(39, 102, 138);
 }
 
+
 /* body */
-.container_body{
+
+.container_body {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #49CC3F;
+    background-color: #eeeeee;
 }
-.btn_add{
+
+.btn_add {
     position: absolute;
     right: 114px;
     top: 10px;
@@ -115,7 +138,9 @@ body{
     cursor: pointer;
     border-radius: 999px;
 }
-.btn_add:hover,.add:hover{
+
+.btn_add:hover,
+.add:hover {
     background-color: rgb(9, 160, 42);
     color: black;
 }
