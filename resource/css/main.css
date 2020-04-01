@@ -1,5 +1,6 @@
 html {
     font-family: Arial;
+    font-size: 16px;
 }
 
 body {
@@ -39,6 +40,16 @@ body {
     color: #49CC3F;
 }
 
+.header_container-item{
+    width: 11rem;
+    background-color: transparent;
+    height: 100%;
+    margin: -45px;
+    padding: 0.6rem 0;
+    padding-top: 0.8rem;
+    text-align: center;
+}
+
 .header_user {
     position: absolute;
     display: inline-block;
@@ -64,12 +75,27 @@ body {
     font-size: 15px;
 }
 
-.address {
-    margin-left: 400px;
+.header_address {
+    position: absolute;
+    display: flex;
+    width: 300px;
+    height: 30px;
+    right: 250px;
+    top: 15px;
     font-size: 15px;
     font-weight: 20px;
 }
+@media only screen and (min-width:500px) and (max-width:1000px) {
+    .header_address{
+        width: 200px;
+        height: auto;
+        font-size: 12px;
+    }
+}
 
+.header_container-item:hover{
+    background-color: #0776B0;
+}
 
 /* Header Container 2*/
 
@@ -97,7 +123,7 @@ body {
 }
 
 .header_navbar-item-all {
-    margin-left: 72px;
+    margin-left: 12rem;
 }
 
 .header__navbar-item-link {
