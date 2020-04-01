@@ -38,7 +38,7 @@ html {
 }
 
 
-/* Test */
+/* responsive */
 
 .grid__column-2 {
     padding-left: 12px;
@@ -46,13 +46,7 @@ html {
     width: 16.6666667%;
 }
 
-.grid__column-2-4 {
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 20%;
-}
-
-.grid__column-1-4 {
+.grid__column-2-5 {
     padding-left: 12px;
     padding-right: 12px;
     width: 20%;
@@ -62,6 +56,18 @@ html {
     padding-left: 12px;
     padding-right: 12px;
     width: 83.33333334%;
+}
+
+.grid__column-10-1 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+}
+
+.grid__column-10-1-4 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 40%;
 }
 
 

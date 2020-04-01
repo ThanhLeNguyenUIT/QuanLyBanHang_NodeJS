@@ -62,6 +62,7 @@
             <div class="grid">
                 <div class="grid__row body_content">
                     <div class="grid__column-2">
+                        <!-- category -->
                         <div class="cagetory">
                             <h1 class="cagetory_heading-page">DANH MỤC</h1>
                             <div class="cagetory-list">
@@ -84,15 +85,58 @@
                         </div>
                     </div>
                     <div class="grid__column-10">
-                        <div class="search_froduct">
-                            <div class="search_froduct-wrap">
-                                <input type="text" class="search_product-input" name="search_froductByID" placeholder="Theo mã, tên hàng">
+
+                        <!-- search-product -->
+                        <div class="search_product">
+                            <div class="search_product-wrap">
+                                <input type="text" class="search_product-input" name="search_productByID" placeholder="Theo mã, tên hàng">
                                 <button class="search_product-btn">
-                                    <i class="search_froduct-btn-icon fas fa-search"></i>
+                                    <i class="search_product-btn-icon fas fa-search"></i>
                                 </button>
                             </div>
-
                             <button class="btn btn--primary btn-add_product">Thêm mới</button>
+                        </div>
+
+                        <div class="grid__row">
+                            <div class="grid__column-10-1">
+                                <table class="product-container">
+                                    <thead>
+                                        <tr class="product-container_header">
+                                            <th class="product-container_header-item code-product">Mã hàng</th>
+                                            <th class="product-container_header-item name-product">Tên hàng</th>
+                                            <th class="product-container_header-item price-product">Giá bán</th>
+                                            <th class="product-container_header-item org-price-product">Giá vốn</th>
+                                            <th class="product-container_header-item num-product">Tồn kho</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="product-container_product">
+                                            <td class="product-container_product-item">4902430340656</td>
+                                            <td class="product-container_product-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
+                                            <td class="product-container_product-item">178,000</td>
+                                            <td class="product-container_product-item">172,000</td>
+                                            <td class="product-container_product-item">29</td>
+                                        </tr>
+                                        <tr class="product-container_product">
+                                            <td class="product-container_product-item">4902430340656</td>
+                                            <td class="product-container_product-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
+                                            <td class="product-container_product-item">178,000</td>
+                                            <td class="product-container_product-item">172,000</td>
+                                            <td class="product-container_product-item">29</td>
+                                        </tr>
+                                        <tr class="product-container_product">
+                                            <td class="product-container_product-item">4902430340656</td>
+                                            <td class="product-container_product-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
+                                            <td class="product-container_product-item">178,000</td>
+                                            <td class="product-container_product-item">172,000</td>
+                                            <td class="product-container_product-item">29</td>
+                                        </tr>
+
+                                    </tbody>
+
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
