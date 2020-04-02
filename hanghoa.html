@@ -38,30 +38,30 @@
                     <ul class="header_navbar-list">
                         <li class="header_navbar-item header_navbar-item-all">
                             <div class="header_container-item">
-                            <a href="/index.html" class="header__navbar-item-link">
-                                <i class="far fa-eye"></i> Tổng quan
-                            </a>
+                                <a href="/index.html" class="header__navbar-item-link">
+                                    <i class="far fa-eye"></i> Tổng quan
+                                </a>
                             </div>
                         </li>
                         <li class="header_navbar-item">
                             <div class="header_container-item">
-                            <a href="/hanghoa.html" class="header__navbar-item-link">
-                                <i class="fas fa-cube"></i> Hàng hoá
-                            </a>
+                                <a href="/hanghoa.html" class="header__navbar-item-link">
+                                    <i class="fas fa-cube"></i> Hàng hoá
+                                </a>
                             </div>
                         </li>
                         <li class="header_navbar-item">
                             <div class="header_container-item">
-                            <a href="" class="header__navbar-item-link">
-                                <i class="fas fa-store-alt"></i> Đại lí
-                            </a>
+                                <a href="" class="header__navbar-item-link">
+                                    <i class="fas fa-store-alt"></i> Đại lí
+                                </a>
                             </div>
                         </li>
                         <li class="header_navbar-item">
                             <div class="header_container-item">
-                            <a href="" class="header__navbar-item-link">
-                                <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
-                            </a>
+                                <a href="" class="header__navbar-item-link">
+                                    <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
+                                </a>
                             </div>
                         </li>
                     </ul>
@@ -75,22 +75,45 @@
                         <!-- category -->
                         <div class="cagetory">
                             <h1 class="cagetory_heading-page">DANH MỤC</h1>
-                            <div class="cagetory-list">
+                            <ul class="cagetory-list">
                                 <h3 class="category-list_header">Nhóm hàng</h3>
-                                <ul class="cagetory-list_item">
-                                    <li class="cagetory-item">
-                                        <a href="/hanghoa.html" class="category-item_link">Nước ngọt</a>
-                                    </li>
-                                    <li class="cagetory-item">
-                                        <a href="/hanghoa.html" class="category-item_link">Thực phẩm</a>
-                                    </li>
-                                    <li class="cagetory-item">
-                                        <a href="/hanghoa.html" class="category-item_link">Dụng cụ gia dụng</a>
-                                    </li>
-                                    <li class="cagetory-item">
-                                        <a href="/hanghoa.html" class="category-item_link">Giấy</a>
-                                    </li>
-                                </ul>
+                                <li class="cagetory-item">
+                                    <a href="/hanghoa.html" class="category-item_link">Nước ngọt</a>
+                                    <i class="category-item-icon far fa-edit"></i>
+                                </li>
+                                <li class="cagetory-item">
+                                    <a href="/hanghoa.html" class="category-item_link">Thực phẩm</a>
+                                    <i class="category-item-icon far fa-edit"></i>
+                                </li>
+                                <li class="cagetory-item">
+                                    <a href="/hanghoa.html" class="category-item_link">Dụng cụ gia dụng</a>
+                                    <i class="category-item-icon far fa-edit"></i>
+                                </li>
+                                <li class="cagetory-item">
+                                    <a href="/hanghoa.html" class="category-item_link">Giấy</a>
+                                    <i class="category-item-icon far fa-edit"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="edit-category_modal">
+                            <div class="modal_overlay edit-category_modal_overlay"></div>
+                            <div class="modal_body edit-category_modal_body">
+                                <div class="auth-form edit-category_form">
+                                    <div class="auth-form_header ">
+                                        <h3 class="auth-form_heading">Thêm nhóm hàng</h3>
+                                    </div>
+                                    <div class="auth-form_form">
+                                        <div class="auth-form_group">
+                                            <span class="auth-form_info">Tên nhóm</span>
+                                            <input type="text" class="auth-form_input">
+                                        </div>
+                                    </div>
+                                    <div class="auth-form_controls auth-form_controls-edit-category">
+                                        <button class="btn">Huỷ bỏ</button>
+                                        <button class="btn btn--primary">Lưu</button>
+                                        <button class="btn btn--delete">Xoá</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -149,6 +172,104 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal_overlay"></div>
+            <div class="modal_body">
+
+                <!-- add product form -->
+                <div class="auth-form auth-form_add-product">
+
+                    <div class="auth-form_header">
+                        <h3 class="auth-form_heading">Thêm hàng hoá</h3>
+                    </div>
+                    <div class="auth-form_form">
+                        <div class="auth-form_form-left">
+                            <div class="auth-form_group">
+                                <span class="auth-form_info">Mã hàng</span>
+                                <i class="auth-form_info-icon ma-hang fa fa-info-circle"></i>
+                                <input type="text" class="auth-form_input" placeholder="Mã hàng tự động">
+                            </div>
+                            <div class="auth-form_group">
+                                <span class="auth-form_info">Tên hàng</span>
+                                <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                <input type="text" class="auth-form_input">
+                            </div>
+                            <div class="auth-form_group">
+                                <span class="auth-form_info">Nhóm hàng</span>
+                                <i class="auth-form_info-icon nhom-hang fa fa-info-circle"></i>
+                                <div class="auth-form_wrap">
+                                    <input type="text" class="auth-form_input auth-form_input-group-product" placeholder="---Lựa chọn---">
+                                    <i class="auth-form_arrow-icon fas fa-chevron-down"></i>
+                                    <ul class="category-Product-list">
+                                        <li class="category-Product-item">Nước ngọt
+
+                                        </li>
+                                        <li class="category-Product-item">Thực phẩm
+
+                                        </li>
+                                        <li class="category-Product-item">Dụng cụ gia dụng
+
+                                        </li>
+                                        <li class="category-Product-item">Giấy
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="add-category_form">
+                                    <i class="auth-form_plus-icon fas fa-plus"></i>
+                                    <div class="modal add-category_modal">
+                                        <div class="modal_overlay add-category_modal_overlay"></div>
+                                        <div class="modal_body add-category_modal_body">
+                                            <div class="auth-form add-category_form">
+                                                <div class="auth-form_header ">
+                                                    <h3 class="auth-form_heading">Thêm nhóm hàng</h3>
+                                                </div>
+                                                <div class="auth-form_form">
+                                                    <div class="auth-form_group">
+                                                        <span class="auth-form_info">Tên nhóm</span>
+                                                        <input type="text" class="auth-form_input">
+                                                    </div>
+                                                </div>
+                                                <div class="auth-form_controls">
+                                                    <button class="btn">Huỷ bỏ</button>
+                                                    <button class="btn btn--primary">Lưu</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="auth-form_group">
+                                <span class="auth-form_info">Đơn vị tính</span>
+                                <i class="auth-form_info-icon don-vi-tinh fa fa-info-circle"></i>
+                                <input type="text" class="auth-form_input">
+                            </div>
+                        </div>
+                        <div class="auth-form_form-right">
+                            <div class="auth-form_group">
+                                <span class="auth-form_info">Giá vốn</span>
+                                <i class="auth-form_info-icon gia-von fa fa-info-circle"></i>
+                                <input type="text" class="auth-form_input input-right" value="0">
+                            </div>
+                            <div class="auth-form_group">
+                                <span class="auth-form_info">Giá bán</span>
+                                <i class="auth-form_info-icon gia-ban fa fa-info-circle"></i>
+                                <input type="text" class="auth-form_input input-right" value="0">
+                            </div>
+                            <div class="auth-form_group">
+                                <span class="auth-form_info">Tồn kho</span>
+                                <i class="auth-form_info-icon ton-kho fa fa-info-circle"></i>
+                                <input type="text" class="auth-form_input input-right" value="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="auth-form_controls">
+                        <button class="btn">Huỷ bỏ</button>
+                        <button class="btn btn--primary">Lưu</button>
+                    </div>
+
                 </div>
             </div>
         </div>
