@@ -8,35 +8,33 @@ body {
 }
 
 .header {
-    position: relative;
-    width: 100%;
-    height: 90px;
-    background-color: #029FE3;
+    height: var(--header-height);
 }
 
 
 /* Header Container 1*/
 
 .header_container-1 {
-    position: absolute;
-    width: 100%;
-    height: 53px;
+    display: flex;
+    justify-content: space-between;
     background-color: rgb(255, 255, 255);
-    z-index: 2;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .header_brand {
-    display: inline-block;
-    font-size: 21px;
-    bottom: 40px;
+    display: flex;
+    font-size: 12px;
+    padding-right: 30px;
+    padding-left: 110px;
 }
 
-.header_brand.agency {
+.header_brand-agency {
     color: #0776B0;
-    margin-left: 110px;
+    
 }
 
-.header_brand.company {
+.header_brand-company {
     color: #49CC3F;
 }
 
@@ -44,20 +42,15 @@ body {
     width: 11rem;
     background-color: transparent;
     height: 100%;
-    margin: -45px;
+    margin: -39px;
     padding: 0.6rem 0;
     padding-top: 0.8rem;
     text-align: center;
 }
 
 .header_user {
-    position: absolute;
-    display: inline-block;
     background-color: transparent;
-    width: 100px;
-    height: 30px;
-    right: 111px;
-    top: 15px;
+    margin: 0 110px 0 0;
 }
 
 .header_user-link {
@@ -76,22 +69,11 @@ body {
 }
 
 .header_address {
-    position: absolute;
-    display: flex;
-    width: 300px;
-    height: 30px;
-    right: 250px;
-    top: 15px;
     font-size: 15px;
     font-weight: 20px;
+    background-color: transparent;
 }
-@media only screen and (min-width:500px) and (max-width:1000px) {
-    .header_address{
-        width: 200px;
-        height: auto;
-        font-size: 12px;
-    }
-}
+
 
 .header_container-item:hover{
     background-color: #0776B0;
@@ -100,20 +82,19 @@ body {
 /* Header Container 2*/
 
 .header_container-2 {
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    margin-top: 52px;
+    position: relative;
+    display: flex;
     background-color: #029FE3;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-.header_navbar {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .header_navbar-list {
     list-style: none;
+    margin-top: 8px;
+    margin-bottom: 0;
 }
 
 .header_navbar-item {
@@ -142,27 +123,25 @@ body {
 
 .container_body {
     position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #eeeeee;
+    display: flex;
+}
+.body_content{
+    margin-top: 36px;
 }
 
 .btn_add {
-    position: absolute;
-    right: 114px;
-    top: 10px;
+    position: relative;
     background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
     border-radius: 999px;
+    outline: none;
+    margin-left: 80%;
 }
 
 .btn_add:hover,

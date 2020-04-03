@@ -135,7 +135,7 @@
 
 .product-container {
     background-color: #fefced;
-    width: 100%;
+    width: 85%;
     margin: 28px 36px;
     border: none;
     border-collapse: collapse;
@@ -175,7 +175,7 @@
 }
 
 .name-product {
-    width: 40%;
+    width: 30%;
 }
 
 .price-product,

@@ -1,0 +1,202 @@
+.container_agency{
+   
+}
+
+.body_content{
+    margin-top: 36px;
+}
+
+.agency_navbar{
+ background-color: var(--white-color);
+ border-radius: 2px;
+}
+
+.agency_heading{
+    font-size: 2.3rem;
+    font-weight: 700;
+    padding-bottom: 36px;
+    padding-left: 12px;
+    margin: 0;
+    text-transform: uppercase;
+    cursor: default;
+    color: var(--black-color);
+}
+
+.agency_group{
+    margin: 0;
+    background-color: #fff;
+    position: relative;
+    padding: 10px 0;
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, .4);
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    list-style: none;
+    padding-bottom: 15px;
+}
+
+.agency_group-header{
+    text-align: center;
+    align-items: center;
+    height: 24px;
+    padding-bottom: 36px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #121212;
+    background-color: transparent;
+    margin: 0;
+    cursor: default;
+}
+
+.agency_group-label{
+    position: relative;
+    margin-left: 20px;
+    margin-right: 7px;
+    font-size: 12px;
+}
+
+.agency_group-list{
+    margin-bottom: 13px;
+}
+
+#agency_group-lis{
+    margin-top: 7px;
+}
+
+#agency_group-place{
+    margin-left: 20px;
+}
+
+/* search agency */
+.search_agency{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+   
+}
+
+.search_agency-wrap{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 35px;
+    width: 50rem;
+    border-radius: 3px;
+    margin-left: 36px;
+    border: 1px solid #6b6b6b;
+}
+
+.search_agency-input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: transparent;
+    font-size: 1.3rem;
+    color: var(--black-color);
+    padding-left: 16px;
+    border-radius: 3px;
+}
+
+.search_agency-btn{
+    background-color: var(--primary-color);
+    border: none;
+    height: 100%;
+    width: 90px;
+    outline: none;
+    cursor: pointer;
+}
+
+.search_agency-btn-icon{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white-color);
+}
+
+.btn_add_agency{
+    margin-right: 11rem;
+}
+
+/* Angency Table Info */
+.container_agency_table{
+    display: flex;
+    position: relative;
+}
+
+.agency_table{
+    background-color: #fefced;
+    width: 85%;
+    margin: 28px 36px;
+    border: none;
+    border-collapse: collapse;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, .2);
+}
+
+.agency_table_head{
+    color: var(--black-color);
+    background-color: rgba(190, 216, 241, 2);
+    cursor: default;
+    text-align: center;
+}
+
+.agency_table_head-item{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 8px;
+    word-break: break-all;
+}
+
+.agency_table_body{
+    color: var(--black-color);
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+}
+
+.agency_table_body-item{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 8px;
+    word-break: break-all;
+}
+
+.code-agency{
+    width: 12%;
+}
+.name-agency{
+    width: 20.1%;
+}
+.address-agency{
+    width: 20%;
+}
+
+.date-agency{
+    width: 13%;
+}
+
+.phone-agency,.district-agency,.group-agency{
+    width: 13%;
+}
+
+/* auth add agency */
+
+.auth_form_container{
+    margin: 10%;
+    position: relative;
+}
+
+.auth_body{
+    position: relative;
+    margin-top: 4rem;
+    width: 400px;
+    background-color: rgb(243, 231, 208);
+}
+
+.auth_agency-name{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
+
