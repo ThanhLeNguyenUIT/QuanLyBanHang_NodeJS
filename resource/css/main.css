@@ -31,21 +31,10 @@ body {
 
 .header_brand-agency {
     color: #0776B0;
-    
 }
 
 .header_brand-company {
     color: #49CC3F;
-}
-
-.header_container-item{
-    width: 11rem;
-    background-color: transparent;
-    height: 100%;
-    margin: -39px;
-    padding: 0.6rem 0;
-    padding-top: 0.8rem;
-    text-align: center;
 }
 
 .header_user {
@@ -74,10 +63,10 @@ body {
     background-color: transparent;
 }
 
-
-.header_container-item:hover{
+.header_container-item:hover {
     background-color: #0776B0;
 }
+
 
 /* Header Container 2*/
 
@@ -85,11 +74,9 @@ body {
     position: relative;
     display: flex;
     background-color: #029FE3;
-    display: flex;
     flex-wrap: nowrap;
+    width: 100%;
 }
-
-
 
 .header_navbar-list {
     list-style: none;
@@ -101,6 +88,16 @@ body {
     display: inline-block;
     margin: 0 45px;
     font-size: 15px;
+}
+
+.header_container-item {
+    width: 11rem;
+    background-color: transparent;
+    height: 100%;
+    margin: -39px;
+    padding: 0.6rem 0;
+    padding-top: 0.8rem;
+    text-align: center;
 }
 
 .header_navbar-item-all {
@@ -125,7 +122,8 @@ body {
     position: relative;
     display: flex;
 }
-.body_content{
+
+.body_content {
     margin-top: 36px;
 }
 

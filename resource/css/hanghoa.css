@@ -185,7 +185,7 @@
 }
 
 
-/* authen modal */
+/* authen modal add product */
 
 .auth-form {
     background-color: var(--white-color);
@@ -340,45 +340,12 @@
     margin: 0 32px;
 }
 
-
-/* add category */
-
-.add-category_form {
-    width: 460px;
-    min-width: 460px;
-    display: none;
-}
-
-.add-category_modal {
-    display: none;
-}
-
-.auth-form_add-product {
-    display: none;
-}
-
-.modal {
+.modal_add-product {
     display: none;
 }
 
 
 /* edit category */
-
-.edit-category_modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: none;
-    animation: fadeIn linear 0.1s;
-    z-index: 1;
-}
-
-.edit-category_form {
-    width: 460px;
-    min-width: 460px;
-}
 
 .btn--delete {
     background-color: #db4e65;
@@ -387,7 +354,24 @@
 
 .auth-form_controls-edit-category {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     padding: 0;
     margin: 0;
+}
+
+
+/* modtify modal */
+
+.modtify-category_form {
+    background-color: var(--white-color);
+    width: 450px;
+    border-radius: 3px;
+    min-width: 450px;
+    padding-bottom: 16px;
+}
+
+.modtify-category_form-add,
+.modtify-category_form-edit,
+.modal_cagetory-modify {
+    display: none;
 }

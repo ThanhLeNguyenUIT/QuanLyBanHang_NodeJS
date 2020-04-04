@@ -18,15 +18,15 @@
     <main>
         <!-- header-->
         <header class="header">
-            <div class="grid__header">
+            <div class="grid">
                 <div class="header_container-1">
                     <!--place-->
                     <div class="header_brand">
-                    <h1 class="header_brand-agency">Agency</h1>
-                    <h1 class="header_brand-company">Company</h1>
+                        <h1 class="header_brand-agency">Agency</h1>
+                        <h1 class="header_brand-company">Company</h1>
                     </div>
                     <div class="header_address">
-                    <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
+                        <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
                     </div>
                     <div class="header_user">
                         <a href="" class="header_user-link">
@@ -35,43 +35,43 @@
                         </a>
                     </div>
                 </div>
-             
                 <div class="header_container-2">
                     <!-- header container 2-->
                     <nav class="header_navbar">
                         <ul class="header_navbar-list">
                             <li class="header_navbar-item header_navbar-item-all">
                                 <div class="header_container-item">
-                                <a href="/index.html" class="header__navbar-item-link">
-                                    <i class="far fa-eye"></i> Tổng quan
-                                </a>
+                                    <a href="/index.html" class="header__navbar-item-link">
+                                        <i class="far fa-eye"></i> Tổng quan
+                                    </a>
                                 </div>
                             </li>
                             <li class="header_navbar-item">
                                 <div class="header_container-item">
-                                <a href="/hanghoa.html" class="header__navbar-item-link">
-                                    <i class="fas fa-cube"></i> Hàng hoá
-                                </a>
-                            </div>
-                        </li>
-                        <li class="header_navbar-item">
-                            <div class="header_container-item">
-                                <a href="/daily.html" class="header__navbar-item-link">
-                                    <i class="fas fa-store-alt"></i> Đại lí
-                                </a>
+                                    <a href="/hanghoa.html" class="header__navbar-item-link">
+                                        <i class="fas fa-cube"></i> Hàng hoá
+                                    </a>
                                 </div>
                             </li>
                             <li class="header_navbar-item">
                                 <div class="header_container-item">
-                                <a href="" class="header__navbar-item-link">
-                                    <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
-                                </a>
+                                    <a href="/daily.html" class="header__navbar-item-link">
+                                        <i class="fas fa-store-alt"></i> Đại lí
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="" class="header__navbar-item-link">
+                                        <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
+                                    </a>
                                 </div>
                             </li>
                         </ul>
                     </nav>
                 </div>
-                </div>
+            </div>
+
         </header>
         <div class="container-product">
             <div class="grid">
@@ -99,27 +99,6 @@
                                     <i class="category-item-icon far fa-edit"></i>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="edit-category_modal">
-                            <div class="modal_overlay edit-category_modal_overlay"></div>
-                            <div class="modal_body edit-category_modal_body">
-                                <div class="auth-form edit-category_form">
-                                    <div class="auth-form_header ">
-                                        <h3 class="auth-form_heading">Thêm nhóm hàng</h3>
-                                    </div>
-                                    <div class="auth-form_form">
-                                        <div class="auth-form_group">
-                                            <span class="auth-form_info">Tên nhóm</span>
-                                            <input type="text" class="auth-form_input">
-                                        </div>
-                                    </div>
-                                    <div class="auth-form_controls auth-form_controls-edit-category">
-                                        <button class="btn">Huỷ bỏ</button>
-                                        <button class="btn btn--primary">Lưu</button>
-                                        <button class="btn btn--delete">Xoá</button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="grid__column-10">
@@ -180,7 +159,8 @@
                 </div>
             </div>
         </div>
-        <div class="modal">
+        <!-- add product  -->
+        <div class="modal modal_add-product">
             <div class="modal_overlay"></div>
             <div class="modal_body">
 
@@ -224,26 +204,7 @@
                                 </div>
                                 <div class="add-category_form">
                                     <i class="auth-form_plus-icon fas fa-plus"></i>
-                                    <div class="modal add-category_modal">
-                                        <div class="modal_overlay add-category_modal_overlay"></div>
-                                        <div class="modal_body add-category_modal_body">
-                                            <div class="auth-form add-category_form">
-                                                <div class="auth-form_header ">
-                                                    <h3 class="auth-form_heading">Thêm nhóm hàng</h3>
-                                                </div>
-                                                <div class="auth-form_form">
-                                                    <div class="auth-form_group">
-                                                        <span class="auth-form_info">Tên nhóm</span>
-                                                        <input type="text" class="auth-form_input">
-                                                    </div>
-                                                </div>
-                                                <div class="auth-form_controls">
-                                                    <button class="btn">Huỷ bỏ</button>
-                                                    <button class="btn btn--primary">Lưu</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="auth-form_group">
@@ -278,6 +239,45 @@
                 </div>
             </div>
         </div>
+        <!-- edit and select cagetory -->
+        <div class="modal modal_cagetory-modify ">
+            <div class="modal_overlay modal_overlay__cagetory-modify"></div>
+            <div class="modal_body modal_body_cagetory-modify">
+                <div class="modtify-category_form modtify-category_form-add ">
+                    <div class="auth-form_header ">
+                        <h3 class="auth-form_heading">Thêm nhóm hàng</h3>
+                    </div>
+                    <div class="auth-form_form">
+                        <div class="auth-form_group">
+                            <span class="auth-form_info">Tên nhóm</span>
+                            <input type="text" class="auth-form_input">
+                        </div>
+                    </div>
+                    <div class="auth-form_controls">
+                        <button class="btn">Huỷ bỏ</button>
+                        <button class="btn btn--primary">Lưu</button>
+                    </div>
+                </div>
+
+                <div class="modtify-category_form modtify-category_form-edit">
+                    <div class="auth-form_header ">
+                        <h3 class="auth-form_heading">Sửa nhóm hàng</h3>
+                    </div>
+                    <div class="auth-form_form">
+                        <div class="auth-form_group">
+                            <span class="auth-form_info">Tên nhóm</span>
+                            <input type="text" class="auth-form_input">
+                        </div>
+                    </div>
+                    <div class="auth-form_controls auth-form_controls-edit-category">
+                        <button class="btn">Huỷ bỏ</button>
+                        <button class="btn btn--primary">Lưu</button>
+                        <button class="btn btn--delete">Xoá</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
     </main>
 </body>
 
