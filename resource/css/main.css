@@ -20,6 +20,7 @@ body {
     background-color: rgb(255, 255, 255);
     flex-wrap: nowrap;
     align-items: center;
+    height: 48px;
 }
 
 .header_brand {
@@ -38,29 +39,36 @@ body {
 }
 
 .header_user {
-    background-color: transparent;
-    margin: 0 110px 0 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 8px 8px 4px 8px;
+    margin-right: 115px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-items: center;
 }
 
-.header_user-link {
-    text-decoration: none;
-    font-size: 14px;
-    color: black;
+.header_user:hover {
+    background-color: rgb(236, 233, 233);
 }
 
-.header_user-link:hover {
-    color: #0776B0;
-}
-
-.fa-user {
+.header_user-icon {
     margin-right: 2px;
     font-size: 15px;
 }
 
+.header_user-name {
+    line-height: 2rem;
+    text-align: center;
+}
+
 .header_address {
-    font-size: 15px;
-    font-weight: 20px;
-    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-height: 1.5rem;
+    word-wrap: unset;
 }
 
 .header_container-item:hover {
@@ -71,48 +79,46 @@ body {
 /* Header Container 2*/
 
 .header_container-2 {
-    position: relative;
-    display: flex;
     background-color: #029FE3;
-    flex-wrap: nowrap;
     width: 100%;
-}
-
-.header_navbar-list {
-    list-style: none;
-    margin-top: 8px;
-    margin-bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 45px;
+    align-items: center;
+    padding: 0 65px;
 }
 
 .header_navbar-item {
-    display: inline-block;
-    margin: 0 45px;
-    font-size: 15px;
+    display: inline-flex;
+    justify-items: center;
+    justify-content: center;
+    margin: 0;
+    border-radius: 3px;
+    width: 135px;
+    height: 45px;
+    padding: 10px 0;
 }
 
-.header_container-item {
-    width: 11rem;
-    background-color: transparent;
-    height: 100%;
-    margin: -39px;
-    padding: 0.6rem 0;
-    padding-top: 0.8rem;
-    text-align: center;
-}
-
-.header_navbar-item-all {
-    margin-left: 12rem;
+.header_navbar-item.header_navbar-item-select {
+    background-color: #0078b6;
 }
 
 .header__navbar-item-link {
-    display: inline-block;
     color: var(--white-color);
     text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    height: 100%;
 }
 
-.header__navbar-item-link:hover {
+.header__navbar-item-icon {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.header_navbar-item:hover {
     cursor: pointer;
-    color: rgb(39, 102, 138);
+    background-color: #0078b6;
 }
 
 
