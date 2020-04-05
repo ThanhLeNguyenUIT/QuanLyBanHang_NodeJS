@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./resource/css/base.css">
     <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
     <link rel="stylesheet" href="./resource/css/daily.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <!-- Body -->
 
@@ -121,6 +122,7 @@
                                         <th class="agency_table_head-item group-agency">Nhóm Đại lý</th>
                                         <th class="agency_table_head-item address-agency">Địa chỉ</th>
                                         <th class="agency_table_head-item date-agency">Ngày nhận</th>
+                                        <th class="agency_table_head-item debt-agency">Công nợ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -132,6 +134,7 @@
                                         <td class="agency_table_body-item">Nhóm 1</td>
                                         <td class="agency_table_body-item">số 10 phường Linh Trung</td>
                                         <td class="agency_table_body-item">1/12/2020</td>
+                                        <td class="agency_table_body-item">0</td>
                                     </tr>
                                     <tr class="agency_table_body">
                                         <td class="agency_table_body-item">002</td>
@@ -141,6 +144,7 @@
                                         <td class="agency_table_body-item">Nhóm 2</td>
                                         <td class="agency_table_body-item">Số 2 đường Điện Biên Phủ</td>
                                         <td class="agency_table_body-item">12/3/2020</td>
+                                        <td class="agency_table_body-item">0</td>
                                     </tr>
                                     <tr class="agency_table_body">
                                         <td class="agency_table_body-item">003</td>
@@ -150,6 +154,7 @@
                                         <td class="agency_table_body-item">Nhóm 3</td>
                                         <td class="agency_table_body-item">Số 69 đường Giải Phóng</td>
                                         <td class="agency_table_body-item">4/5/2020</td>
+                                        <td class="agency_table_body-item">0</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -160,42 +165,83 @@
             </div>
         </div>
 
-        <!-- <div class="modal">
-           <div class="modal__overlay"></div>
-           <div class="modal__body">
+         <div class="modal modal_add-agency">
+           <div class="modal_overlay"></div>
+           <div class="modal_body">
                <div class="auth_form">
-                   <div class="auth_form_container">
+        
                        <div class="auth_header">
                            <h1 class="auth_heading">Thêm Đại Lý</h1>
                        </div>
                        <div class="auth_body">
-                           <input type="text" class="auth_agency-name" placeholder="Tên Đại lý" required>
-                           <input type="number" class="auth_agency_code" placeholder="Mã Đại lý" required>
-
+                           <div class="auth_body-left">
+                            <div class="auth_group-left">
+                                <span class="auth-form_info">Tên Đại lý</span>
+                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                 <input type="text" class="auth_agency-input auth_agency-name" placeholder="Tên Đại lý" required>
+                            </div>
+                            <div class="auth_group-left">
+                                <span class="auth-form_info">Mã Đại lý</span>
+                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                <input type="number" class="auth_agency-input auth_agency_code" placeholder="Mã Đại lý" required>
+                            </div>
                            <div class="auth_agency_selection">
-                               <label for="auth_group">Chọn nhóm:</label>
+                                <div class="auth_group-left">
+                               <label for="auth_group-left" class="auth-form_info">Nhóm</label>
+                               <i class="auth-form_info-icon  fa fa-info-circle"></i>
                                 <select name="authGroup" class="auth_agency-group" id="auth_group" required>
                                     <option value="nhom1">Nhóm 1</option>
                                     <option value="nhom2">Nhóm 2</option>
                                     <option value="nhom3">Nhóm 3</option>
                                 </select>
-                                <label for="auth_district">Chọn khu vực:</label>:
-                                <select class="auth_agency_district" name="authDistrict" id="auth_district" required>
+                                </div>
+                                <div class="auth_group-left">
+                                <label for="auth_district" class="auth-form_info">Khu vực</label>
+                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                <select class="auth_agency-district" name="authDistrict" id="auth_district" required>
                                     <option value="quan1">Quận 1</option>
                                     <option value="quan2">Quận 2</option>
                                     <option value="quan3">Quận 3</option>
                                 </select>
+                                </div>
                            </div>
-                           <input type="number" class="auth_agency_number" placeholder="Số điện thoaị" required> 
-                           <input type="text" class="auth_agency_adress" placeholder="Địa chỉ" required> 
-                           <label for="auth_date">Ngày tiếp nhận:</label>
-                           <input type="date" class="auth_agency_date" placeholder="1/1/2000" id="auth_date" required>
-
+                           </div>
+                           <div class="auth_body-right">
+                            <div class="auth_group-right">
+                                <span class="auth-form_info">Số điện thoại</span>
+                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                <input type="number" class="auth_agency-input auth_agency_number" placeholder="" required> 
+                           </div>
+                           <div class="auth_group-right">
+                            <span class="auth-form_info">Địa chỉ</span>
+                            <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                 <input type="text" class="auth_agency-input auth_agency_adress" placeholder="" required> 
+                           </div>
+                           <div class="auth_group-right">
+                                <label for="auth_date" class="auth-form_info">Ngày tiếp nhận</label>
+                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                 <input type="date" class="auth_agency-input auth_agency_date" placeholder="1-12-2000" id="auth_date" required>
+                           </div>
+                           </div>
+                       </div>
+                       <!-- script form -->
+                       <script>
+                           $(document).ready(function(){
+                               $(".btn").click(function(){
+                                    $(".modal_add-agency").hide(1000);
+                               });
+                               $(".btn_add_agency").click(function(){
+                                   $(".modal_add-agency").show();
+                               });
+                           });
+                       </script>
+                       <div class="auth_form-controls">
+                           <button class="btn">Trở lại</button>
+                           <button class="btn btn--primary">Đồng ý </button>
                        </div>
                    </div>
                </div>
-           </div>
-       </div> -->
+       </div> 
     </main>
 </body>
 
