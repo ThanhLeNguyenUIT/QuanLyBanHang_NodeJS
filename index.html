@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./resource/css/main.css">
     <link rel="stylesheet" href="./resource/css/base.css">
     <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <!-- Body -->
 
@@ -78,7 +79,7 @@
             <div class="grid">
                 <div class="grid__row body_content">
 
-                    <button class="btn_add">
+                    <button class="btn_order">
                             <i class="fas fa-shopping-basket"></i>
                             <span class="add">Đặt hàng</span>
                         </button>
@@ -86,10 +87,80 @@
                 </div>
             </div>
         </div>
+       
+        <div class="modal">
+            <div class="modal_overlay"></div>
+            <div class="modal_body">
+                <div class="order_form">
+                    <div class="order_form-header">
+                        <h1 class="order_form-heading">Đặt hàng</h1>
+                    </div>
+                    <div class="order_form-body">
+                        <div class="order_form-left">
+                            <div class="container_order">
+                                <div class="container_order-left">
+                                    <span class="order_item">1</span>
+                                    <i class="fas fa-trash-alt delete-icon order_item"></i>
+                                    <span class="order_item">001</span>
+                                    <span class="order_item">Nước uống tăng lực Number one</span>
+                                </div>
+                                <div class="container_order-right">
+                                    <span class="order_item">Hộp</span>
+                                    <div>
+                                        <span class="order_item" >1</span>
+                                    </div>
+                                    <div >
+                                        <span class="order_item">11,000</span>
+                                    </div>
+                                    <span class="order_item">11,000</span>
+                                </div>
+                            </div>
 
-        
+                            <div class="container_order">
+                                <div class="container_order-left">
+                                    <span class="order_item">2</span>
+                                    <i class="fas fa-trash-alt delete-icon order_item"></i>
+                                    <span class="order_item">002</span>
+                                    <span class="order_item">Nước uống tăng lực Number one</span>
+                                </div>
+                                <div class="container_order-right">
+                                    <span class="order_item">Hộp</span>
+                                    <div>
+                                        <span class="order_item" >1</span>
+                                    </div>
+                                    <div >
+                                        <span class="order_item">11,000</span>
+                                    </div>
+                                    <span class="order_item">11,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order_form-right">
+                            <div class="container_bill">
+                                <span>06/09/2020</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order_form-controls">
+                        <button class="btn">Trở lại</button>
+                        <button class="btn btn--primary">Đồng ý </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
         
     </main>
+    <script>
+    $(document).ready(function(){
+        $(".btn").click(function(){
+             $(".modal").hide(1000);
+        });
+        $(".btn_order").click(function(){
+            $(".modal").show();
+        });
+    });
+    </script>
 </body>
 
 </html>
