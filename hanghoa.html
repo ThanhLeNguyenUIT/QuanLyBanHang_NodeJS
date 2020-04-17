@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./resource/css/base.css">
     <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./resource/css/hanghoa.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <!-- Body -->
 
@@ -80,23 +81,23 @@
                 <div class="grid__row body_content">
                     <div class="grid__column-2">
                         <!-- category -->
-                        <div class="cagetory">
-                            <h1 class="cagetory_heading-page">DANH MỤC</h1>
-                            <ul class="cagetory-list">
+                        <div class="category">
+                            <h1 class="category_heading-page">DANH MỤC</h1>
+                            <ul class="category-list">
                                 <h3 class="category-list_header">Nhóm hàng</h3>
-                                <li class="cagetory-item">
+                                <li class="category-item">
                                     <a href="/hanghoa.html" class="category-item_link">Nước ngọt</a>
                                     <i class="category-item-icon far fa-edit"></i>
                                 </li>
-                                <li class="cagetory-item">
+                                <li class="category-item">
                                     <a href="/hanghoa.html" class="category-item_link">Thực phẩm</a>
                                     <i class="category-item-icon far fa-edit"></i>
                                 </li>
-                                <li class="cagetory-item">
+                                <li class="category-item">
                                     <a href="/hanghoa.html" class="category-item_link">Dụng cụ gia dụng</a>
                                     <i class="category-item-icon far fa-edit"></i>
                                 </li>
-                                <li class="cagetory-item">
+                                <li class="category-item">
                                     <a href="/hanghoa.html" class="category-item_link">Giấy</a>
                                     <i class="category-item-icon far fa-edit"></i>
                                 </li>
@@ -234,18 +235,18 @@
                         </div>
                     </div>
                     <div class="auth-form_controls">
-                        <button class="btn">Huỷ bỏ</button>
+                        <button class="btn btn-add-product-cancel">Huỷ bỏ</button>
                         <button class="btn btn--primary">Lưu</button>
                     </div>
 
                 </div>
             </div>
         </div>
-        <!-- edit and select cagetory -->
-        <div class="modal modal_cagetory-modify ">
-            <div class="modal_overlay modal_overlay__cagetory-modify"></div>
-            <div class="modal_body modal_body_cagetory-modify">
-                <div class="modtify-category_form modtify-category_form-add ">
+        <!-- edit and select category -->
+        <div class="modal modal_category-modify ">
+            <div class="modal_overlay modal_overlay__category-modify"></div>
+            <div class="modal_body modal_body_category-modify">
+                <div class="modify-category_form modify-category_form-add ">
                     <div class="auth-form_header ">
                         <h3 class="auth-form_heading">Thêm nhóm hàng</h3>
                     </div>
@@ -256,12 +257,12 @@
                         </div>
                     </div>
                     <div class="auth-form_controls">
-                        <button class="btn">Huỷ bỏ</button>
+                        <button class="btn btn-add-category-cancel">Huỷ bỏ</button>
                         <button class="btn btn--primary">Lưu</button>
                     </div>
                 </div>
 
-                <div class="modtify-category_form modtify-category_form-edit">
+                <div class="modify-category_form modify-category_form-edit">
                     <div class="auth-form_header ">
                         <h3 class="auth-form_heading">Sửa nhóm hàng</h3>
                     </div>
@@ -272,14 +273,14 @@
                         </div>
                     </div>
                     <div class="auth-form_controls auth-form_controls-edit-category">
-                        <button class="btn">Huỷ bỏ</button>
+                        <button class="btn btn-edit-category-cancel">Huỷ bỏ</button>
                         <button class="btn btn--primary">Lưu</button>
                         <button class="btn btn--delete">Xoá</button>
                     </div>
                 </div>
             </div>
-        </div> -->
-
+        </div>
+        <script src="/resource/js/table.js"></script>
     </main>
 </body>
 
