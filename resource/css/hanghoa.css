@@ -157,12 +157,16 @@
 
 .product-container_product {
     color: var(--black-color);
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(218, 216, 216);
     cursor: pointer;
 }
 
+.product-container_between {
+    background-color: rgb(244, 244, 245);
+}
+
 .product-container_product:hover {
-    background-color: rgb(230, 228, 228);
+    background-color: rgb(201, 238, 198);
 }
 
 .product-container_product-item {
