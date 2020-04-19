@@ -1,0 +1,29 @@
+{
+    "name": "amapp",
+    "version": "1.0.0",
+    "description": "NhapMonCNPM",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon ./bin/www"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ThanhLeNguyenUIT/NhapMonCNPM.git"
+    },
+    "author": "Wayci & yuno",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ThanhLeNguyenUIT/NhapMonCNPM/issues"
+    },
+    "homepage": "https://github.com/ThanhLeNguyenUIT/NhapMonCNPM#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "debug": "^4.1.1",
+        "devextreme": "^19.2.7",
+        "ejs": "^3.0.2",
+        "express": "^4.17.1",
+        "express-validator": "^6.4.0",
+        "mongoose": "^5.9.9",
+        "nodemon": "^2.0.3"
+    }
+}
