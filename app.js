@@ -6,7 +6,7 @@ var dashboard = require("./routes/dashboard");
 var baocao = require("./routes/baocao");
 var daily = require("./routes/daily");
 var hanghoa = require("./routes/hanghoa");
-
+var order = require('./routes/order');
 
 var expressValidator = require('express-validator');
 var app = express();
@@ -14,10 +14,8 @@ var app = express();
 // view engine setup
 app.set('view engine', 'ejs');
 app.set("views", "./views");
-
 const url = 'mongodb://127.0.0.1:27017/agent_managerment';
-mongoose.connect(url, { useNewUrlParser: true });
-
+//mongoose.connect('url', {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/resource", express.static('resource'));
@@ -45,5 +43,6 @@ app.use('/', dashboard);
 app.use('/', daily);
 app.use('/', hanghoa);
 app.use('/', baocao);
+app.use('/',order);
 
 module.exports = app;

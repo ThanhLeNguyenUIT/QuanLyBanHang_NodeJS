@@ -78,6 +78,16 @@ html {
     width: 40%;
 }
 
+.grid__column-8{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 66.6666667%;
+}
+.grid__column-8-12{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 33.33333337%;
+}
 
 /* Animation */
 
@@ -162,6 +172,9 @@ html {
 
 
 /* Modal */
+.hide_modal{
+    display: none;
+}
 
 .modal {
     position: fixed;

@@ -31,20 +31,15 @@
                     <div class="header_user">
                         Đăng nhập
                     </div>
-                    <!-- <div class="header_user">
-                        <i class="header_user-icon fas fa-user"></i>
-                        <span class="header_user-name">
-                            WayciQ
-                        </span>
-                    </div> -->
+                  
                 </div>
                 <div class="header_container-2">
                     <!-- header container 2-->
                     <nav class="header_navbar">
                         <ul class="header_navbar-list">
-                            <li class="header_navbar-item header_navbar-item-select">
+                            <li class="header_navbar-item ">
                                 <div class="header_container-item">
-                                    <a href="/" class="header__navbar-item-link">
+                                    <a href="/dashboard" class="header__navbar-item-link">
                                         <i class="far fa-eye"></i> Tổng quan
                                     </a>
                                 </div>
@@ -63,9 +58,9 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item">
+                            <li class="header_navbar-item header_navbar-item-select">
                                 <div class="header_container-item">
-                                    <a href="baocao" class="header__navbar-item-link">
+                                    <a href="/baocao" class="header__navbar-item-link">
                                         <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
                                     </a>
                                 </div>
@@ -79,82 +74,21 @@
             <div class="grid">
                 <div class="grid__row body_content">
 
-                    <button class="btn_order">
+                    <button class="btn_order" onclick="window.location.href='/order'">
                             <i class="fas fa-shopping-basket"></i>
                             <span class="add">Đặt hàng</span>
-                        </button>
+                     </button>
 
                 </div>
             </div>
         </div>
-
-        <div class="modal">
-            <div class="modal_overlay"></div>
-            <div class="modal_body">
-                <div class="order_form">
-                    <div class="order_form-header">
-                        <h1 class="order_form-heading">Đặt hàng</h1>
-                    </div>
-                    <div class="order_form-body">
-                        <div class="order_form-left">
-                            <div class="container_order">
-                                <div class="container_order-left">
-                                    <span class="order_item">1</span>
-                                    <i class="fas fa-trash-alt delete-icon order_item"></i>
-                                    <span class="order_item">001</span>
-                                    <span class="order_item">Nước uống tăng lực Number one</span>
-                                </div>
-                                <div class="container_order-right">
-                                    <span class="order_item">Hộp</span>
-                                    <div>
-                                        <span class="order_item">1</span>
-                                    </div>
-                                    <div>
-                                        <span class="order_item">11,000</span>
-                                    </div>
-                                    <span class="order_item">11,000</span>
-                                </div>
-                            </div>
-
-                            <div class="container_order">
-                                <div class="container_order-left">
-                                    <span class="order_item">2</span>
-                                    <i class="fas fa-trash-alt delete-icon order_item"></i>
-                                    <span class="order_item">002</span>
-                                    <span class="order_item">Nước uống tăng lực Number one</span>
-                                </div>
-                                <div class="container_order-right">
-                                    <span class="order_item">Hộp</span>
-                                    <div>
-                                        <span class="order_item">1</span>
-                                    </div>
-                                    <div>
-                                        <span class="order_item">11,000</span>
-                                    </div>
-                                    <span class="order_item">11,000</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="order_form-right">
-                            <div class="container_bill">
-                                <span>06/09/2020</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order_form-controls">
-                        <button class="btn">Trở lại</button>
-                        <button class="btn btn--primary">Đồng ý </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
     </main>
+    
     <script>
         $(document).ready(function() {
             $(".btn").click(function() {
-                $(".modal").hide(1000);
+                $("/order").hide(1000);
             });
             $(".btn_order").click(function() {
                 $(".modal").show();
