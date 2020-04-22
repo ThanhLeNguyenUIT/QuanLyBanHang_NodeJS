@@ -7,10 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Agency Management</title>
-    <link rel="stylesheet" href="./resource/css/main.css">
-    <link rel="stylesheet" href="./resource/css/base.css">
-    <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../resource/css/main.css">
+    <link rel="stylesheet" href="../resource/css/base.css">
+    <link rel="stylesheet" href="../resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../resource/css/baocao.css">
+    <script>
+        window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.light.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.2/jszip.min.js"></script>
+    <script src="https://cdn3.devexpress.com/jslib/19.2.7/js/dx.all.js"></script>
+    <script src="../resource/js/baocao.js"></script>
 </head>
 <!-- Body -->
 
@@ -78,31 +87,33 @@
         <div class="container_report">
             <div class="grid">
                 <div class="grid_row">
-                    <div class="grid_column">
-                        <div class="grid__column-2">
-                            <!-- category -->
-                            <div class="cagetory">
-                                <h1 class="cagetory_heading-page">Báo cáo</h1>
-                                <ul class="cagetory-list">
-                                    <h3 class="category-list_header">Nhóm hàng</h3>
-                                    <li class="cagetory-item">
-                                        <a href="/hanghoa.ejs" class="category-item_link">Nước ngọt</a>
-                                        <i class="category-item-icon far fa-edit"></i>
-                                    </li>
-                                    <li class="cagetory-item">
-                                        <a href="/hanghoa.ejs" class="category-item_link">Thực phẩm</a>
-                                        <i class="category-item-icon far fa-edit"></i>
-                                    </li>
-                                    <li class="cagetory-item">
-                                        <a href="/hanghoa.ejs" class="category-item_link">Dụng cụ gia dụng</a>
-                                        <i class="category-item-icon far fa-edit"></i>
-                                    </li>
-                                    <li class="cagetory-item">
-                                        <a href="/hanghoa.ejs" class="category-item_link">Giấy</a>
-                                        <i class="category-item-icon far fa-edit"></i>
-                                    </li>
-                                </ul>
+                    <div class="grid__column-2">
+                        <div class="report">
+                            <h1 class="report_heading-page">Báo cáo</h1>
+                            <div class="report_select-wrap">
+                                <div class="report-form">
+                                    <div class="report-form-label">Mối quan tâm</div>
+                                    <div class="report-form-value">
+                                        <div id="radio-group-with-selection"></div>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="report_select-wrap">
+                                <div class="report-form">
+                                    <div class="report-form-label">Thời gian</div>
+                                    <span class="selected-date-label">Từ</span>
+                                    <div id="selected-date-from"></div>
+                                    <span class="selected-date-label">Đến</span>
+                                    <div id="selected-date-to"></div>
+                                    <button class="create-report">Tạo báo cáo</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="grid__column-10">
+                        <div class="grid_form-report">
+                            <div id="reportContainer"></div>
                         </div>
                     </div>
                 </div>
