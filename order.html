@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agency Management</title>
+    <link rel="stylesheet" href="./resource/css/main.css">
+    <link rel="stylesheet" href="./resource/css/base.css">
+    <link rel="stylesheet" href="/resource/css/order.css">
+    <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="grid">
+            <div class="header_container">
+                <div class="search_product"> <!-- có thể bị trùng-->
+                     <input type="text" class="search_product-input" placeholder="Tìm kiếm ">
+                    <button class="search_product-button"><i class="search_product-button-icon fas fa-search"></i></button>
+                </div>
+
+                <div class="bill_container">
+                    <div class="bill_tab">
+                        <span>Hoá đơn 1</span>
+                        <i class="fas fa-times close-icon"></i>
+                    </div>
+                    <div class="bill_tab">
+                        <span>Hoá đơn 2</span>
+                        <i class="fas fa-times close-icon"></i>
+                    </div>
+                    <i class="fas fa-plus add-icon"></i>
+                </div>
+
+                <div class="bill-function">
+                    <i class="fas fa-undo function"></i>
+                    <i class="fas fa-map-marker-alt function"></i>
+                    <i class="fas fa-print function"></i>
+                    <span class="function">0794560642</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__column-8">
+                    <div class="container_order-list">
+                        <table class="order_table">
+                            <thead>
+                                <tr class="order_table-head">
+                                    <th class="order_table-head-item order-num">STT</th>
+                                    <th class="order_table-head-item order-delete"></th >
+                                    <th class="order_table-head-item order-id">Mã</th>
+                                    <th class="order_table-head-item order-name">Tên hàng</th>
+                                    <th class="order_table-head-item order-kind">Loại</th>
+                                    <th class="order_table-head-item order-amount">Số lượng</th>
+                                    <th class="order_table-head-item order-price">Đơn giá</th>
+                                    <th class="order_table-head-item order-totalPrice">Tổng tiền</th>
+                                 </tr>
+                            </thead>
+                            <tbody class="order_table-body"> 
+                                <tr class="order_table-row">
+                                    <td class="order_table-body-item">1</td>
+                                    <td class="order_table-body-item"><i class="fas fa-trash-alt delete-icon order_item"></i></td>
+                                    <td class="order_table-body-item">001</td>
+                                    <td class="order_table-body-item">Nước uống tăng lực Number one</td>
+                                    <td class="order_table-body-item">Hộp</td>
+                                    <td class="order_table-body-item">1</td>
+                                    <td class="order_table-body-item">11,000</td>
+                                    <td class="order_table-body-item">11,000</td>
+                                </tr>
+                                <tr class="order_table-row">
+                                    <td class="order_table-body-item">2</td>
+                                    <td class="order_table-body-item"><i class="fas fa-trash-alt delete-icon order_item"></i></td>
+                                    <td class="order_table-body-item">002</td>
+                                    <td class="order_table-body-item">Phô mai con bò cười</td>
+                                    <td class="order_table-body-item">Hộp</td>
+                                    <td class="order_table-body-item">2</td>
+                                    <td class="order_table-body-item">5,000</td>
+                                    <td class="order_table-body-item">10,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                    
+                <div class="grid__column-8-12">
+                    <div class="container_bill-info">
+                        <div class="bill_info-head">
+                            <div class="bill_info-head-left">
+                                <i class="header_user-icon fas fa-user"></i>
+                                <span>0794560642</span>
+                            </div>
+                            <div class="bill_info-head-right">
+                                <span>05/04/2020</span>
+                                <span>19:20</span>
+                            </div>
+                        </div>
+
+                        <div class="bill_info-input">
+                            <input class="bill-agency-input" type="text" placeholder="Đại lý">
+                        </div>
+
+                        <div class="bill_price">
+                            <span>Tổng tiền hàng</span>
+                            <span>21,000</span>
+                        </div>
+
+                        <div class="bill_discount">
+                            <span>Giảm giá</span>
+                            <input type="number" class="input_discount" placeholder="0">
+                        </div>
+
+                        <div class="bill_finalPrice">
+                            <span class="finalPrice_label">Đại lý cần trả</span>
+                            <span class="finalPrice">21,000</span>
+                        </div>
+
+                        <div class="bill_note">
+                            <input type="text" class="note-input" placeholder="Ghi chú">
+                        </div>
+
+                        <button class="bill_confirm">Thanh Toán</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+                
+            
