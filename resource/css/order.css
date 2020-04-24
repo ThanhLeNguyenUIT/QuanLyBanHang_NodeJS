@@ -68,8 +68,20 @@
     color: var(--black-color);
     margin-right: 1px;
     border-right: 1px solid rgba(0,0,0,0.3);
+    outline: none;
 }
 
+#tab1,#tab2{
+    display: none;
+}
+
+.tab_button:hover{
+    background-color: rgb(148, 191, 231);
+}
+
+.tab_button.active{
+    background-color: rgb(82, 151, 197);
+}
 .add-icon{
     margin-left: 5px;
 }
