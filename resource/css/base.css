@@ -78,16 +78,18 @@ html {
     width: 40%;
 }
 
-.grid__column-8{
+.grid__column-8 {
     padding-left: 12px;
     padding-right: 12px;
     width: 66.6666667%;
 }
-.grid__column-8-12{
+
+.grid__column-8-12 {
     padding-left: 12px;
     padding-right: 12px;
-    width: 33.33333337%;
+    width: 33.33333334%;
 }
+
 
 /* Animation */
 
@@ -170,11 +172,13 @@ html {
     background-color: var(--primary-color);
 }
 
+.btn--delete {
+    background-color: #db4e65;
+    color: var(--white-color);
+}
+
 
 /* Modal */
-.hide_modal{
-    display: none;
-}
 
 .modal {
     position: fixed;

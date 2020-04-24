@@ -1,18 +1,23 @@
+.container_report {
+    position: relative;
+    display: flex;
+}
+
+.body_content {
+    margin-top: 36px;
+}
+
 .report {
-    width: 100%;
     background-color: #fff;
 }
 
 .report-form {
-    width: 100%;
-    background-color: rgb(238, 238, 238);
+    background-color: #fff;
     padding: 8px 12px 8px 12px;
     border-radius: 3px;
     margin: 6px 0;
-}
-
-.report-item {
-    width: 100%;
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, .4);
+    border: 1px solid rgba(0, 0, 0, .2);
 }
 
 .report-form-label {

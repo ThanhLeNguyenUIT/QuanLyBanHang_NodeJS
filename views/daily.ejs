@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Agency Management</title>
-    <link rel="stylesheet" href="./resource/css/main.css">
-    <link rel="stylesheet" href="./resource/css/base.css">
-    <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
-    <link rel="stylesheet" href="./resource/css/daily.css">
+    <link rel="stylesheet" href="../resource/css/main.css">
+    <link rel="stylesheet" href="../resource/css/base.css">
+    <link rel="stylesheet" href="../resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <!-- Body -->
@@ -57,14 +56,14 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item">
+                            <li class="header_navbar-item header_navbar-item-select">
                                 <div class="header_container-item">
                                     <a href="/daily" class="header__navbar-item-link">
                                         <i class="fas fa-store-alt"></i> Đại lí
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item header_navbar-item-select">
+                            <li class="header_navbar-item">
                                 <div class="header_container-item">
                                     <a href="/baocao" class="header__navbar-item-link">
                                         <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
@@ -76,7 +75,7 @@
                 </div>
             </div>
         </header>
-        <div class="container_agency">
+        <div class="container">
             <div class="grid">
                 <div class="grid__row body_content">
                     <div class="grid__column-2">
@@ -101,64 +100,87 @@
                         </nav>
                     </div>
                     <div class="grid__column-10">
-                        <div class="search_agency">
-                            <div class="search_agency-wrap">
-                                <input type="text" class="search_agency-input" name="searchAgencyByID" placeholder="Tìm tên, mã Đại lý">
-                                <button class="search_agency-btn">
-                                        <i class="search_agency-btn-icon fas fa-search"></i>
+                        <div class="search">
+                            <div class="search-wrap">
+                                <input type="text" class="search-input" name="searchAgencyByID" placeholder="Tìm tên, mã Đại lý">
+                                <button class="search-btn">
+                                        <i class="search-btn-icon fas fa-search"></i>
                                     </button>
                             </div>
-                            <button class="btn btn--primary btn_add_agency">Thêm mới</button>
+                            <button class="btn btn--primary btn-add">Thêm mới</button>
+                        </div>
+                        <div class="grid__row">
+                            <div class="grid__column-10-1">
+                                <table class="table_container">
+                                    <thead>
+                                        <tr class="table-container_header">
+                                            <th class="table-container_header-item code-agency">Mã Đại lý</th>
+                                            <th class="table-container_header-item name-agency">Tên Đại lý</th>
+                                            <th class="table-container_header-item phone-agency">Điện thoại</th>
+                                            <th class="table-container_header-item district-agency">Quận</th>
+                                            <th class="table-container_header-item group-agency">Nhóm Đại lý</th>
+                                            <th class="table-container_header-item address-agency">Địa chỉ</th>
+                                            <th class="table-container_header-item date-agency">Ngày nhận</th>
+                                            <th class="table-container_header-item debt-agency">Công nợ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-container_body table-container_body_between">
+                                            <td class="table-container_body-item">001</td>
+                                            <td class="table-container_body-item">UIT</td>
+                                            <td class="table-container_body-item">0794560642</td>
+                                            <td class="table-container_body-item">Quận 1</td>
+                                            <td class="table-container_body-item">Nhóm 1</td>
+                                            <td class="table-container_body-item">số 10 phường Linh Trung</td>
+                                            <td class="table-container_body-item">1/12/2020</td>
+                                            <td class="table-container_body-item">0</td>
+                                        </tr>
+                                        <tr class="table-container_body">
+                                            <td class="table-container_body-item">002</td>
+                                            <td class="table-container_body-item">USSH</td>
+                                            <td class="table-container_body-item">0905966867</td>
+                                            <td class="table-container_body-item">Quận 2</td>
+                                            <td class="table-container_body-item">Nhóm 2</td>
+                                            <td class="table-container_body-item">Số 2 đường Điện Biên Phủ</td>
+                                            <td class="table-container_body-item">12/3/2020</td>
+                                            <td class="table-container_body-item">0</td>
+                                        </tr>
+                                        <tr class="table-container_body table-container_body_between">
+                                            <td class="table-container_body-item">003</td>
+                                            <td class="table-container_body-item">UEL</td>
+                                            <td class="table-container_body-item">0969242258</td>
+                                            <td class="table-container_body-item">Quận 3</td>
+                                            <td class="table-container_body-item">Nhóm 3</td>
+                                            <td class="table-container_body-item">Số 69 đường Giải Phóng</td>
+                                            <td class="table-container_body-item">4/5/2020</td>
+                                            <td class="table-container_body-item">0</td>
+                                        </tr>
+                                        <tr class="table-container_body">
+                                            <td class="table-container_body-item">002</td>
+                                            <td class="table-container_body-item">USSH</td>
+                                            <td class="table-container_body-item">0905966867</td>
+                                            <td class="table-container_body-item">Quận 2</td>
+                                            <td class="table-container_body-item">Nhóm 2</td>
+                                            <td class="table-container_body-item">Số 2 đường Điện Biên Phủ</td>
+                                            <td class="table-container_body-item">12/3/2020</td>
+                                            <td class="table-container_body-item">0</td>
+                                        </tr>
+                                        <tr class="table-container_body table-container_body_between">
+                                            <td class="table-container_body-item">002</td>
+                                            <td class="table-container_body-item">USSH</td>
+                                            <td class="table-container_body-item">0905966867</td>
+                                            <td class="table-container_body-item">Quận 2</td>
+                                            <td class="table-container_body-item">Nhóm 2</td>
+                                            <td class="table-container_body-item">Số 2 đường Điện Biên Phủ</td>
+                                            <td class="table-container_body-item">12/3/2020</td>
+                                            <td class="table-container_body-item">0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
                         </div>
 
-                        <div class="container_agency_table">
-                            <table class="agency_table">
-                                <thead>
-                                    <tr class="agency_table_head">
-                                        <th class="agency_table_head-item code-agency">Mã Đại lý</th>
-                                        <th class="agency_table_head-item name-agency">Tên Đại lý</th>
-                                        <th class="agency_table_head-item phone-agency">Điện thoại</th>
-                                        <th class="agency_table_head-item district-agency">Quận</th>
-                                        <th class="agency_table_head-item group-agency">Nhóm Đại lý</th>
-                                        <th class="agency_table_head-item address-agency">Địa chỉ</th>
-                                        <th class="agency_table_head-item date-agency">Ngày nhận</th>
-                                        <th class="agency_table_head-item debt-agency">Công nợ</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="agency_table_body">
-                                        <td class="agency_table_body-item">001</td>
-                                        <td class="agency_table_body-item">UIT</td>
-                                        <td class="agency_table_body-item">0794560642</td>
-                                        <td class="agency_table_body-item">Quận 1</td>
-                                        <td class="agency_table_body-item">Nhóm 1</td>
-                                        <td class="agency_table_body-item">số 10 phường Linh Trung</td>
-                                        <td class="agency_table_body-item">1/12/2020</td>
-                                        <td class="agency_table_body-item">0</td>
-                                    </tr>
-                                    <tr class="agency_table_body">
-                                        <td class="agency_table_body-item">002</td>
-                                        <td class="agency_table_body-item">USSH</td>
-                                        <td class="agency_table_body-item">0905966867</td>
-                                        <td class="agency_table_body-item">Quận 2</td>
-                                        <td class="agency_table_body-item">Nhóm 2</td>
-                                        <td class="agency_table_body-item">Số 2 đường Điện Biên Phủ</td>
-                                        <td class="agency_table_body-item">12/3/2020</td>
-                                        <td class="agency_table_body-item">0</td>
-                                    </tr>
-                                    <tr class="agency_table_body">
-                                        <td class="agency_table_body-item">003</td>
-                                        <td class="agency_table_body-item">UEL</td>
-                                        <td class="agency_table_body-item">0969242258</td>
-                                        <td class="agency_table_body-item">Quận 3</td>
-                                        <td class="agency_table_body-item">Nhóm 3</td>
-                                        <td class="agency_table_body-item">Số 69 đường Giải Phóng</td>
-                                        <td class="agency_table_body-item">4/5/2020</td>
-                                        <td class="agency_table_body-item">0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
 
                 </div>
@@ -168,26 +190,26 @@
         <div class="modal modal_add-agency">
             <div class="modal_overlay"></div>
             <div class="modal_body">
-                <div class="auth_form">
+                <div class="auth-form">
 
-                    <div class="auth_header">
-                        <h1 class="auth_heading">Thêm Đại Lý</h1>
+                    <div class="auth-form_header">
+                        <h1 class="auth-form_heading">Thêm Đại Lý</h1>
                     </div>
-                    <div class="auth_body">
-                        <div class="auth_body-left">
-                            <div class="auth_group-left">
+                    <div class="auth-form_body">
+                        <div class="auth-form_body-left">
+                            <div class="auth-form_group">
                                 <span class="auth-form_info">Tên Đại lý</span>
                                 <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="text" class="auth_agency-input auth_agency-name" placeholder="Tên Đại lý" required>
+                                <input type="text" class="auth-form_input auth_agency-name" placeholder="Tên Đại lý" required>
                             </div>
-                            <div class="auth_group-left">
+                            <div class="auth-form_group">
                                 <span class="auth-form_info">Mã Đại lý</span>
                                 <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="number" class="auth_agency-input auth_agency_code" placeholder="Mã Đại lý" required>
+                                <input type="number" class="auth-form_input auth_agency_code" placeholder="Mã Đại lý" required>
                             </div>
                             <div class="auth_agency_selection">
-                                <div class="auth_group-left">
-                                    <label for="auth_group-left" class="auth-form_info">Nhóm</label>
+                                <div class="auth-form_group">
+                                    <label for="auth-form_group" class="auth-form_info">Nhóm</label>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
                                     <select name="authGroup" class="auth_agency-group" id="auth_group" required>
                                     <option value="nhom1">Nhóm 1</option>
@@ -195,7 +217,7 @@
                                     <option value="nhom3">Nhóm 3</option>
                                 </select>
                                 </div>
-                                <div class="auth_group-left">
+                                <div class="auth-form_group">
                                     <label for="auth_district" class="auth-form_info">Khu vực</label>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
                                     <select class="auth_agency-district" name="authDistrict" id="auth_district" required>
@@ -206,37 +228,39 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="auth_body-right">
-                            <div class="auth_group-right">
+                        <div class="auth-form_body-right">
+                            <div class="auth-form_group">
                                 <span class="auth-form_info">Số điện thoại</span>
                                 <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="number" class="auth_agency-input auth_agency_number" placeholder="" required>
+                                <input type="number" class="auth-form_input auth_agency_number" placeholder="" required>
                             </div>
-                            <div class="auth_group-right">
+                            <div class="auth-form_group">
                                 <span class="auth-form_info">Địa chỉ</span>
                                 <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="text" class="auth_agency-input auth_agency_adress" placeholder="" required>
+                                <input type="text" class="auth-form_input auth_agency_adress" placeholder="" required>
                             </div>
-                            <div class="auth_group-right">
+                            <div class="auth-form_group">
                                 <label for="auth_date" class="auth-form_info">Ngày tiếp nhận</label>
                                 <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="date" class="auth_agency-input auth_agency_date" placeholder="1-12-2000" id="auth_date" required>
+                                <input type="date" class="auth-form_input auth_agency_date" placeholder="1-12-2000" id="auth_date" required>
                             </div>
                         </div>
                     </div>
                     <!-- script form -->
                     <script>
                         $(document).ready(function() {
-                            $(".btn").click(function() {
+                            $(".btn-agency-cancel").click(function() {
                                 $(".modal_add-agency").hide(1000);
                             });
-                            $(".btn_add_agency").click(function() {
+                            $(".btn-add").click(function() {
                                 $(".modal_add-agency").show();
+                                $(".auth-form").show();
+
                             });
                         });
                     </script>
-                    <div class="auth_form-controls">
-                        <button class="btn">Trở lại</button>
+                    <div class="auth-form_controls">
+                        <button class="btn btn-agency-cancel">Trở lại</button>
                         <button class="btn btn--primary">Đồng ý </button>
                     </div>
                 </div>
