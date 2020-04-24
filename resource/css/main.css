@@ -11,7 +11,15 @@ body {
     height: var(--header-height);
 }
 
+#chart {
+    height: 440px;
+    margin-top: 15rem;
+}
 
+#chart_good{
+    height: 440px;
+    margin-top: 10rem;
+}
 /* Header Container 1*/
 
 .header_container-1 {
@@ -146,7 +154,7 @@ body {
     cursor: pointer;
     border-radius: 999px;
     outline: none;
-    margin-left: 80%;
+    margin-top: 30px;
 }
 
 .btn_order:hover {

@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Agency Management</title>
-    <link rel="stylesheet" href="../resource/css/main.css">
-    <link rel="stylesheet" href="../resource/css/base.css">
-    <link rel="stylesheet" href="../resource/css/order.css">
+    <link rel="stylesheet" href="./resource/css/main.css">
+    <link rel="stylesheet" href="./resource/css/base.css">
+    <link rel="stylesheet" href="/resource/css/order.css">
     <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
-
 <body>
-    <header class="order_header">
+    <header class="header">
         <div class="grid">
-            <div class="order_header_container">
-                <div class="order_header-search_product">
-                    <!-- có thể bị trùng-->
-                    <input type="text" class="search_product-input" placeholder="Tìm kiếm ">
+            <div class="header_container">
+                <div class="search_product"> <!-- có thể bị trùng-->
+                     <input type="text" class="search_product-input" placeholder="Tìm kiếm ">
                     <button class="search_product-button"><i class="search_product-button-icon fas fa-search"></i></button>
                 </div>
 
                 <div class="bill_container">
-                    <button class="tab_button" onclick="openTab(event, 'tab1')">
+                    <div class="bill_tab">
                         <span>Hoá đơn 1</span>
                         <i class="fas fa-times close-icon"></i>
-                    </button>
-                    <button class="tab_button" onclick="openTab(event, 'tab2')">
+                    </div>
+                    <div class="bill_tab">
                         <span>Hoá đơn 2</span>
                         <i class="fas fa-times close-icon"></i>
-                    </button>
+                    </div>
                     <i class="fas fa-plus add-icon"></i>
                 </div>
 
@@ -49,20 +46,20 @@
             <div class="grid__row">
                 <div class="grid__column-8">
                     <div class="container_order-list">
-                        <table class="order_table" id="tab1">
+                        <table class="order_table">
                             <thead>
                                 <tr class="order_table-head">
                                     <th class="order_table-head-item order-num">STT</th>
-                                    <th class="order_table-head-item order-delete"></th>
+                                    <th class="order_table-head-item order-delete"></th >
                                     <th class="order_table-head-item order-id">Mã</th>
                                     <th class="order_table-head-item order-name">Tên hàng</th>
                                     <th class="order_table-head-item order-kind">Loại</th>
                                     <th class="order_table-head-item order-amount">Số lượng</th>
                                     <th class="order_table-head-item order-price">Đơn giá</th>
                                     <th class="order_table-head-item order-totalPrice">Tổng tiền</th>
-                                </tr>
+                                 </tr>
                             </thead>
-                            <tbody class="order_table-body">
+                            <tbody class="order_table-body"> 
                                 <tr class="order_table-row">
                                     <td class="order_table-body-item">1</td>
                                     <td class="order_table-body-item"><i class="fas fa-trash-alt delete-icon order_item"></i></td>
@@ -85,37 +82,9 @@
                                 </tr>
                             </tbody>
                         </table>
-
-                        <table class="order_table" id="tab2">
-                            <thead>
-                                <tr class="order_table-head">
-                                    <th class="order_table-head-item order-num">STT</th>
-                                    <th class="order_table-head-item order-delete"></th >
-                                    <th class="order_table-head-item order-id">Mã</th>
-                                    <th class="order_table-head-item order-name">Tên hàng</th>
-                                    <th class="order_table-head-item order-kind">Loại</th>
-                                    <th class="order_table-head-item order-amount">Số lượng</th>
-                                    <th class="order_table-head-item order-price">Đơn giá</th>
-                                    <th class="order_table-head-item order-totalPrice">Tổng tiền</th>
-                                 </tr>
-                            </thead>
-                            <tbody class="order_table-body"> 
-                                <tr class="order_table-row">
-                                    <td class="order_table-body-item">1</td>
-                                    <td class="order_table-body-item"><i class="fas fa-trash-alt delete-icon order_item"></i></td>
-                                    <td class="order_table-body-item">003</td>
-                                    <td class="order_table-body-item">Khẩu trang y tế</td>
-                                    <td class="order_table-body-item">Hộp</td>
-                                    <td class="order_table-body-item">2</td>
-                                    <td class="order_table-body-item">20,000</td>
-                                    <td class="order_table-body-item">40,000</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
                     </div>
                 </div>
-
+                    
                 <div class="grid__column-8-12">
                     <div class="container_bill-info">
                         <div class="bill_info-head">
@@ -152,27 +121,16 @@
                             <input type="text" class="note-input" placeholder="Ghi chú">
                         </div>
 
-                        <button class="bill_confirm" onclick="window.location.href='/dashboard'">Thanh Toán</button>
+                        <button class="bill_confirm">Thanh Toán</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        function openTab(event, tab){
-            var i, order_table, tab_button;
-            order_table = document.getElementsByClassName('order_table');
-            for( i = 0; i < order_table.length; i++){
-                order_table[i].style.display = "none";
-            }
-            tab_button = document.getElementsByClassName('tab_button');
-            for( i = 0; i < tab_button.length; i++){
-                tab_button[i].className = tab_button[i].className.replace("active", "");
-            }
-            document.getElementById(tab).style.display = "block";
-            event.currentTarget.className += " active";
-        }
-    </script>
 </body>
-
 </html>
+
+
+
+                
+            

@@ -56,7 +56,7 @@
     color: var(--white-color);
 }
 
-.bill_tab {
+.tab_button{
     display: flex;
     width: 8rem;
     height: 100%;
@@ -67,13 +67,14 @@
     justify-content: space-evenly;
     color: var(--black-color);
     margin-right: 1px;
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(0,0,0,0.3);
 }
 
-.add-icon {
+.add-icon{
     margin-left: 5px;
 }
 
+/* bill function */ 
 
 /* bill function */
 
@@ -115,6 +116,7 @@
     text-align: center;
     background-color: var(--primary-color);
     color: var(--white-color);
+    width: 100%;
 }
 
 .order_table-head-item {
@@ -131,6 +133,7 @@
 
 .order_table-body {
     cursor: pointer;
+    width: 100%;
 }
 
 .order_table-row {
