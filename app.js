@@ -7,6 +7,7 @@ var baocao = require("./routes/baocao");
 var daily = require("./routes/daily");
 var hanghoa = require("./routes/hanghoa");
 var order = require('./routes/order');
+var authentication = require('./routes/authentication');
 
 var expressValidator = require('express-validator');
 var app = express();
@@ -37,12 +38,13 @@ app.use("/resource", express.static('resource'));
 //         };
 //     }
 // }));
-
+app.use('/',authentication);
 app.use('/', dashboard);
 app.use('/', dashboard);
 app.use('/', daily);
 app.use('/', hanghoa);
 app.use('/', baocao);
 app.use('/',order);
+
 
 module.exports = app;
