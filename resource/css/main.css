@@ -311,7 +311,14 @@ body {
     margin-left: 20px;
 }
 
+.agency_input{
+    width: 7rem;
+    outline: none;
+}
 
+.agency_input-group{
+    margin-left: 18px;
+}
 /* table */
 
 .table_container {
