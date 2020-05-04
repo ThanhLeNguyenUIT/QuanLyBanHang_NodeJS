@@ -36,3 +36,60 @@
     font-size: 1.25rem;
     font-weight: 500;
 }
+
+.report-table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, .2);
+}
+
+table,
+td {
+    border: 1px solid black;
+}
+
+.report-table-header {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background-color: #029fe3;
+}
+
+.report-table_header-time {
+    font-size: 1.3rem;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+.report-table_header-title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.stt {
+    width: 10%;
+}
+
+.name_agency {
+    width: 25%;
+}
+
+.column_2 {
+    width: 25%;
+}
+
+.column_3 {
+    width: 25%;
+}
+
+.column_4 {
+    width: 15%;
+}
+
+.report-table-body {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+}

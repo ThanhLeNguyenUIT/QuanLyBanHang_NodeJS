@@ -90,16 +90,16 @@
                             <thead>
                                 <tr class="order_table-head">
                                     <th class="order_table-head-item order-num">STT</th>
-                                    <th class="order_table-head-item order-delete"></th >
+                                    <th class="order_table-head-item order-delete"></th>
                                     <th class="order_table-head-item order-id">Mã</th>
                                     <th class="order_table-head-item order-name">Tên hàng</th>
                                     <th class="order_table-head-item order-kind">Loại</th>
                                     <th class="order_table-head-item order-amount">Số lượng</th>
                                     <th class="order_table-head-item order-price">Đơn giá</th>
                                     <th class="order_table-head-item order-totalPrice">Tổng tiền</th>
-                                 </tr>
+                                </tr>
                             </thead>
-                            <tbody class="order_table-body"> 
+                            <tbody class="order_table-body">
                                 <tr class="order_table-row">
                                     <td class="order_table-body-item">1</td>
                                     <td class="order_table-body-item"><i class="fas fa-trash-alt delete-icon order_item"></i></td>
@@ -110,7 +110,7 @@
                                     <td class="order_table-body-item">20,000</td>
                                     <td class="order_table-body-item">40,000</td>
                                 </tr>
-                                
+
                             </tbody>
                         </table>
                     </div>
@@ -159,14 +159,14 @@
         </div>
     </div>
     <script>
-        function openTab(event, tab){
+        function openTab(event, tab) {
             var i, order_table, tab_button;
             order_table = document.getElementsByClassName('order_table');
-            for( i = 0; i < order_table.length; i++){
+            for (i = 0; i < order_table.length; i++) {
                 order_table[i].style.display = "none";
             }
             tab_button = document.getElementsByClassName('tab_button');
-            for( i = 0; i < tab_button.length; i++){
+            for (i = 0; i < tab_button.length; i++) {
                 tab_button[i].className = tab_button[i].className.replace("active", "");
             }
             document.getElementById(tab).style.display = "table";
