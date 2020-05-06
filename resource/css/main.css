@@ -11,14 +11,44 @@ body {
     height: var(--header-height);
 }
 
+.change_chart{
+    min-width: 150px;
+    height: 35px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.change_chart:hover{
+    cursor: pointer;
+    background-color: #1d95d1;
+}
 #chart {
     height: 440px;
-    margin-top: 15rem;
+    margin: 15rem 0 0 0;
+    
 }
 
 #chart_good{
     height: 440px;
-    margin-top: 10rem;
+    margin-top: 13rem;
+}
+
+#pie {
+    height: 440px;
+    margin: 15rem 0 0 0;
+    display: none;
 }
 /* Header Container 1*/
 
@@ -56,6 +86,11 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-items: center;
+}
+
+.header_user-link{
+    text-decoration: none;
+    color: var(--black-color);
 }
 
 .header_user:hover {

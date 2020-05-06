@@ -14,6 +14,15 @@
     <script>
         window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/event.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/supplemental.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/unresolved.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize/message.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize/number.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize/currency.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize/date.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.common.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.light.css" />
     <script src="https://cdn3.devexpress.com/jslib/19.2.7/js/dx.all.js"></script>
@@ -36,7 +45,7 @@
                         <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
                     </div>
                     <div class="header_user">
-                        <a href="/authentication">Đăng nhập</a>
+                        <a href="/authentication" class="header_user-link">Đăng nhập</a>
                     </div>
 
                 </div>
@@ -84,7 +93,13 @@
                     <div class="grid__row">
                         <div class="grid__column-2"></div>
                         <div class="grid__column-8">
-                            <div id="chart"></div>
+                            <div id="pie">
+                                <button class="change_chart chart_circle">Xem biểu đồ dưới cột</button>
+                            </div>
+                            <div id="chart">
+                                <button class="change_chart chart_column">Xem biểu đồ dưới tròn</button>
+                            </div>
+                            
                         </div>
                         <div class="grid__column-11-12">
                             <button class="btn_order" onclick="window.location.href='/order'">
@@ -107,19 +122,19 @@
 
     </main>
 
-    <script>
-        $(document).ready(function() {
-            $(".btn").click(function() {
-                $("/order").hide(1000);
+    <script>       
+    
+        $(document).ready(function(){
+            $(".chart_column").click(function(){
+                $("#pie").css("display", "block");
+                $("#chart").css("display", "none");
             });
-            $(".btn_order").click(function() {
-                $(".modal").show();
-            });
-        });
 
-        function myFunction(x) {
-            document.getElementsById(x).style.background = "red";
-        }
+            $(".chart_circle").click(function(){
+                $("#pie").css("display", "none");
+                $("#chart").css("display", "block");
+            });
+        })
     </script>
 </body>
 

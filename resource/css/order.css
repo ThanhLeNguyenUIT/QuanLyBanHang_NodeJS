@@ -253,4 +253,9 @@ td {
     font-weight: bold;
     color: var(--white-color);
     margin-top: 70px;
+    outline: none;
+    cursor: pointer;
+}
+.bill_confirm:hover{
+    background-color: rgb(39, 134, 39);
 }
