@@ -1,3 +1,5 @@
+
+   // chart column
 $(function(){
     $("#chart").dxChart({
         dataSource: saleData,
@@ -56,6 +58,7 @@ $(function(){
         }
     });
 });
+
 var saleData = [{
     arg: 'Đại lý 1',
     val: 150000000
@@ -91,3 +94,71 @@ var saleDaily = [
 	{ "day": "Dầu ăn trường an", "sales": 8 },
 	{ "day": "Mì Hảo Hảo", "sales": 9 }
 ]
+
+
+   // chart circle
+
+   $(function(){
+    $("#pie").dxPieChart({
+        type: "doughnut",
+        palette: "Soft Pastel",
+        dataSource: dataSource,
+        title: "Doanh thu của Đại lý trong tháng này",
+        tooltip: {
+            enabled: true,
+            format: "millions",
+            customizeTooltip: function (arg) {
+                var percentText = Globalize.formatNumber(arg.percent, {  
+                    style: "percent",
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+    
+                return {
+                    text: arg.valueText + " - " + percentText
+                };
+            }
+        },
+        legend: {
+            horizontalAlignment: "right",
+            verticalAlignment: "top",
+            margin: 0
+        },
+        "export": {
+            enabled: true
+        },
+        series: [{        
+            argumentField: "agency",
+            label: {
+                visible: true,
+                format: "millions",
+                connector: {
+                    visible: true
+                }
+            }
+        }]
+    });
+});
+
+var dataSource = [{
+    agency: "Đại lý 1",
+    val: 150000000
+}, {
+    agency: "Đại lý 2",
+    val: 100000000
+}, {
+    region: "Đại lý 3",
+    val: 1000000000
+}, {
+    agency: "Đại lý 4",
+    val: 1200000000
+}, {
+    agency: "Đại lý 5",
+    val: 1000000000
+}, {
+    agency: "Đại lý 6",
+    val: 500000000
+}, {
+    agency: "Đại lý 6",
+    val: 700000000
+}];
