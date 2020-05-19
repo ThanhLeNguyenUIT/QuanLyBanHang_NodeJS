@@ -424,7 +424,7 @@ body {
 }
 
 .address-agency {
-    width: 20%;
+    width: 16%;
 }
 
 .date-agency {
@@ -437,7 +437,16 @@ body {
     width: 13%;
 }
 
+.edit-agency{
+    width: 13%;
+}
 
+.edit,.delete{
+    color: var(--primary-color);
+}
+.edit{
+    margin-right: 7px;
+}
 /* searching */
 
 .search {
@@ -496,7 +505,8 @@ body {
 
 .modal.modal_add-product,
 .modal.modal_add-agency,
-.modal.modal-category {
+.modal.modal-category,
+.modal.modal_edit-product {
     display: none;
 }
 

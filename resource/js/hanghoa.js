@@ -33,5 +33,9 @@ $(document).ready(function() {
         $(".auth-form_input-group-product").val(temp);
         $(".category-Product-list").slideUp();
     })
+    $(".edit").click(function() {
+        $(".modal_edit-product").css("display","flex");
+        $(".auth-form").css("display", "block");
+    })
 
 })
