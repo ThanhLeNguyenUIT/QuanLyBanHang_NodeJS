@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
     var selectedDateFrom = $("#selected-date-from").dxDateBox({
         value: new Date(),
         width: "100%",
@@ -16,9 +16,31 @@ $(function() {
 
     var radioGroup = $("#radio-group-with-selection").dxRadioGroup({
         items: selections,
-        value: selections[0]
+        onValueChanged: function(e) {
+            $each(task, function(i, item) {
+                if (item.selection == e.value) {
+                    $("#report-table_header-title").text(task[i].title);
+                    $("#column_2-header").text(task[i].column_2);
+                    $("#column_3-header").text(task[i].column_3);
+                    $("#column_4-header").text(task[i].column_4);
+                }
+            })
+        }
     }).dxRadioGroup("instance");
-    // radioGroup.option("value", selections[0]);
+    radioGroup.option("value", selections[1]);
 
 })
 var selections = ["Báo cáo", "Công nợ"];
+var task = [{
+    title: "Báo Cáo Doanh Số",
+    column_2: "Số Phiếu Xuất",
+    column_3: "Tổng Trị Giá",
+    column_4: "Tỷ Lệ",
+    selection: "Báo cáo"
+}, {
+    title: "Báo Cáo Công Nợ Đại Lý",
+    column_2: "Nợ Đầu",
+    column_3: "Phát Sinh",
+    column_4: "Nợ cuối",
+    selection: "Công nợ"
+}]

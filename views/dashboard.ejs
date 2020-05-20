@@ -93,13 +93,16 @@
                     <div class="grid__row">
                         <div class="grid__column-2"></div>
                         <div class="grid__column-8">
-                            <div id="pie">
-                                <button class="change_chart chart_circle">Xem biểu đồ dưới cột</button>
+                            <div class="chart-1">
+                                <div id="pie">
+                                    <button class="change_chart chart_circle">Xem biểu đồ dưới cột</button>
+                                </div>
+                                <div id="chart">
+                                    <button class="change_chart chart_column">Xem biểu đồ dưới tròn</button>
+                                </div>
                             </div>
-                            <div id="chart">
-                                <button class="change_chart chart_column">Xem biểu đồ dưới tròn</button>
-                            </div>
-                            
+
+
                         </div>
                         <div class="grid__column-11-12">
                             <button class="btn_order" onclick="window.location.href='/order'">
@@ -122,15 +125,14 @@
 
     </main>
 
-    <script>       
-    
-        $(document).ready(function(){
-            $(".chart_column").click(function(){
+    <script>
+        $(document).ready(function() {
+            $(".chart_column").click(function() {
                 $("#pie").css("display", "block");
                 $("#chart").css("display", "none");
             });
 
-            $(".chart_circle").click(function(){
+            $(".chart_circle").click(function() {
                 $("#pie").css("display", "none");
                 $("#chart").css("display", "block");
             });

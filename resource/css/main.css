@@ -11,7 +11,7 @@ body {
     height: var(--header-height);
 }
 
-.change_chart{
+.change_chart {
     min-width: 150px;
     height: 35px;
     text-decoration: none;
@@ -30,26 +30,34 @@ body {
     margin-bottom: 2rem;
 }
 
-.change_chart:hover{
+.change_chart:hover {
     cursor: pointer;
     background-color: #1d95d1;
 }
-#chart {
+
+.chart-1 {
+    margin: 15rem 0 0;
     height: 440px;
-    margin: 15rem 0 0 0;
-    
+    width: 816px;
 }
 
-#chart_good{
+#chart {
     height: 440px;
-    margin-top: 13rem;
+    width: 816px;
 }
 
 #pie {
     height: 440px;
-    margin: 15rem 0 0 0;
     display: none;
+    width: 816px;
 }
+
+#chart_good {
+    height: 440px;
+    margin-top: 13rem;
+}
+
+
 /* Header Container 1*/
 
 .header_container-1 {
@@ -88,7 +96,7 @@ body {
     justify-items: center;
 }
 
-.header_user-link{
+.header_user-link {
     text-decoration: none;
     color: var(--black-color);
 }
@@ -346,14 +354,16 @@ body {
     margin-left: 20px;
 }
 
-.agency_input{
+.agency_input {
     width: 7rem;
     outline: none;
 }
 
-.agency_input-group{
+.agency_input-group {
     margin-left: 18px;
 }
+
+
 /* table */
 
 .table_container {
