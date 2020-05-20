@@ -8,13 +8,13 @@ var daily = require("./routes/daily");
 var hanghoa = require("./routes/hanghoa");
 var order = require('./routes/order');
 var authentication = require('./routes/authentication');
-
+var path = require('path');
 var expressValidator = require('express-validator');
 var app = express();
 
 // view engine setup
 app.set('view engine', 'ejs');
-app.set("views", "./views");
+app.set('views', path.join(__dirname, 'views'));
 const url = 'mongodb://127.0.0.1:27017/agent_managerment';
 //mongoose.connect('url', {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.json());
@@ -38,13 +38,13 @@ app.use("/resource", express.static('resource'));
 //         };
 //     }
 // }));
-app.use('/',authentication);
+app.use('/', authentication);
 app.use('/', dashboard);
 app.use('/', dashboard);
 app.use('/', daily);
 app.use('/', hanghoa);
 app.use('/', baocao);
-app.use('/',order);
+app.use('/', order);
 
 
 module.exports = app;
