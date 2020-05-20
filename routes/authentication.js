@@ -1,7 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/authentication', function(req, res) {
+router.get('/', function(req, res) {
+    res.render('authentication');
+})
+
+router.get('/authentication', (req, res) => {
     res.render('authentication');
 })
 

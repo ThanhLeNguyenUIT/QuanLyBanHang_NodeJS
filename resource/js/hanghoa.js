@@ -37,5 +37,9 @@ $(document).ready(function() {
         $(".modal_edit-product").css("display","flex");
         $(".auth-form").css("display", "block");
     })
+    $(".btn-product-cancel").click(function() {
+        $(".modal_edit-product").css("display","none");
+        $(".auth-form").css("display", "none");
+    })
 
 })

@@ -506,7 +506,8 @@ body {
 .modal.modal_add-product,
 .modal.modal_add-agency,
 .modal.modal-category,
-.modal.modal_edit-product {
+.modal.modal_edit-product,
+.modal.modal_edit-agency {
     display: none;
 }
 
