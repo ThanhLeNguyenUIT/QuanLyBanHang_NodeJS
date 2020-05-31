@@ -19,6 +19,7 @@ var productSchema = mongoose.Schema({
     ogn_price: {
         type: Number
     },
+    type_product: String,
     exit: Number
 });
 

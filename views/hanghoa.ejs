@@ -155,7 +155,8 @@
                                             <td class="table-container_body-item">178,000</td>
                                             <td class="table-container_body-item">172,000</td>
                                             <td class="table-container_body-item">29</td>
-                                            <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>                                        </tr>
+                                            <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>
+                                        </tr>
                                         <tr class="table-container_body">
                                             <td class="table-container_body-item">4902430340656</td>
                                             <td class="table-container_body-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
@@ -187,77 +188,80 @@
             <div class="modal_body">
 
                 <!-- add product form -->
-                <div class="auth-form">
+                <form action="" method="post">
 
-                    <div class="auth-form_header">
-                        <h3 class="auth-form_heading">Thêm hàng hoá</h3>
-                    </div>
-                    <div class="auth-form_body">
-                        <div class="auth-form_body-left">
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Mã hàng</span>
-                                <i class="auth-form_info-icon ma-hang fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input" placeholder="Mã hàng tự động">
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Tên hàng</span>
-                                <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input">
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Nhóm hàng</span>
-                                <i class="auth-form_info-icon nhom-hang fa fa-info-circle"></i>
-                                <div class="auth-form_wrap">
-                                    <input type="text" class="auth-form_input auth-form_input-group-product" placeholder="---Lựa chọn---">
-                                    <i class="auth-form_arrow-icon fas fa-chevron-down"></i>
-                                    <ul class="category-Product-list">
-                                        <li class="category-Product-item">Nước ngọt
+                    <div class="auth-form">
 
-                                        </li>
-                                        <li class="category-Product-item">Thực phẩm
-
-                                        </li>
-                                        <li class="category-Product-item">Dụng cụ gia dụng
-
-                                        </li>
-                                        <li class="category-Product-item">Giấy
-                                        </li>
-                                    </ul>
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Thêm hàng hoá</h3>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-left">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Mã hàng</span>
+                                    <i class="auth-form_info-icon ma-hang fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input" name="id_product" placeholder="Mã hàng tự động">
                                 </div>
-                                <div class="add-category">
-                                    <i class="auth-form_plus-icon fas fa-plus"></i>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên hàng</span>
+                                    <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                    <input type="text" name="name_product" class="auth-form_input" placeholder="tên sản phẩm">
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Nhóm hàng</span>
+                                    <i class="auth-form_info-icon nhom-hang fa fa-info-circle"></i>
+                                    <div class="auth-form_wrap">
+                                        <input type="text" name="category" class="auth-form_input auth-form_input-group-product" placeholder="---Lựa chọn---">
+                                        <i class="auth-form_arrow-icon fas fa-chevron-down"></i>
+                                        <ul class="category-Product-list">
+                                            <li class="category-Product-item">Nước ngọt
 
+                                            </li>
+                                            <li class="category-Product-item">Thực phẩm
+
+                                            </li>
+                                            <li class="category-Product-item">Dụng cụ gia dụng
+
+                                            </li>
+                                            <li class="category-Product-item">Giấy
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="add-category">
+                                        <i class="auth-form_plus-icon fas fa-plus"></i>
+
+                                    </div>
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Đơn vị tính</span>
+                                    <i class="auth-form_info-icon don-vi-tinh fa fa-info-circle"></i>
+                                    <input type="text" name="type_product" class="auth-form_input" placeholder="cái, hộp, thùng">
                                 </div>
                             </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Đơn vị tính</span>
-                                <i class="auth-form_info-icon don-vi-tinh fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input">
+                            <div class="auth-form_body-right">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Giá vốn</span>
+                                    <i class="auth-form_info-icon gia-von fa fa-info-circle"></i>
+                                    <input type="text" name="ogn_price" class="auth-form_input input-right">
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Giá bán</span>
+                                    <i class="auth-form_info-icon gia-ban fa fa-info-circle"></i>
+                                    <input type="text" name="price" class="auth-form_input input-right">
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tồn kho</span>
+                                    <i class="auth-form_info-icon ton-kho fa fa-info-circle"></i>
+                                    <input type="text" name="exit" class="auth-form_input input-right">
+                                </div>
                             </div>
                         </div>
-                        <div class="auth-form_body-right">
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Giá vốn</span>
-                                <i class="auth-form_info-icon gia-von fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input input-right" value="0">
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Giá bán</span>
-                                <i class="auth-form_info-icon gia-ban fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input input-right" value="0">
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Tồn kho</span>
-                                <i class="auth-form_info-icon ton-kho fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input input-right" value="0">
-                            </div>
+                        <div class="auth-form_controls">
+                            <button class="btn btn-product-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn--primary" type="submit">Lưu</button>
                         </div>
                     </div>
-                    <div class="auth-form_controls">
-                        <button class="btn btn-product-cancel">Huỷ bỏ</button>
-                        <button class="btn btn--primary">Lưu</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
 
