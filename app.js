@@ -26,7 +26,7 @@ var app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 const url = 'mongodb://127.0.0.1:27017/agent_managerment';
-mongoose.connect('url', { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log("connect to database");
 });
 app.use(bodyParser.json());

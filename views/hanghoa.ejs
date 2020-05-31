@@ -131,48 +131,26 @@
                                     </thead>
                                     <tbody>
 
-
-                                        <tr class="table-container_body table-container_body_between">
-                                            <td class="table-container_body-item">123123</td>
-                                            <td class="table-container_body-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
-                                            <td class="table-container_body-item">178,000</td>
-                                            <td class="table-container_body-item">172,000</td>
-                                            <td class="table-container_body-item">29</td>
-                                            <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>
-                                        </tr>
-
-                                        <tr class="table-container_body ">
-                                            <td class="table-container_body-item">4902430340656</td>
-                                            <td class="table-container_body-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
-                                            <td class="table-container_body-item">178,000</td>
-                                            <td class="table-container_body-item">172,000</td>
-                                            <td class="table-container_body-item">29</td>
-                                            <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>
-                                        </tr>
-                                        <tr class="table-container_body table-container_body_between">
-                                            <td class="table-container_body-item">4902430340656</td>
-                                            <td class="table-container_body-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
-                                            <td class="table-container_body-item">178,000</td>
-                                            <td class="table-container_body-item">172,000</td>
-                                            <td class="table-container_body-item">29</td>
-                                            <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>
-                                        </tr>
-                                        <tr class="table-container_body">
-                                            <td class="table-container_body-item">4902430340656</td>
-                                            <td class="table-container_body-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
-                                            <td class="table-container_body-item">178,000</td>
-                                            <td class="table-container_body-item">172,000</td>
-                                            <td class="table-container_body-item">29</td>
-                                            <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>
-                                        </tr>
-                                        <tr class="table-container_body table-container_body_between">
-                                            <td class="table-container_body-item">4902430340656</td>
-                                            <td class="table-container_body-item">Tả Quần Pampers M40 7-12kg (Bịch)</td>
-                                            <td class="table-container_body-item">178,000</td>
-                                            <td class="table-container_body-item">172,000</td>
-                                            <td class="table-container_body-item">29</td>
-                                            <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>
-                                        </tr>
+                                        <% for( var i = 0; i < product.length; i++) {%>
+                                            <tr class="table-container_body table-container_body_between">
+                                                <td class="table-container_body-item">
+                                                    <%= product[i].id_product %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= product[i].name_product %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= product[i].price %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= product[i].ogn_price %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= product[i].exit %>
+                                                </td>
+                                                <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>
+                                            </tr>
+                                            <% } %>
 
                                     </tbody>
                                 </table>
@@ -347,6 +325,7 @@
         </div>
 
         <script src="../resource/js/hanghoa.js"></script>
+        <script src="../routes/hanghoa.js"></script>
     </main>
 </body>
 

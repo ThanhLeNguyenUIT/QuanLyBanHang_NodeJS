@@ -2,12 +2,12 @@ var express = require('express');
 var router = express.Router();
 var product = require("../model/product")
 var cate = require('../model/category')
+    // router.get('/hanghoa', function(req, res) {
+    //     res.redirect('hanghoa')
+    // })
 router.get('/hanghoa', function(req, res) {
-    res.render('hanghoa')
-})
-router.get('/hanghoa', checkAdmin, function(req, res) {
     product.find().then(function(pro) {
-        res.render('./views/hanghoa', { product: pro });
+        res.render('hanghoa', { product: pro });
     })
 })
 router.post('/hanghoa', function(req, res) {
@@ -20,8 +20,9 @@ router.post('/hanghoa', function(req, res) {
         type_product: req.body.type_product,
         exit: req.body.exit
     })
-    console.log(pro);
-    pro.save().then(console.log("succset"))
+    pro.save().then(function() {
+        res.redirect('/hanghoa')
+    })
 })
 
 function checkAdmin(req, res, next) {
