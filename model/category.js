@@ -1,6 +1,5 @@
 var mongoose = require('mongoose')
 var categorySchema = mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
     id_category: {
         type: Number,
         require: true

@@ -84,22 +84,14 @@
                             <h1 class="category_heading-page">DANH MỤC</h1>
                             <ul class="category-list">
                                 <h3 class="category-list_header">Nhóm hàng</h3>
-                                <li class="category-item">
-                                    <a href="/hanghoa.html" class="category-item_link">Nước ngọt</a>
-                                    <i class="category-item-icon far fa-edit"></i>
-                                </li>
-                                <li class="category-item">
-                                    <a href="/hanghoa.html" class="category-item_link">Thực phẩm</a>
-                                    <i class="category-item-icon far fa-edit"></i>
-                                </li>
-                                <li class="category-item">
-                                    <a href="/hanghoa.html" class="category-item_link">Dụng cụ gia dụng</a>
-                                    <i class="category-item-icon far fa-edit"></i>
-                                </li>
-                                <li class="category-item">
-                                    <a href="/hanghoa.html" class="category-item_link">Giấy</a>
-                                    <i class="category-item-icon far fa-edit"></i>
-                                </li>
+                                <% for( var i = 0; i < cate.length; i++) { %>
+                                    <li class="category-item">
+                                        <a href="/hanghoa/nhomhang/<%= cate[i].name_category %>" class="category-item_link">
+                                            <%= cate[i].name_category %>
+                                        </a>
+                                        <i class="category-item-icon far fa-edit"></i>
+                                    </li>
+                                    <% } %>
                             </ul>
                         </div>
                     </div>
@@ -107,12 +99,22 @@
 
                         <!-- search-product -->
                         <div class="search">
-                            <div class="search-wrap">
-                                <input type="text" class="search-input" name="searchProductByID" placeholder="Theo mã, tên hàng">
-                                <button class="search-btn">
-                                    <i class="search-btn-icon fas fa-search"></i>
-                                </button>
-                            </div>
+                            <form action="/hanghoa/search" method="post">
+
+                                <div class="search-wrap">
+
+                                    <input type="text" class="search-input" name="searchPro" required placeholder="Theo mã, tên hàng">
+                                    <div class="search-btn">
+                                        <a class="reset-search-btn" type="reset" href="/hanghoa">
+                                            <i class="search-btn-icon fas fa-times"></i>
+                                        </a>
+                                    </div>
+                                    <button class="search-btn" type="submit">
+                                        <i class="search-btn-icon fas fa-search"></i>
+                                    </button>
+
+                                </div>
+                            </form>
                             <button class="btn btn--primary btn-add">Thêm mới</button>
                         </div>
 
@@ -133,7 +135,7 @@
 
                                         <% for( var i = 0; i < product.length; i++) {%>
                                             <tr class="table-container_body table-container_body_between">
-                                                <td class="table-container_body-item">
+                                                <td class="table-container_body-item id_product">
                                                     <%= product[i].id_product %>
                                                 </td>
                                                 <td class="table-container_body-item">
@@ -146,14 +148,35 @@
                                                     <%= product[i].ogn_price %>
                                                 </td>
                                                 <td class="table-container_body-item">
-                                                    <%= product[i].exit %>
+                                                    <%= product[i].ogn_price %>
                                                 </td>
-                                                <td class="table-container_body-item"><a href="#" class="edit">Sửa</a> <a href="#" class="delete">Xoá</a></td>
+                                                <td class="table-container_body-edit">
+                                                    <button class="edit-product-btn">
+                                                        <a href="/hanghoa/<%= product[i]._id %>" class="editPro edit-product">Sửa</a> 
+                                                    </button>
+                                                    <button class="delete-product-btn">
+                                                        <a href="/hanghoa/deletePro/<%= product[i]._id %>" class="editPro delete-product">Xoá</a>
+                                                    </button>
+                                                </td>
                                             </tr>
                                             <% } %>
 
                                     </tbody>
                                 </table>
+                                <ul class="pagination home-product__pagination">
+
+
+                                    <% for( var i = 1; i <= (prod.length/5)+1; i++) { %>
+
+                                        <li class="pagination-item pagination-item--active">
+                                            <a href="/hanghoa/page<%= i %>" class="pagination-item__link ">
+                                                <%= i %>
+                                            </a>
+                                        </li>
+                                        <% } %>
+
+
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -166,7 +189,7 @@
             <div class="modal_body">
 
                 <!-- add product form -->
-                <form action="" method="post">
+                <form action="/hanghoa/them-hang" autocomplete="off" method="post">
 
                     <div class="auth-form">
 
@@ -178,18 +201,93 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Mã hàng</span>
                                     <i class="auth-form_info-icon ma-hang fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input" name="id_product" placeholder="Mã hàng tự động">
+                                    <input type="text" class="auth-form_input" name="id_product" required placeholder="Mã hàng tự động">
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên hàng</span>
                                     <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
-                                    <input type="text" name="name_product" class="auth-form_input" placeholder="tên sản phẩm">
+                                    <input type="text" name="name_product" class="auth-form_input" required placeholder="tên sản phẩm">
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Nhóm hàng</span>
                                     <i class="auth-form_info-icon nhom-hang fa fa-info-circle"></i>
                                     <div class="auth-form_wrap">
-                                        <input type="text" name="category" class="auth-form_input auth-form_input-group-product" placeholder="---Lựa chọn---">
+                                        <input type="text" name="category" class="auth-form_input auth-form_input-group-product" readonly required placeholder="---Lựa chọn---">
+                                        <i class="auth-form_arrow-icon fas fa-chevron-down"></i>
+                                        <ul class="category-Product-list">
+                                            <% for( var i = 0; i < cate.length; i++) { %>
+                                                <li class="category-Product-item" id=" <%= i %>">
+                                                    <%= cate[i].name_category %>
+                                                </li>
+                                                <% } %>
+                                        </ul>
+                                    </div>
+                                    <div class="add-category">
+                                        <i class="auth-form_plus-icon fas fa-plus"></i>
+                                    </div>
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Đơn vị tính</span>
+                                    <i class="auth-form_info-icon don-vi-tinh fa fa-info-circle"></i>
+                                    <input type="text" name="type_product" class="auth-form_input" required placeholder="cái, hộp, thùng">
+                                </div>
+                            </div>
+                            <div class="auth-form_body-right">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Giá vốn</span>
+                                    <i class="auth-form_info-icon gia-von fa fa-info-circle"></i>
+                                    <input type="text" name="ogn_price" required class="auth-form_input input-right">
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Giá bán</span>
+                                    <i class="auth-form_info-icon gia-ban fa fa-info-circle"></i>
+                                    <input type="text" name="price" required class="auth-form_input input-right">
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tồn kho</span>
+                                    <i class="auth-form_info-icon ton-kho fa fa-info-circle"></i>
+                                    <input type="text" name="exit" required class="auth-form_input input-right">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auth-form_controls">
+                            <button class="btn btn-product-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn--primary" type="submit">Lưu</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- edit product -->
+
+        <div class="modal modal_edit-product">
+            <div class="modal_overlay"></div>
+            <div class="modal_body">
+                <form action="/hanghoa/update" autocomplete="off" method="POST">
+                    <div class="auth-form">
+
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Sửa hàng hoá</h3>
+                        </div>
+
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-left">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Mã hàng</span>
+                                    <i class="auth-form_info-icon ma-hang fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input" name="id_product" required placeholder="Mã hàng tự động">
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên hàng</span>
+                                    <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                    <input type="text" name="name_product" class="auth-form_input" required placeholder="tên sản phẩm">
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Nhóm hàng</span>
+                                    <i class="auth-form_info-icon nhom-hang fa fa-info-circle"></i>
+                                    <div class="auth-form_wrap">
+                                        <input type="text" name="category" class="auth-form_input auth-form_input-group-product" required placeholder="---Lựa chọn---">
                                         <i class="auth-form_arrow-icon fas fa-chevron-down"></i>
                                         <ul class="category-Product-list">
                                             <li class="category-Product-item">Nước ngọt
@@ -213,24 +311,24 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Đơn vị tính</span>
                                     <i class="auth-form_info-icon don-vi-tinh fa fa-info-circle"></i>
-                                    <input type="text" name="type_product" class="auth-form_input" placeholder="cái, hộp, thùng">
+                                    <input type="text" name="type_product" class="auth-form_input" required placeholder="cái, hộp, thùng">
                                 </div>
                             </div>
                             <div class="auth-form_body-right">
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Giá vốn</span>
                                     <i class="auth-form_info-icon gia-von fa fa-info-circle"></i>
-                                    <input type="text" name="ogn_price" class="auth-form_input input-right">
+                                    <input type="text" name="ogn_price" class="auth-form_input input-right" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Giá bán</span>
                                     <i class="auth-form_info-icon gia-ban fa fa-info-circle"></i>
-                                    <input type="text" name="price" class="auth-form_input input-right">
+                                    <input type="text" name="price" class="auth-form_input input-right" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tồn kho</span>
                                     <i class="auth-form_info-icon ton-kho fa fa-info-circle"></i>
-                                    <input type="text" name="exit" class="auth-form_input input-right">
+                                    <input type="text" name="exit" class="auth-form_input input-right" required>
                                 </div>
                             </div>
                         </div>
@@ -240,89 +338,65 @@
                         </div>
                     </div>
                 </form>
+
+
             </div>
         </div>
-
-        <!-- edit product -->
-
-        <div class="modal modal_edit-product">
+        <div class="modal modal-category">
             <div class="modal_overlay"></div>
             <div class="modal_body">
-
-                <!-- add product form -->
-                <div class="auth-form">
-
-                    <div class="auth-form_header">
-                        <h3 class="auth-form_heading">Sửa hàng hoá</h3>
-                    </div>
-                    <div class="auth-form_body">
-                        <div class="auth-form_body-left">
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Mã hàng</span>
-                                <i class="auth-form_info-icon ma-hang fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input" placeholder="Mã hàng tự động">
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Tên hàng</span>
-                                <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input">
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Nhóm hàng</span>
-                                <i class="auth-form_info-icon nhom-hang fa fa-info-circle"></i>
-                                <div class="auth-form_wrap">
-                                    <input type="text" class="auth-form_input auth-form_input-group-product" placeholder="---Lựa chọn---">
-                                    <i class="auth-form_arrow-icon fas fa-chevron-down"></i>
-                                    <ul class="category-Product-list">
-                                        <li class="category-Product-item">Nước ngọt
-
-                                        </li>
-                                        <li class="category-Product-item">Thực phẩm
-
-                                        </li>
-                                        <li class="category-Product-item">Dụng cụ gia dụng
-
-                                        </li>
-                                        <li class="category-Product-item">Giấy
-                                        </li>
-                                    </ul>
+                <form action="/hanghoa/them-cate" autocomplete="off" method="post">
+                    <div class="auth-form_min auth-form_min-add">
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Thêm nhóm hàng</h3>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-wrap">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Mã nhóm hàng</span>
+                                    <i class="auth-form_info-icon ma-hang fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input" name="id_category" required placeholder="Mã nhóm hàng">
                                 </div>
-                                <div class="add-category">
-                                    <i class="auth-form_plus-icon fas fa-plus"></i>
-
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên nhóm hàng</span>
+                                    <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                    <input type="text" name="name_category" class="auth-form_input" required placeholder="tên nhóm hàng">
                                 </div>
                             </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Đơn vị tính</span>
-                                <i class="auth-form_info-icon don-vi-tinh fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input">
-                            </div>
+
                         </div>
-                        <div class="auth-form_body-right">
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Giá vốn</span>
-                                <i class="auth-form_info-icon gia-von fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input input-right" value="0">
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Giá bán</span>
-                                <i class="auth-form_info-icon gia-ban fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input input-right" value="0">
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Tồn kho</span>
-                                <i class="auth-form_info-icon ton-kho fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input input-right" value="0">
-                            </div>
+                        <div class="auth-form_controls">
+                            <button class="btn btn-add-category-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn--primary " type="submit">Lưu</button>
                         </div>
                     </div>
-                    <div class="auth-form_controls">
-                        <button class="btn btn-product-cancel">Huỷ bỏ</button>
-                        <button class="btn btn--primary">Lưu</button>
+                </form>
+                <form action="/hanghoa/edit-cate" autocomplete="off" method="post">
+                    <div class="auth-form_min auth-form_min-edit">
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Sửa nhóm hàng</h3>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-wrap">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên nhóm hàng</span>
+                                    <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                    <input type="text" name="name_category" class="auth-form_input" required placeholder="tên nhóm hàng">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="auth-form_controls-edit">
+                            <button class="btn btn-edit-category-cancel" type="reset">Huỷ bỏ</button>
+                            <a class="btn btn--primary" href="/hanghoa/updateCate/">Lưu</a>
+                            <a class="btn btn--delete" href="/hanghoa/DeleteCate/">Xoá</a>
+                        </div>
                     </div>
-                </div>
+                </form>
+
             </div>
         </div>
+
 
         <script src="../resource/js/hanghoa.js"></script>
         <script src="../routes/hanghoa.js"></script>

@@ -25,20 +25,28 @@ $(document).ready(function() {
         $(".modal-category").css("display", "none");
         $(".auth-form_min-edit").css("display", "none");
     });
-    $(".auth-form_wrap.auth-form_input-group-product,.auth-form_wrap.auth-form_arrow-icon").click(function() {
-        $(".category-Product-list").slideDown();
+    var sel = 0;
+    $(".auth-form_input-group-product,.auth-form_arrow-icon").click(function() {
+        if (sel == 0) {
+            $(".category-Product-list").slideDown();
+            sel++;
+        } else {
+            $(".category-Product-list").slideUp();
+            sel = 0;
+        }
+
     })
-    $(".auth-form_wrap.category-Product-item").click(function() {
+    $(".category-Product-item  ").click(function() {
         var temp = $(this).text();
         $(".auth-form_input-group-product").val(temp);
         $(".category-Product-list").slideUp();
     })
-    $(".edit").click(function() {
-        $(".modal_edit-product").css("display","flex");
+    $(".editPro.edit-product").click(function() {
+        $(".modal_edit-product").css("display", "flex");
         $(".auth-form").css("display", "block");
     })
     $(".btn-product-cancel").click(function() {
-        $(".modal_edit-product").css("display","none");
+        $(".modal_edit-product").css("display", "none");
         $(".auth-form").css("display", "none");
     })
 
