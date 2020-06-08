@@ -38,7 +38,7 @@ $(function(){
         argumentAxis: {
             label: {
                 customizeText: function() {
-                    return "Day " + this.valueText;
+                    return  this.valueText;
                 }
             }
         },

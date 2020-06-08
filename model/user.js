@@ -1,39 +1,28 @@
-var mongoose = require('mongoose');
-var userSchema = mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-    id_user: {
-        type: Number,
-        require: true
-    },
-    name_login: {
+const mongoose = require('mongoose');
+
+const userSchema = mongoose.Schema({
+    name: {
         type: String,
-        require: true
+        require: true,
+        min: 5,
+        max: 255
+    },
+    email: {
+        type: String,
+        require: true,
+        min: 6,
+        max: 255
     },
     password: {
         type: String,
-        require: true
+        require: true,
+        min: 1,
+        max: 255
     },
-    Name_user: {
-        type: String,
-        require: true
-    },
-    identify: {
-        type: Number,
-        require: true
-    },
-    phoneNumber: {
-        type: Number,
-        require: true
-    },
-    address: {
-        type: String,
-        require: true
-    },
-    position: {
-        type: Number,
-        require: true
+    date: {
+        type: Date,
+        default: Date.now
     }
-})
+});
 
-var user = mongoose.model('user', userSchema);
-module.exports = user;
+module.exports = mongoose.model('User', userSchema);

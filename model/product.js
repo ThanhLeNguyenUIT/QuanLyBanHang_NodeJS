@@ -22,7 +22,6 @@ var productSchema = mongoose.Schema({
     type_product: String,
     exit: Number
 });
-productSchema.index({ id_product: 'text' })
-var product = mongoose.model('products', productSchema);
 
-module.exports = product;
+
+module.exports = mongoose.model('products', productSchema);

@@ -9,7 +9,7 @@ var agencySchema = mongoose.Schema({
         type: String,
         require: true
     },
-    type_agency: {
+    phone_agency: {
         type: Number,
         require: true
     },
@@ -17,7 +17,22 @@ var agencySchema = mongoose.Schema({
         type: String,
         require: true
     },
-
+    type_agency: {
+        type: Number,
+        require: true
+    },
+    address_agency: {
+        type: String,
+        require: true
+    },
+    date_agency: {
+        type: Date,
+        default: Date.now()
+    },
+    debt_agency: {
+        type: Number,
+        default: 0
+    }
 })
 var agency = mongoose.model('agency', agencySchema);
 module.exports = agency;

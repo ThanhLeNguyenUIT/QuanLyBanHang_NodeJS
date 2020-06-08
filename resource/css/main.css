@@ -2,6 +2,9 @@ html {
     font-family: Arial;
     font-size: 16px;
 }
+a{
+    text-decoration: none;
+}
 
 body {
     margin: 0;
@@ -55,6 +58,7 @@ body {
 #chart_good {
     height: 440px;
     margin-top: 13rem;
+    padding-bottom: 5rem;
 }
 
 
@@ -94,6 +98,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-items: center;
+    flex-direction: column;
 }
 
 .header_user-link {
@@ -101,18 +106,27 @@ body {
     color: var(--black-color);
 }
 
-.header_user:hover {
-    background-color: rgb(236, 233, 233);
-}
-
 .header_user-icon {
     margin-right: 2px;
     font-size: 15px;
 }
 
+.header_user:hover .user_drop{
+    display: block;
+}
+
+.header_avatar{
+  vertical-align: middle;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
 .header_user-name {
-    line-height: 2rem;
     text-align: center;
+    margin-top: 4px;
+    margin-left: 7px;
+    font-style: normal;
 }
 
 .header_address {
@@ -126,6 +140,41 @@ body {
     background-color: #0776B0;
 }
 
+.user_drop{
+    display: none;
+    list-style: none;
+    z-index: 2;
+    top: 5.5%;
+    position: absolute;
+    width: 170px;
+    height: 82px;
+    background-color: var(--white-color);
+    margin-top: 1rem;
+    animation: fadeIn ease-in 0.1s;
+    border-radius: 2px;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, .2);
+}
+
+.user_drop::before{
+    position: absolute;
+    left: 0;
+    top: -16px;
+    width: 100%;
+    height: 20px;
+    content:"";
+    display: block;
+}
+
+.user_drop-item{
+    padding: 8px;
+    font-family: 'Roboto', sans-serif;
+    color: #616060;
+}
+
+.user_drop-item:hover{
+    background-color: #c8e5f3;
+    color: var(--black-color);
+}
 
 /* Header Container 2*/
 
