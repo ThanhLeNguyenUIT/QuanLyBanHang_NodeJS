@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "5e8d39096df6d8739cb8913d"
+  },
+  "id_category": 1,
+  "name_category": "cafe",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5e8d392a49846b5dd8a11e8f"
+  },
+  "id_category": 2,
+  "name_category": "milk",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5e8d397c685f323774c24424"
+  },
+  "id_category": 3,
+  "name_category": "cake",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edda9a65ebcc090a859066b"
+  },
+  "name_category": "nước",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edda9b85ebcc090a859066c"
+  },
+  "name_category": "thực phẩm",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ee6d80b980b41419c75aad2"
+  },
+  "name_category": "caan",
+  "__v": 0
+}]

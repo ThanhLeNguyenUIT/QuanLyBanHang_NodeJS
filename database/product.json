@@ -1,0 +1,169 @@
+[{
+  "_id": {
+    "$oid": "5ed3ac72a0a880275cf2ea59"
+  },
+  "id_product": 2,
+  "name_product": "sting",
+  "price": 230000,
+  "category": "nước",
+  "ogn_price": 167000,
+  "type_product": "thùng",
+  "exit": 30,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ed3ac8da0a880275cf2ea5a"
+  },
+  "id_product": 3,
+  "name_product": "Redbull",
+  "price": 270000,
+  "category": "nước",
+  "ogn_price": 265000,
+  "type_product": "thùng",
+  "exit": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ed756f5baa1b07dd47c0550"
+  },
+  "id_product": 12,
+  "name_product": "gà",
+  "price": 120000,
+  "category": "thức ăn",
+  "ogn_price": 90000,
+  "type_product": "con",
+  "exit": 20,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb4f886937402e004bf180"
+  },
+  "id_product": 12312312,
+  "name_product": "sting",
+  "price": 310000,
+  "category": "nước",
+  "ogn_price": 41240,
+  "type_product": "cái",
+  "exit": 30,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb536d655a40430896999d"
+  },
+  "id_product": 123,
+  "name_product": "gà",
+  "price": 310000,
+  "category": "thức phẩm",
+  "ogn_price": 130000,
+  "type_product": "con",
+  "exit": 13,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb53a4655a40430896999f"
+  },
+  "id_product": 1,
+  "name_product": "coca tươi",
+  "price": 310000,
+  "category": "nước",
+  "ogn_price": 41240,
+  "type_product": "lon",
+  "exit": 124,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb53df655a4043089699a0"
+  },
+  "id_product": 12314,
+  "name_product": "không độ",
+  "price": 11000,
+  "category": "nước",
+  "ogn_price": 10000,
+  "type_product": "chai",
+  "exit": 123,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb547e655a4043089699a1"
+  },
+  "id_product": 22,
+  "name_product": "bạc xỉu",
+  "price": 29000,
+  "category": "nước",
+  "ogn_price": 25000,
+  "type_product": "ly",
+  "exit": 24,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb549a655a4043089699a2"
+  },
+  "id_product": 13,
+  "name_product": "lavie",
+  "price": 310000,
+  "category": "nước",
+  "ogn_price": 41240,
+  "type_product": "cái",
+  "exit": 30,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb54de655a4043089699a3"
+  },
+  "id_product": 23,
+  "name_product": "ly sứ",
+  "price": 21000,
+  "category": "đồ dùng",
+  "ogn_price": 39000,
+  "type_product": "cái",
+  "exit": 123,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb552b655a4043089699a4"
+  },
+  "id_product": 31,
+  "name_product": "hổ vằn",
+  "price": 220000,
+  "category": "nước",
+  "ogn_price": 41240,
+  "type_product": "lon",
+  "exit": 30,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb5588655a4043089699a6"
+  },
+  "id_product": 134,
+  "name_product": "Thành lon",
+  "price": 2,
+  "category": "human",
+  "ogn_price": 1,
+  "type_product": "con",
+  "exit": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5edb5de349a08f193c6ff422"
+  },
+  "id_product": 1314,
+  "name_product": "test",
+  "price": 3214124,
+  "category": "thức ăn",
+  "ogn_price": 131313,
+  "type_product": "cái",
+  "exit": 141,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ee6d7d5980b41419c75aad1"
+  },
+  "id_product": 100,
+  "name_product": "caca",
+  "price": 414,
+  "category": "                                                    milk                                                ",
+  "ogn_price": 131,
+  "type_product": "cai",
+  "exit": 141,
+  "__v": 0
+}]

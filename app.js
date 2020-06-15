@@ -25,7 +25,7 @@ var app = express();
 // view engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-const url = 'mongodb://127.0.0.1:27017/testDB';
+const url = 'mongodb://127.0.0.1:27017/agency_data';
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log("connect to database");
 });

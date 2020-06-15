@@ -35,12 +35,14 @@ $(document).ready(function() {
             sel = 0;
         }
 
-    })
-    $(".category-Product-item  ").click(function() {
+    });
+    $(".category-Product-item").click(function() {
         var temp = $(this).text();
         $(".auth-form_input-group-product").val(temp);
         $(".category-Product-list").slideUp();
     })
+
+
     $(".editPro.edit-product").click(function() {
         $(".modal_edit-product").css("display", "flex");
         $(".auth-form").css("display", "block");
