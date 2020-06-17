@@ -58,14 +58,14 @@ app.use('/', hanghoa);
 app.use('/', baocao);
 app.use('/', order);
 
-app.use(session({
-    secret: 'wayci',
-    resave: true,
-    key: 'user',
-    saveUninitialized: true
+// app.use(session({
+//     secret: 'wayci',
+//     resave: true,
+//     key: 'user',
+//     saveUninitialized: true
 
-}));
-app.use(passport.initialize());
-app.use(passport.session());
+// }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 module.exports = app;
