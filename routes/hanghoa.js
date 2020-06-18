@@ -15,9 +15,6 @@ router.get('/hanghoa', function(req, res) {
     })
 })
 
-router.get('/hanghoa', (req, res) => {
-
-})
 router.get('/hanghoa/page:id', function(req, res) {
 
     product.find().sort({ id_product: 1 }).limit(20).then(function(proe) {
