@@ -82,17 +82,25 @@
                         <!-- category -->
                         <div class="category">
                             <h1 class="category_heading-page">DANH MỤC</h1>
-                            <ul class="category-list">
-                                <h3 class="category-list_header">Nhóm hàng</h3>
-                                <% for( var i = 0; i < cate.length; i++) { %>
-                                    <li class="category-item">
-                                        <a href="/hanghoa/nhom<%= cate[i].name_category %>" class="category-item_link">
-                                            <%= cate[i].name_category %>
-                                        </a>
-                                        <i data-id="<%= cate[i]._id %>" class="category-item-icon far fa-edit"></i>
-                                    </li>
-                                    <% } %>
-                            </ul>
+                            <div class="category-wrap">
+                                <div class="category-wrap-item">
+                                    <h3 class="category-list_header">Nhóm hàng</h3>
+                                    <div class="add-category add-category-outside">
+                                        <i class="auth-form_plus-icon fas fa-plus"></i>
+                                    </div>
+                                </div>
+                                <ul class="category-list">
+                                    <% for( var i = 0; i < cate.length; i++) { %>
+                                        <li class="category-item">
+                                            <a href="/hanghoa/nhom<%= cate[i].name_category %>" class="category-item_link">
+                                                <%= cate[i].name_category %>
+                                            </a>
+                                            <i data-id="<%= cate[i]._id %>" class="category-item-icon far fa-edit"></i>
+                                        </li>
+                                        <% } %>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                     <div class="grid__column-10">
@@ -211,11 +219,11 @@
                                     <span class="auth-form_info">Nhóm hàng</span>
                                     <i class="auth-form_info-icon nhom-hang fa fa-info-circle"></i>
                                     <div class="auth-form_wrap">
-                                        <input type="text" name="category" class="auth-form_input auth-form_input-group-product" readonly required placeholder="---Lựa chọn---">
+                                        <input type="text" name="category" class="auth-form_input auth-form_input-group-product" id="cateProAdd" readonly required placeholder="---Lựa chọn---">
                                         <i class="auth-form_arrow-icon fas fa-chevron-down"></i>
                                         <ul class="category-Product-list">
                                             <% for( var i = 0; i < cate.length; i++) { %>
-                                                <li class="category-Product-item" id=" <%= i %>">
+                                                <li class="category-Product-item">
                                                     <%= cate[i].name_category %>
                                                 </li>
                                                 <% } %>
@@ -288,9 +296,9 @@
                                     <div class="auth-form_wrap">
                                         <input type="text" name="category" readonly class="auth-form_input auth-form_input-group-product " id="cateProUpdate" required placeholder="---Lựa chọn---">
                                         <i class="auth-form_arrow-icon fas fa-chevron-down"></i>
-                                        <ul class="category-Product-list">
+                                        <ul class="category-Product-list" id="cate-list-inform">
                                             <% for( var i = 0; i < cate.length; i++) { %>
-                                                <li class="category-Product-item" id=" <%= i %>">
+                                                <li class="category-Product-item">
                                                     <%= cate[i].name_category %>
                                                 </li>
                                                 <% } %>
@@ -340,6 +348,7 @@
         <div class="modal modal-category">
             <div class="modal_overlay"></div>
             <div class="modal_body">
+                <!-- add-cate -->
                 <form action="/hanghoa/them-cate" autocomplete="off" method="post">
                     <div class="auth-form_min auth-form_min-add">
                         <div class="auth-form_header">
@@ -350,18 +359,19 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên nhóm hàng</span>
                                     <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
-                                    <input type="text" name="name_category" class="auth-form_input" required placeholder="tên nhóm hàng">
+                                    <input type="text" name="name_category" class="auth-form_input" id="nameCateAdd" required placeholder="tên nhóm hàng">
                                 </div>
                             </div>
 
                         </div>
                         <div class="auth-form_controls">
                             <button class="btn btn-add-category-cancel" type="reset">Huỷ bỏ</button>
-                            <button class="btn btn--primary " type="submit">Lưu</button>
+                            <button class="btn btn--primary btn-add-category" type="submit">Lưu</button>
                         </div>
                     </div>
                 </form>
-                <form action="/hanghoa/edit-cate" autocomplete="off" method="post">
+                <!-- edit-cate -->
+                <form action="/hanghoa/edit-cate" id="edit-cate-form" autocomplete="off" method="post">
                     <div class="auth-form_min auth-form_min-edit">
                         <div class="auth-form_header">
                             <h3 class="auth-form_heading">Sửa nhóm hàng</h3>
@@ -374,12 +384,11 @@
                                     <input type="text" name="name_category" id="nameCateUpdate" class="auth-form_input edit-name-cate" required placeholder="tên nhóm hàng">
                                 </div>
                             </div>
-
                         </div>
                         <div class="auth-form_controls-edit">
                             <button class="btn btn-edit-category-cancel" type="reset">Huỷ bỏ</button>
-                            <button class="btn btn--primary" type="submit">Lưu</button>
-                            <a class="btn btn--delete" href="/hanghoa/deleteCate/">Xoá</a>
+                            <button class="btn btn--primary btn-edit-category" type="submit ">Lưu</button>
+                            <a class="btn btn--delete " href="/hanghoa/deleteCate">Xoá</a>
                         </div>
                     </div>
                 </form>
@@ -388,7 +397,7 @@
         </div>
 
 
-        <script src="../resource/js/hanghoa.js"></script>
+        <script src="../resource/js/hanghoa.js "></script>
     </main>
 </body>
 
