@@ -3,13 +3,25 @@ const router = express.Router();
 const product = require("../model/product")
 const { findByIdAndUpdate } = require('../model/product');
 const category = require('../model/category');
-const { productValidation, cateValidation } = require('../resource/js/validation');
 
+const isEmpty = v => {
+    return Object.keys(v).length === 0;
+};
+router.post('/hanghoa/search', function(req, res) {
+    product.find({ 'id_product': req.body.searchPro }).then(function(prod) {
+        category.find().then((cate) => {
+            res.render('hanghoa', { product: prod, page: prod, cate: cate, errors: null, message: null });
+        })
+    })
+})
+
+let getError = '';
 router.get('/hanghoa', function(req, res) {
-    product.find().sort({ id_product: 1 }).limit(20).then(function(proe) {
+    product.find().sort({ id_product: 1 }).limit(20).then(function(num) {
         product.find().sort({ id_product: 1 }).limit(5).then(function(pro) {
             category.find().then((cate) => {
-                res.render('hanghoa', { product: pro, page: proe, cate: cate });
+                res.render('hanghoa', { product: pro, page: num, cate: cate, errors: getError, message: req.flash('message') });
+                getError = '';
             })
         })
     })
@@ -17,121 +29,160 @@ router.get('/hanghoa', function(req, res) {
 
 router.get('/hanghoa/page:id', function(req, res) {
 
-    product.find().sort({ id_product: 1 }).limit(20).then(function(proe) {
-        product.find().sort({ id_product: 1 }).skip((req.params.id - 1) * 5).limit(5).then(function(pro) {
-            category.find().then((cate) => {
-                res.render('hanghoa', { product: pro, page: proe, cate: cate });
+        product.find().sort({ id_product: 1 }).limit(20).then(function(num) {
+            product.find().sort({ id_product: 1 }).skip((req.params.id - 1) * 5).limit(5).then(function(pro) {
+                category.find().then((cate) => {
+                    res.render('hanghoa', { product: pro, page: num, cate: cate, errors: null, message: null });
+
+                })
             })
         })
     })
-})
+    //product
 router.post('/hanghoa/them-hang', async(req, res) => {
-    const { error } = productValidation(req.body);
-    if (error) {
-        return res.status(400).send(error.details[0].message);
+    getError = '';
+    const findPro = await product.findOne({ 'id_product': req.body.id_product });
+    if (findPro) {
+        var temp = findPro.id_product;
+        req.checkBody('id_product', 'đã tồn tại sản phẩm').not().isIn(req.body.id_product);
     }
-    // check product if exist
-    const idExist = await product.findOne({ id_product: req.body.id_product });
-    if (idlExist) {
-        return res.status(400).send('Id sản phẩm đã tồn tại')
-    }
+    req.checkBody('id_product', 'ID phải là số').isInt();
+    req.checkBody('price', 'Giá bán phải là số').isInt();
+    req.checkBody('ogn_price', 'Giá gốc phải là số').isInt();
+    req.checkBody('exit', 'Tồn kho phải là số').isInt();
 
-    const pro = new product({
-        id_product: req.body.id_product,
-        name_product: req.body.name_product,
-        price: req.body.price,
-        category: req.body.category,
-        ogn_price: req.body.ogn_price,
-        type_product: req.body.type_product,
-        exit: req.body.exit
-    })
-    pro.save().then(function() {
+    getError = req.validationErrors();
+    if (getError) {
+        console.log(getError)
         res.redirect('/hanghoa');
-    })
-})
+    } else {
+        const pro = new product({
+            id_product: req.body.id_product,
+            name_product: req.body.name_product,
+            price: req.body.price,
+            category: req.body.category,
+            ogn_price: req.body.ogn_price,
+            type_product: req.body.type_product,
+            exit: req.body.exit
+        });
+
+        req.flash('message', "Thêm sản phẩm thành công ");
+        const saveProduct = await pro.save();
+        res.redirect('/hanghoa');
 
 
-router.post('/hanghoa/search', function(req, res) {
-    product.find({ 'id_product': req.body.searchPro }).then(function(prod) {
-        category.find().then((cate) => {
-            res.render('hanghoa', { product: prod, page: prod, cate: cate });
-        })
-    })
+    }
 })
 
 router.get("/hanghoa/deletePro/:id/", function(req, res) {
     product.findById(req.params.id, function(err, data) {
         data.remove(function() {
-            console.log("da xoa thanh cong", data.name_product);
+            req.flash('message', "xoá sản phẩm thành công ");
             res.redirect('/hanghoa');
         })
     })
 })
+router.post('/hanghoa/update', (req, res) => {
+    var filter = { 'id_product': req.body.id_product };
+    req.checkBody('price', 'Giá bán phải là số').isInt();
+    req.checkBody('ogn_price', 'Giá gốc phải là số').isInt();
+    req.checkBody('exit', 'Tồn kho phải là số').isInt();
+    getError = req.validationErrors();
+    if (getError) {
+        console.log(getError)
+        res.redirect('/hanghoa');
+    } else {
+        var pro = ({
+            'name_product': req.body.name_product,
+            'price': req.body.price,
+            'category': req.body.category,
+            'ogn_price': req.body.ogn_price,
+            'type_product': req.body.type_product,
+            'exit': req.body.exit
+        })
+        product.findOneAndUpdate(filter, pro, { new: true, upsert: true }).then(() => {
+            req.flash('message', "Sửa sản phẩm thành công");
+            res.redirect('/hanghoa');
+        });
+    }
 
-router.post('/hanghoa/them-cate', async(req, res) => {
-    const { error } = cateValidation(req.body);
-    if (error) {
-        return res.status(400).send(error.details[0].message);
-    }
-    // check cate if exist
-    const cateExist = await category.findOne({ name_category: req.body.name_category });
-    if (cateExist) {
-        return res.status(400).send('cate has already exist')
-    }
-    const ca = new category({
-        id_category: req.body.id_category,
-        name_category: req.body.name_category
-    })
-    ca.save().then(() => {
-        res.redirect('/hanghoa')
-    })
+
 })
-
 router.get('/hanghoa/update/:id', (req, res) => {
     product.findById(req.params.id).then((data) => {
         res.send(data);
     })
 })
+router.get('/hanghoa/nhom:id', function(req, res) {
+    product.find({ 'category': req.params.id }).then((data) => {
+        category.find().then((cate) => {
+            res.render('hanghoa', { product: data, page: data, cate: cate, errors: null, message: null });
+        })
+    })
+})
+
+// category
+router.post('/hanghoa/them-cate', async(req, res) => {
+    getError = '';
+    const findCate = await category.findOne({ 'name_category': req.body.name_category })
+    if (findCate) {
+        var temp = findCate.name_category;
+        req.checkBody('name_category', "Đã tồn tại loại hàng '" + temp + "'").not().equals(temp);
+        getError = req.validationErrors();
+    }
+    if (getError) {
+        console.log(getError)
+        res.redirect('/hanghoa');
+    } else {
+        const ca = new category({
+            name_category: req.body.name_category
+        })
+        ca.save().then(() => {
+            req.flash('message', "Thêm thành công '" + req.body.name_category + "'");
+            res.redirect('/hanghoa')
+        })
+    }
+
+})
+
 
 router.get('/hanghoa/updateCate/:id', (req, res) => {
     category.findById(req.params.id).then((data) => {
         res.send(data);
-        console.log(data)
+        cateNow = data.name_category
     })
 })
 
-router.post('/hanghoa/update', (req, res) => {
-    var filter = { 'id_product': req.body.id_product };
-    var pro = ({
-        'name_product': req.body.name_product,
-        'price': req.body.price,
-        'category': req.body.category,
-        'ogn_price': req.body.ogn_price,
-        'type_product': req.body.type_product,
-        'exit': req.body.exit
-    })
-    product.findOneAndUpdate(filter, pro, { new: true, upsert: true }).then(() => {
+var cateNow;
+router.post('/hanghoa/edit-cate/:id', async(req, res) => {
+    if (req.body.name_category == cateNow) {
         res.redirect('/hanghoa');
-    });
-})
-router.post('/hanghoa/edit-cate/:id', (req, res) => {
-    category.findByIdAndUpdate(req.params.id, { name_category: req.body.name_category }).then(() => {
-        res.redirect('/hanghoa');
-    });
+    } else {
+        const findCate = await category.find({ 'name_category': req.body.name_category });
+        if (isEmpty(findCate) == false) {
+            var temp = findCate[0].name_category;
+            req.checkBody('name_category', "đã tồn tại loại hàng '" + temp + "'").not().equals(temp);
+            getError = req.validationErrors();
+        }
+
+        if (getError) {
+            res.redirect('/hanghoa');
+        } else {
+            category.findByIdAndUpdate(req.params.id, { name_category: req.body.name_category }).then(() => {
+                req.flash('message', "Sửa thành công từ '" + cateNow + "' thành '" + req.body.name_category + "'");
+                res.redirect('/hanghoa');
+            });
+        }
+    }
+
 })
 
 router.get('/hanghoa/deleteCate/:id', function(req, res) {
     category.findByIdAndDelete(req.params.id).then((data) => {
-        console.log('đã xoá thành công ' + data.name_category)
+        req.flash('message', "Xoá thành công '" + data.name_category + "'");
         res.redirect('/hanghoa');
     });
 })
 
-router.get('/hanghoa/nhom:id', function(req, res) {
-    product.find({ 'category': req.params.id }).then((data) => {
-        category.find().then((cate) => {
-            res.render('hanghoa', { product: data, page: data, cate: cate });
-        })
-    })
-})
+
 module.exports = router;

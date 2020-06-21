@@ -89,6 +89,7 @@
                                         <i class="auth-form_plus-icon fas fa-plus"></i>
                                     </div>
                                 </div>
+
                                 <ul class="category-list">
                                     <% for( var i = 0; i < cate.length; i++) { %>
                                         <li class="category-item">
@@ -186,6 +187,8 @@
                                 </ul>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -396,7 +399,21 @@
             </div>
         </div>
 
+        <div class="alert">
+            <% if (errors){ %>
+                <% errors.forEach(function(e){ %>
+                    <div class="alert_errors">
+                        <%= e.msg %>
+                    </div>
+                    <%});%>
+                        <% } %>
 
+                            <% if(message != '') {%>
+                                <div class="alert_success">
+                                    <%= message %>
+                                </div>
+                                <% } %>
+        </div>
         <script src="../resource/js/hanghoa.js "></script>
     </main>
 </body>

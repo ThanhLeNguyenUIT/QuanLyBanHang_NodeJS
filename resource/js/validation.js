@@ -31,14 +31,7 @@ const productValidation = (data) => {
     });
     return schema.validate(data);
 };
-const cateValidation = (data) => {
-    const schema = Joi.object({
-        name_category: Joi.string().min(2).required()
-    });
-    return schema.validate(data);
-};
 
 module.exports.registerValidation = registerValidation;
 module.exports.loginValidation = loginValidation;
 module.exports.productValidation = productValidation;
-module.exports.cateValidation = cateValidation;
