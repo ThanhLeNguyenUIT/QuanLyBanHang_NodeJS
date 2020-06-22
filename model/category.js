@@ -1,9 +1,5 @@
 var mongoose = require('mongoose')
 var categorySchema = mongoose.Schema({
-    id_category: {
-        type: Number,
-        require: true
-    },
     name_category: String
 })
 

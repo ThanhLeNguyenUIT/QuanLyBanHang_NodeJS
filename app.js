@@ -1,8 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var session = require('express-session'); 
-var flash = require('connect-flash');
+var session = require('express-session');
+var flash = require('connect-flash')
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
@@ -22,6 +22,7 @@ var hash = bcrypt.hashSync("B4c0/\/", salt);
 var path = require('path');
 
 var expressValidator = require('express-validator');
+const { use } = require('passport');
 var app = express();
 
 // view engine setup
@@ -34,13 +35,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, () =>
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/resource", express.static('resource'));
-app.use(session({
-     secret: 'secret',
-     cookie: {maxAge: 6000},
-     resave: false,
-     saveUninitialized: false
-}));
-app.use(flash());
+
 
 // app.use(expressValidator({
 //     errorFormatter: function(param, msg, value) {
@@ -48,16 +43,16 @@ app.use(flash());
 //             root = namespace.shift(),
 //             formParam = root;
 
-//         while (namespace.length) {
-//             formParam += '[' + namespace.shift() + ']';
-//         }
-//         return {
-//             param: formParam,
-//             msg: msg,
-//             value: value
-//         };
-//     }
-// }));
+        while (namespace.length) {
+            formParam += '[' + namespace.shift() + ']';
+        }
+        return {
+            param: formParam,
+            msg: msg,
+            value: value
+        };
+    }
+}));
 app.use('/', authentication);
 app.use('/', dashboard);
 app.use('/', dashboard);
@@ -67,13 +62,7 @@ app.use('/', baocao);
 app.use('/', order);
 app.use('/', account);
 
-// app.use(session({
-//     secret: 'wayci',
-//     resave: true,
-//     key: 'user',
-//     saveUninitialized: true
 
-// }));
 // app.use(passport.initialize());
 // app.use(passport.session());
 
