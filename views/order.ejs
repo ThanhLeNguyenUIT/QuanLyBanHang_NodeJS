@@ -10,20 +10,51 @@
     <link rel="stylesheet" href="../resource/css/base.css">
     <link rel="stylesheet" href="../resource/css/order.css">
     <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../resource/js/order.js"></script>
+    <script src="../routes/order.js"></script>
 </head>
 
 <body>
     <header class="order_header">
         <div class="grid">
             <div class="order_header_container">
-                <div class="order_header-search_product">
-                    <!-- có thể bị trùng-->
-                    <input type="text" class="search_product-input" placeholder="Tìm kiếm ">
-                    <button class="search_product-button"><i class="search_product-button-icon fas fa-search"></i></button>
+                <div class="order-search-container">
+                    <form action="/order/search" method="post">
+                        <div class="order_header-search_product">
+                            <!-- có thể bị trùng-->
+                            <input type="text" class="search_product-input" placeholder="Tìm kiếm" name="searchPro" autocomplete="off">
+                            <button class="search_product-button"><i class="search_product-button-icon fas fa-search"></i></button>
+                        </div>
+                    
+                    <ul class="order-search-dropdown">
+                        <% for ( var i=0; i < product.length; i++ ) { %>
+                        <li class="search-dropdown-item">
+                            <div class="search-line-1">
+                                <span class="search-product-name">
+                                    <%= product[i].name_product %>
+                                </span>
+                                <span class="search-product-unit">lon</span>
+                            </div>
+                            <div class="search-line-2">
+                                <span>
+                                    <%= product[i].id_product %>
+                                </span>
+                                <span class="search-product-price">
+                                    Giá: <%= product[i].price_product %> 
+                                </span>
+                            </div>
+                            <div class="search-line-3">
+                                <span>Tồn kho: 20</span>
+                            </div>
+                        </li>
+                        <% } %>
+                    </ul>
+                    </form>
                 </div>
 
-                <div class="bill_container">
+                <div class="bill_container" id="billContainer">
                     <button class="tab_button" onclick="openTab(event, 'tab1')">
                         <span>Hoá đơn 1</span>
                         <i class="fas fa-times close-icon"></i>
@@ -32,7 +63,7 @@
                         <span>Hoá đơn 2</span>
                         <i class="fas fa-times close-icon"></i>
                     </button>
-                    <i class="fas fa-plus add-icon"></i>
+                    <i class="fas fa-plus add-icon" id="addIcon"></i>
                 </div>
 
                 <div class="bill-function">
@@ -158,21 +189,6 @@
             </div>
         </div>
     </div>
-    <script>
-        function openTab(event, tab) {
-            var i, order_table, tab_button;
-            order_table = document.getElementsByClassName('order_table');
-            for (i = 0; i < order_table.length; i++) {
-                order_table[i].style.display = "none";
-            }
-            tab_button = document.getElementsByClassName('tab_button');
-            for (i = 0; i < tab_button.length; i++) {
-                tab_button[i].className = tab_button[i].className.replace("active", "");
-            }
-            document.getElementById(tab).style.display = "table";
-            event.currentTarget.className += " active";
-        }
-    </script>
 </body>
 
 </html>

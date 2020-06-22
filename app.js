@@ -12,6 +12,7 @@ var daily = require("./routes/daily");
 var hanghoa = require("./routes/hanghoa");
 var order = require('./routes/order');
 var authentication = require('./routes/authentication');
+var account = require('./routes/account');
 
 //ma hoa password
 var salt = bcrypt.genSaltSync(10);
@@ -57,6 +58,7 @@ app.use('/', daily);
 app.use('/', hanghoa);
 app.use('/', baocao);
 app.use('/', order);
+app.use('/', account);
 
 // app.use(session({
 //     secret: 'wayci',

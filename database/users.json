@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "5ee6f4283df5be3c92917b27"
+  },
+  "name": "thanhlenguyen",
+  "email": "thanhnguyenvn2000@gmail.com",
+  "password": "$2a$10$VuR14I20cBGa98y90yB6ReG3GGpPfMfgkIhrMHK6Yh/fv3NJK.Wxy",
+  "date": {
+    "$date": "2020-06-15T04:08:08.670Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ee6f4b04af1523cadde5dbc"
+  },
+  "name": "hoangdinhquang",
+  "email": "wayci@gmail.com",
+  "password": "$2a$10$yiJjJFDEJs68x4L.y9jfteVKyqA4zoXrRMw0z/Bl5J70DjtriXRs2",
+  "date": {
+    "$date": "2020-06-15T04:10:24.105Z"
+  },
+  "__v": 0
+}]
