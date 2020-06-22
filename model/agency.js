@@ -1,6 +1,5 @@
 var mongoose = require('mongoose')
 var agencySchema = mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
     id_agency: {
         type: Number,
         require: true
@@ -17,7 +16,7 @@ var agencySchema = mongoose.Schema({
         type: String,
         require: true
     },
-    type_agency: {
+    group_agency: {
         type: Number,
         require: true
     },

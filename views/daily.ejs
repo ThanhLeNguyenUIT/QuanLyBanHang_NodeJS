@@ -99,7 +99,11 @@
                                         <option value="Quận 2"></option>
                                         <option value="Quận 3"></option>
                                 </datalist>
+                                <button class="confirm_address">
+                                    lọc
+                                </button>
                             </div>
+
                         </nav>
                     </div>
                     <div class="grid__column-10">
@@ -129,96 +133,42 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="table-container_body table-container_body_between">
-                                            <td class="table-container_body-item">001</td>
-                                            <td class="table-container_body-item">UIT</td>
-                                            <td class="table-container_body-item">0794560642</td>
-                                            <td class="table-container_body-item">Quận 1</td>
-                                            <td class="table-container_body-item">Nhóm 1</td>
-                                            <td class="table-container_body-item">số 10 phường Linh Trung</td>
-                                            <td class="table-container_body-item">1/12/2020</td>
-                                            <td class="table-container_body-item">0</td>
-                                            <td class="table-container_body-edit">
-                                                <button class="edit-product-btn">
-                                                        <a href="#" class="editPro edit-product">Sửa</a> 
-                                                    </button>
-                                                <button class="delete-product-btn">
-                                                        <a href="#" class="editPro delete-product">Xoá</a>
-                                                    </button>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-container_body">
-                                            <td class="table-container_body-item">002</td>
-                                            <td class="table-container_body-item">USSH</td>
-                                            <td class="table-container_body-item">0905966867</td>
-                                            <td class="table-container_body-item">Quận 2</td>
-                                            <td class="table-container_body-item">Nhóm 2</td>
-                                            <td class="table-container_body-item">Số 2 đường Điện Biên Phủ</td>
-                                            <td class="table-container_body-item">12/3/2020</td>
-                                            <td class="table-container_body-item">0</td>
-                                            <td class="table-container_body-edit">
-                                                <button class="edit-product-btn">
-                                                        <a href="#" class="editPro edit-product">Sửa</a> 
-                                                    </button>
-                                                <button class="delete-product-btn">
-                                                        <a href="#" class="editPro delete-product">Xoá</a>
-                                                    </button>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-container_body table-container_body_between">
-                                            <td class="table-container_body-item">003</td>
-                                            <td class="table-container_body-item">UEL</td>
-                                            <td class="table-container_body-item">0969242258</td>
-                                            <td class="table-container_body-item">Quận 3</td>
-                                            <td class="table-container_body-item">Nhóm 3</td>
-                                            <td class="table-container_body-item">Số 69 đường Giải Phóng</td>
-                                            <td class="table-container_body-item">4/5/2020</td>
-                                            <td class="table-container_body-item">0</td>
-                                            <td class="table-container_body-edit">
-                                                <button class="edit-product-btn">
-                                                        <a href="#" class="editPro edit-product">Sửa</a> 
-                                                    </button>
-                                                <button class="delete-product-btn">
-                                                        <a href="#" class="editPro delete-product">Xoá</a>
-                                                    </button>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-container_body">
-                                            <td class="table-container_body-item">002</td>
-                                            <td class="table-container_body-item">USSH</td>
-                                            <td class="table-container_body-item">0905966867</td>
-                                            <td class="table-container_body-item">Quận 2</td>
-                                            <td class="table-container_body-item">Nhóm 2</td>
-                                            <td class="table-container_body-item">Số 2 đường Điện Biên Phủ</td>
-                                            <td class="table-container_body-item">12/3/2020</td>
-                                            <td class="table-container_body-item">0</td>
-                                            <td class="table-container_body-edit">
-                                                <button class="edit-product-btn">
-                                                        <a href="#" class="editPro edit-product">Sửa</a> 
-                                                    </button>
-                                                <button class="delete-product-btn">
-                                                        <a href="#" class="editPro delete-product">Xoá</a>
-                                                    </button>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-container_body table-container_body_between">
-                                            <td class="table-container_body-item">002</td>
-                                            <td class="table-container_body-item">USSH</td>
-                                            <td class="table-container_body-item">0905966867</td>
-                                            <td class="table-container_body-item">Quận 2</td>
-                                            <td class="table-container_body-item">Nhóm 2</td>
-                                            <td class="table-container_body-item">Số 2 đường Điện Biên Phủ</td>
-                                            <td class="table-container_body-item">12/3/2020</td>
-                                            <td class="table-container_body-item">0</td>
-                                            <td class="table-container_body-edit">
-                                                <button class="edit-product-btn">
-                                                        <a href="#" class="editPro edit-product">Sửa</a> 
-                                                    </button>
-                                                <button class="delete-product-btn">
-                                                        <a href="#" class="editPro delete-product">Xoá</a>
-                                                    </button>
-                                            </td>
-                                        </tr>
+                                        <% for(var i = 0; i < agency.length; i++){ %>
+                                            <tr class="table-container_body table-container_body_between">
+                                                <td class="table-container_body-item">
+                                                    <%= agency[i].id_agency %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= agency[i].name_agency %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= agency[i].phone_agency %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= agency[i].area_agency %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= agency[i].group_agency %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= agency[i].address_agency %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= agency[i].date_agency %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= agency[i].debt_agency %>
+                                                </td>
+                                                <td class="table-container_body-edit">
+                                                    <button class="edit-product-btn">
+                                                            <a dataid="/daily/sua-daily/ <%= agency[i]._id %>" class="editPro edit-product">Sửa</a> 
+                                                        </button>
+                                                    <button class="delete-product-btn">
+                                                            <a href="/daily/xoa-daily/ <%= agency[i]._id %>" class="editPro delete-product">Xoá</a>
+                                                        </button>
+                                                </td>
+                                            </tr>
+                                            <% } %>
                                     </tbody>
                                 </table>
                             </div>
@@ -231,134 +181,226 @@
         <div class="modal modal_add-agency">
             <div class="modal_overlay"></div>
             <div class="modal_body">
-                <div class="auth-form">
-                    <div class="auth-form_header">
-                        <h1 class="auth-form_heading">Thêm Đại Lý</h1>
-                    </div>
-                    <div class="auth-form_body">
-                        <div class="auth-form_body-left">
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Tên Đại lý</span>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input auth_agency-name" placeholder="Tên Đại lý" required>
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Mã Đại lý</span>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="number" class="auth-form_input auth_agency_code" placeholder="Mã Đại lý" required>
-                            </div>
-                            <div class="auth_agency_selection">
+                <form action="/daily/them-daily" method="post">
+                    <div class="auth-form">
+                        <div class="auth-form_header">
+                            <h1 class="auth-form_heading">Thêm Đại Lý</h1>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-left">
                                 <div class="auth-form_group">
-                                    <label for="auth-form_group" class="auth-form_info">Nhóm</label>
+                                    <span class="auth-form_info">Mã Đại lý</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <select name="authGroup" class="auth_agency-group" id="auth_group" required>
-                                    <option value="nhom1">Nhóm 1</option>
-                                    <option value="nhom2">Nhóm 2</option>
-                                    <option value="nhom3">Nhóm 3</option>
-                                </select>
+                                    <input type="number" class="auth-form_input" id="auth_agency_code" name="id_agency" placeholder="Mã Đại lý" required>
                                 </div>
                                 <div class="auth-form_group">
-                                    <label for="auth_district" class="auth-form_info">Khu vực</label>
+                                    <span class="auth-form_info">Tên Đại lý</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <select class="auth_agency-district" name="authDistrict" id="auth_district" required>
-                                    <option value="quan1">Quận 1</option>
-                                    <option value="quan2">Quận 2</option>
-                                    <option value="quan3">Quận 3</option>
-                                </select>
+                                    <input type="text" class="auth-form_input" id="auth_agency-name" name="name_agency" placeholder="Tên Đại lý" required>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="auth-form_body-right">
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Số điện thoại</span>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="number" class="auth-form_input auth_agency_number" placeholder="" required>
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Địa chỉ</span>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input auth_agency_adress" placeholder="" required>
-                            </div>
-                            <div class="auth-form_group">
-                                <label for="auth_date" class="auth-form_info">Ngày tiếp nhận</label>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="date" class="auth-form_input auth_agency_date" placeholder="1-12-2000" id="auth_date" required>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="auth-form_controls">
-                        <button class="btn btn-agency-cancel">Trở lại</button>
-                        <button class="btn btn--primary">Đồng ý </button>
+                                <div class="auth_agency_selection">
+                                    <div class="auth-form_group">
+                                        <label for="auth-form_group" class="auth-form_info">Nhóm</label>
+                                        <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                        <select name="authGroup" class="auth_agency-group" name="group_agency" id="auth_group" required>
+                                        <option value="nhom1">Nhóm 1</option>
+                                        <option value="nhom2">Nhóm 2</option>
+                                        <option value="nhom3">Nhóm 3</option>
+                                    </select>
+                                    </div>
+                                    <div class="auth-form_group">
+                                        <label for="auth_district" class="auth-form_info">Khu vực</label>
+                                        <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                        <select class="auth_agency-district" name="area_agency" id="auth_district" required>
+                                        <option value="quan1">Quận 1</option>
+                                        <option value="quan2">Quận 2</option>
+                                        <option value="quan3">Quận 3</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="auth-form_body-right">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Số điện thoại</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="number" class="auth-form_input auth_agency_number" name="phone_agency" placeholder="" required>
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Địa chỉ</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input" id="auth_agency_adress" name="address_agency" placeholder="" required>
+                                </div>
+                                <div class="auth-form_group">
+                                    <label for="auth_date" class="auth-form_info">Ngày tiếp nhận</label>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="date" class="auth-form_input auth_agency_date" name="date-agency" placeholder="1/12/2000" id="auth_date" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-form_controls">
+                            <button class="btn btn-agency-cancel">Trở lại</button>
+                            <button class="btn btn--primary">Đồng ý </button>
+                        </div>
                     </div>
-                </div>
+                </form>
+                <form action="" method="post">
+                    <div class="auth-form">
+                        <div class="auth-form_header">
+                            <h1 class="auth-form_heading">Sửa Đại Lý</h1>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-left">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên Đại lý</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input auth_agency-name" placeholder="Tên Đại lý" required>
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Mã Đại lý</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="number" class="auth-form_input auth_agency_code" placeholder="Mã Đại lý" required>
+                                </div>
+                                <div class="auth_agency_selection">
+                                    <div class="auth-form_group">
+                                        <label for="auth-form_group" class="auth-form_info">Nhóm</label>
+                                        <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                        <select name="authGroup" class="auth_agency-group" id="" required>
+                                        <option value="nhom1">Nhóm 1</option>
+                                        <option value="nhom2">Nhóm 2</option>
+                                        <option value="nhom3">Nhóm 3</option>
+                                    </select>
+                                    </div>
+                                    <div class="auth-form_group">
+                                        <label for="auth_district" class="auth-form_info">Khu vực</label>
+                                        <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                        <select class="auth_agency-district" name="authDistrict" id="" required>
+                                        <option value="quan1">Quận 1</option>
+                                        <option value="quan2">Quận 2</option>
+                                        <option value="quan3">Quận 3</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="auth-form_body-right">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Số điện thoại</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="number" class="auth-form_input auth_agency_number" placeholder="" required>
+                                </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Địa chỉ</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input auth_agency_adress" placeholder="" required>
+                                </div>
+                                <div class="auth-form_group">
+                                    <label for="auth_date" class="auth-form_info">Ngày tiếp nhận</label>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="date" class="auth-form_input auth_agency_date" placeholder="01/12/2000" id="" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-form_controls">
+                            <button class="btn btn-agency-cancel">Trở lại</button>
+                            <button class="btn btn--primary">Đồng ý</button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
         </div>
 
         <div class="modal modal_edit-agency">
             <div class="modal_overlay"></div>
             <div class="modal_body">
-                <div class="auth-form">
-                    <div class="auth-form_header">
-                        <h1 class="auth-form_heading">Sửa Đại Lý</h1>
-                    </div>
-                    <div class="auth-form_body">
-                        <div class="auth-form_body-left">
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Tên Đại lý</span>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input auth_agency-name" placeholder="Tên Đại lý" required>
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Mã Đại lý</span>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="number" class="auth-form_input auth_agency_code" placeholder="Mã Đại lý" required>
-                            </div>
-                            <div class="auth_agency_selection">
-                                <div class="auth-form_group">
-                                    <label for="auth-form_group" class="auth-form_info">Nhóm</label>
-                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <select name="authGroup" class="auth_agency-group" id="" required>
-                                    <option value="nhom1">Nhóm 1</option>
-                                    <option value="nhom2">Nhóm 2</option>
-                                    <option value="nhom3">Nhóm 3</option>
-                                </select>
-                                </div>
-                                <div class="auth-form_group">
-                                    <label for="auth_district" class="auth-form_info">Khu vực</label>
-                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <select class="auth_agency-district" name="authDistrict" id="" required>
-                                    <option value="quan1">Quận 1</option>
-                                    <option value="quan2">Quận 2</option>
-                                    <option value="quan3">Quận 3</option>
-                                </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="auth-form_body-right">
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Số điện thoại</span>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="number" class="auth-form_input auth_agency_number" placeholder="" required>
-                            </div>
-                            <div class="auth-form_group">
-                                <span class="auth-form_info">Địa chỉ</span>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="text" class="auth-form_input auth_agency_adress" placeholder="" required>
-                            </div>
-                            <div class="auth-form_group">
-                                <label for="auth_date" class="auth-form_info">Ngày tiếp nhận</label>
-                                <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                <input type="date" class="auth-form_input auth_agency_date" placeholder="1-12-2000" id="" required>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="auth-form_controls">
-                        <button class="btn btn-agency-cancel">Trở lại</button>
-                        <button class="btn btn--primary">Đồng ý</button>
+
+                <form action="" autocomplete="off" method="post">
+                    <div class="auth-form_min auth-form_min-add">
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Thêm loại đại lý</h3>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-wrap">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên loại đại lý</span>
+                                    <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                    <input type="text" name="name_category" class="auth-form_input" id="nameCateAdd" required placeholder="tên nhóm hàng">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="auth-form_controls">
+                            <button class="btn btn-add-category-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn--primary btn-add-category" type="submit">Lưu</button>
+                        </div>
                     </div>
-                </div>
+                </form>
+                <form action="" autocomplete="off" method="post">
+                    <div class="auth-form_min auth-form_min-add">
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Thêm khu vực</h3>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-wrap">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên khu vực</span>
+                                    <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                    <input type="text" name="name_category" class="auth-form_input" id="nameCateAdd" required placeholder="tên nhóm hàng">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="auth-form_controls">
+                            <button class="btn btn-add-category-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn--primary btn-add-category" type="submit">Lưu</button>
+                        </div>
+                    </div>
+                </form>
+                <form action="/hanghoa/edit-cate" id="edit-cate-form" autocomplete="off" method="post">
+                    <div class="auth-form_min auth-form_min-edit">
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Sửa loại đại lý</h3>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-wrap">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên loại đại lý</span>
+                                    <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                    <input type="text" name="name_category" id="nameCateUpdate" class="auth-form_input edit-name-cate" required placeholder="tên nhóm hàng">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auth-form_controls-edit">
+                            <button class="btn btn-edit-category-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn--primary btn-edit-category" type="submit ">Lưu</button>
+                            <a class="btn btn--delete " href="/hanghoa/deleteCate">Xoá</a>
+                        </div>
+                    </div>
+                </form>
+                <form action="/hanghoa/edit-cate" id="edit-cate-form" autocomplete="off" method="post">
+                    <div class="auth-form_min auth-form_min-edit">
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Sửa khu vực</h3>
+                        </div>
+                        <div class="auth-form_body">
+                            <div class="auth-form_body-wrap">
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên khu vực</span>
+                                    <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
+                                    <input type="text" name="name_category" id="nameCateUpdate" class="auth-form_input edit-name-cate" required placeholder="tên nhóm hàng">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auth-form_controls-edit">
+                            <button class="btn btn-edit-category-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn--primary btn-edit-category" type="submit ">Lưu</button>
+                            <a class="btn btn--delete " href="/hanghoa/deleteCate">Xoá</a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </main>

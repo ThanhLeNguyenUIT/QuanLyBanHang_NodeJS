@@ -41,19 +41,18 @@ router.get('/hanghoa/page:id', function(req, res) {
     //product
 router.post('/hanghoa/them-hang', async(req, res) => {
     getError = '';
+    req.checkBody('id_product', 'ID phải là số').isInt();
     const findPro = await product.findOne({ 'id_product': req.body.id_product });
     if (findPro) {
-        var temp = findPro.id_product;
         req.checkBody('id_product', 'đã tồn tại sản phẩm').not().isIn(req.body.id_product);
     }
-    req.checkBody('id_product', 'ID phải là số').isInt();
+
     req.checkBody('price', 'Giá bán phải là số').isInt();
     req.checkBody('ogn_price', 'Giá gốc phải là số').isInt();
     req.checkBody('exit', 'Tồn kho phải là số').isInt();
 
     getError = req.validationErrors();
     if (getError) {
-        console.log(getError)
         res.redirect('/hanghoa');
     } else {
         const pro = new product({
