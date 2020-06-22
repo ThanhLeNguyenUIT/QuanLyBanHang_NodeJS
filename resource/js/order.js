@@ -1,9 +1,17 @@
 $(document).ready(() => {
     let i = 0;
+    $(".order-search-dropdown").css("display","none");
+    if($('.order-search-dropdown').length < 1 ){
+        $('.order-search-dropdown').css("display","none");
+    }
+    else{
+        $('.order-search-dropdown').css("display","block");
+    }
     $('#addIcon').click(() =>{
         i++;
+        console.log($('.order-search-dropdown').length);
         if(i<=5){
-            $('<button class="tab_button" id="tabButton">Hoá đơn <i class="fas fa-times close-icon" id="closeIcon"></i></button>').appendTo('#billContainer')
+            $('<button class="tab_button" id="tabButton">Hoá đơn '+ i +' <i class="fas fa-times close-icon" id="closeIcon"></i></button>').insertBefore('#addIcon')
         }
         else{
             alert('Đã đạt tối đa hoá đơn');

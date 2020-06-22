@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../resource/css/main.css">
     <link rel="stylesheet" href="../resource/css/base.css">
     <link rel="stylesheet" href="../resource/css/order.css">
-    <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../resource/js/order.js"></script>
@@ -24,7 +24,7 @@
                     <form action="/order/search" method="post">
                         <div class="order_header-search_product">
                             <!-- có thể bị trùng-->
-                            <input type="text" class="search_product-input" placeholder="Tìm kiếm" name="searchPro" autocomplete="off">
+                            <input type="text" class="search_product-input" placeholder="Tìm kiếm" name="searchProduct" autocomplete="off">
                             <button class="search_product-button"><i class="search_product-button-icon fas fa-search"></i></button>
                         </div>
                     
@@ -80,6 +80,7 @@
             <div class="grid__row">
                 <div class="grid__column-8">
                     <div class="container_order-list">
+                        <!-- <% for(var i = 0; i < $("#billContainer").length; i++){ %> -->
                         <table class="order_table" id="tab1">
                             <thead>
                                 <tr class="order_table-head">

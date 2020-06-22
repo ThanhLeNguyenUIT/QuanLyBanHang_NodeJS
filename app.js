@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var session = require('express-session');
+var session = require('express-session'); 
+var flash = require('connect-flash');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
@@ -33,7 +34,13 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, () =>
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/resource", express.static('resource'));
-
+app.use(session({
+     secret: 'secret',
+     cookie: {maxAge: 6000},
+     resave: false,
+     saveUninitialized: false
+}));
+app.use(flash());
 
 // app.use(expressValidator({
 //     errorFormatter: function(param, msg, value) {

@@ -5,13 +5,13 @@ var cate = require('../model/category')
 
 router.get('/order',(req,res) => {
     // res.render('order', {product: product});
-    product.find().sort({id_product: 1}).then((data) => {
+    product.find().sort({id_product: req.body.searchProduct}).then((data) => {
         res.render('order', {product: data})
     })
 })
 
 router.post('/order/search', function(req, res) {
-    product.find({ id_product: req.body.searchPro }).then(function(prod) {
+    product.find({ id_product: req.body.searchProduct }).then(function(prod) {
         res.render('order', { product: prod });
     })
 })

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../resource/css/base.css">
     <link rel="stylesheet" href="../resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../resource/css/baocao.css">
     <script>
         window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
@@ -170,11 +171,140 @@
                                 </tbody>
                             </table>
 
+                            <table class="table_container">
+                                <thead>
+                                    <tr class="table-container_header">
+                                        <th class="table-container_header-item code-bill">Mã hoá đơn</th>
+                                        <th class="table-container_header-item name-account">Tên tài khoản</th>
+                                        <th class="table-container_header-item date-bill">Ngày bán</th>
+                                        <th class="table-container_header-item total-bill">Tổng tiền</th>
+                                        <th class="table-container_header-item edit-account"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-container_body table-container_body_between">
+                                        <td class="table-container_body-item">001</td>
+                                        <td class="table-container_body-item">NguyenLeThanh</td>
+                                        <td class="table-container_body-item">01/10/2000</td>
+                                        <td class="table-container_body-item">100000</td>
+                                        <td class="table-container_body-edit table-container_body-item">
+                                            <button class="view-bill-btn">
+                                                    <a href="#" class="editPro view-bill">Xem</a> 
+                                                </button>
+                                            <button class="delete-bill-btn">
+                                                    <a href="#" class="editPro delete-bill">Xoá</a>
+                                                </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="modal modal_bill-details">
+                                <div class="modal_overlay"></div>
+                                <div class="modal_body">
+                                    <div class="auth-form">
+                                        <div class="auth-form_header">
+                                            <h1 class="auth-form_heading">Chi tiết hoá đơn</h1>
+                                        </div>
+                                        <div class="auth-form_body-report">
+                                            <div class="id-bill-container">
+                                                <span>MHD: </span>
+                                                <span>001</span>
+                                            </div>
+                                            <table class="table_container table-report">
+                                                <thead>
+                                                    <tr class="table-container_header">
+                                                        <th class="table-container_header-item code-product">Mã hàng</th>
+                                                        <th class="table-container_header-item name-product">Tên hàng</th>
+                                                        <th class="table-container_header-item price-product">Đơn giá</th>
+                                                        <th class="table-container_header-item amount-product">Số lượng</th>
+                                                        <th class="table-container_header-item total-price">Thành tiền</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="table-container_body table-container_body_between">
+                                                        <td class="table-container_body-item">001</td>
+                                                        <td class="table-container_body-item">Bò húc</td>
+                                                        <td class="table-container_body-item">1000</td>
+                                                        <td class="table-container_body-item">2</td>
+                                                        <td class="table-container_body-item">2000</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="final-price-container">
+                                                <span>Tổng tiền : </span>
+                                                <span class="price">2000</span>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="auth-form_controls">
+                                            <button class="btn btn-account-cancel btn-cancel">Trở lại</button>
+                                            <button class="btn btn--primary btn-confirm">Đồng ý </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <table class="bill-table">
+                                <thead>
+                                    <tr class="bill-table_header">
+                                        <th class="bill-table_header-item code-product">Mã hàng</th>
+                                        <th class="bill-table_header-item name-product">Tên hàng</th>
+                                        <th class="bill-table_header-item price-product">Giá bán</th>
+                                        <th class="bill-table_header-item org-price-product">Giá vốn</th>
+                                        <th class="bill-table_header-item num-product">Tồn kho</th>
+                                        <th class="bill-table_header-item edit-agency"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <% for( var i = 0; i < product.length; i++) {%>
+                                        <tr class="bill-table_body bill-table_body_between">
+                                            <td class="bill-table_body-item id_product">
+                                                <%= product[i].id_product %>
+                                            </td>
+                                            <td class="bill-table_body-item">
+                                                <%= product[i].name_product %>
+                                            </td>
+                                            <td class="bill-table_body-item">
+                                                <%= product[i].price %>
+                                            </td>
+                                            <td class="bill-table_body-item">
+                                                <%= product[i].ogn_price %>
+                                            </td>
+                                            <td class="bill-table_body-item">
+                                                <%= product[i].ogn_price %>
+                                            </td>
+                                            <td class="bill-table_body-edit">
+                                                <button data-id='<%= product[i]._id %>' class="edit-product-btn">
+                                                    Sửa
+                                                </button>
+                                                <button class="delete-product-btn">
+                                                    <a href="/hanghoa/deletePro/<%= product[i]._id %>" class="editPro delete-product">Xoá</a>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+
+                                </tbody>
+                            </table> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            $(document).ready(() => {
+                $(".view-bill-btn").click(function() {
+                    $(".modal_bill-details").css("display","flex");
+                    $(".auth-form").css("display", "block");
+                })
+                $(".btn-cancel").click(() => {
+                    $(".modal_bill-details").css("display","none");
+                    $(".auth-form").css("display", "none");
+                })
+            })
+        </script>
         <script src="../resource/js/baocao.js"></script>
 
     </main>

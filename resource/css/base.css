@@ -168,8 +168,14 @@ html {
     align-items: center;
     line-height: 1.4rem;
 }
+
+.btn-confirm{
+    margin-right: 4rem;
+}
+
 .btn-cancel{
     background-color: (var(--white-color));
+    margin-right: 1rem;
 }
 
 .btn-cancel:hover{

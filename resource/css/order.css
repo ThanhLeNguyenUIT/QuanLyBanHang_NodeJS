@@ -27,7 +27,7 @@
 }
 
 .order-search-dropdown{
-    display: block;
+    display: none;
     padding: 0;
     width: 502px;
     height: auto;
