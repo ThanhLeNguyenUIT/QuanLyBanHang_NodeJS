@@ -30,11 +30,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.light.css" />
     <script src="https://cdn3.devexpress.com/jslib/19.2.7/js/dx.all.js"></script>
     <script src="../resource/js/chart.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            $("#header_container").load("header.ejs");
-        });
-    </script>
 </head>
 <!-- Body -->
 
@@ -66,45 +61,60 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="header_container-2">
-                <!-- header container 2-->
-                <nav class="header_navbar">
-                    <ul class="header_navbar-list">
-                        <li class="header_navbar-item header_navbar-item-select">
-                            <div class="header_container-item">
-                                <a href="/dashboard" class="header__navbar-item-link">
-                                    <i class="far fa-eye"></i> Tổng quan
-                                </a>
-                            </div>
-                        </li>
-                        <li class="header_navbar-item">
-                            <div class="header_container-item">
-                                <a href="/hanghoa" class="header__navbar-item-link">
-                                    <i class="fas fa-cube"></i> Hàng hoá
-                                </a>
-                            </div>
-                        </li>
-                        <li class="header_navbar-item">
-                            <div class="header_container-item">
-                                <a href="/daily" class="header__navbar-item-link">
-                                    <i class="fas fa-store-alt"></i> Đại lí
-                                </a>
-                            </div>
-                        </li>
-                        <li class="header_navbar-item">
-                            <div class="header_container-item">
-                                <a href="/baocao" class="header__navbar-item-link">
-                                    <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div id="header_container">
-            </div>
-            </div>
+                <div class="header_container-2">
+                    <!-- header container 2-->
+                    <nav class="header_navbar">
+                        <ul class="header_navbar-list">
+                            <li class="header_navbar-item header_navbar-item-select">
+                                <div class="header_container-item">
+                                    <a href="/dashboard" class="header__navbar-item-link">
+                                        <i class="far fa-eye"></i> Tổng quan
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/hanghoa" class="header__navbar-item-link">
+                                        <i class="fas fa-cube"></i> Hàng hoá
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/daily" class="header__navbar-item-link">
+                                        <i class="fas fa-store-alt"></i> Đại lí
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/account" class="header__navbar-item-link">
+                                        <i class="fas fa-user"></i> Tài khoản
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/baocao" class="header__navbar-item-link">
+                                        <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="header_navbar-item order-btn">
+                                <div class="header_container-item">
+                                    <a href="/order" class="header__navbar-item-link">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <span class="add">Đặt hàng</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="header_container"> 
+                </div>
+            </div> 
         </header>
 
         <body>
@@ -124,12 +134,12 @@
 
 
                         </div>
-                        <div class="grid__column-11-12">
+                        <!-- <div class="grid__column-11-12">
                             <button class="btn_order" onclick="window.location.href='/order'">
                                 <i class="fas fa-shopping-basket"></i>
                                 <span class="add">Đặt hàng</span>
-                         </button>
-                        </div>
+                            </button>
+                        </div> -->
                     </div>
 
                     <div class="grid__row">

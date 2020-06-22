@@ -169,6 +169,19 @@ html {
     line-height: 1.4rem;
 }
 
+.btn-confirm{
+    margin-right: 4rem;
+}
+
+.btn-cancel{
+    background-color: (var(--white-color));
+    margin-right: 1rem;
+}
+
+.btn-cancel:hover{
+    background-color: rgb(211, 209, 206);
+}
+
 .btn:hover {
     opacity: 0.8;
 }

@@ -29,8 +29,16 @@ $(document).ready(function() {
     }).dxRadioGroup("instance");
     radioGroup.option("value", selections[1]);
 
+    $(".view-bill-btn").click(function() {
+        $(".modal_bill-details").css("display","flex");
+        $(".auth-form").css("display", "block");
+    })
+    $(".btn-cancel").click(() => {
+        $(".modal_bill-details").css("display","none");
+        $(".auth-form").css("display", "none");
+    })
 })
-var selections = ["Báo cáo", "Công nợ"];
+var selections = ["Báo cáo", "Công nợ", "Hoá đơn"];
 var task = [{
     title: "Báo Cáo Doanh Số",
     column_2: "Số Phiếu Xuất",

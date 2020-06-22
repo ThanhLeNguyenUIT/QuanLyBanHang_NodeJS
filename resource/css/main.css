@@ -34,13 +34,17 @@ body {
     margin-bottom: 2rem;
 }
 
+.report-table{
+    display: none;
+}
+
 .change_chart:hover {
     cursor: pointer;
     background-color: #1d95d1;
 }
 
 .chart-1 {
-    margin: 15rem 0 0;
+    margin: 10rem 0 0;
     height: 440px;
     width: 816px;
 }
@@ -224,6 +228,10 @@ body {
     background-color: #0078b6;
 }
 
+.order-btn{
+    position: relative;
+    margin-left: 158px;
+}
 
 /* body */
 
@@ -457,6 +465,7 @@ body {
     color: var(--black-color);
     background-color: rgb(218, 216, 216);
     cursor: pointer;
+    border: none;
 }
 
 .table-container_body_between {
@@ -474,10 +483,14 @@ body {
     line-height: 1.2;
     padding: 8px;
     word-break: break-all;
+    border: none;
 }
 
 .table-container_body-edit {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .editPro {
@@ -615,7 +628,10 @@ body {
 .modal.modal_add-product,
 .modal.modal_add-agency,
 .modal.modal-category,
+.modal.modal_add-account,
+.modal.modal_edit-account,
 .modal.modal_edit-product,
+.modal.modal_bill-details,
 .modal.modal_edit-agency {
     display: none;
 }
@@ -855,6 +871,41 @@ body {
     line-height: var(--height);
     text-align: center;
     border-radius: 2px;
+}
+
+/* Auth form Báo cáo*/
+.auth-form_body-report{
+    display: flex;
+    flex-direction: column;
+}
+
+.id-bill-container{
+    margin: 0 auto;
+    margin-top: 2%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.table-report{
+    margin: 0 auto;
+    margin-top: 3%;
+}
+
+.final-price-container{
+   display: flex;
+   width: 100%;
+   justify-content: flex-end;
+   right: 0;
+   margin: 3rem 3rem 3rem -7rem;
+   font-size: 2rem;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   color: rgb(60, 199, 83);
+}
+
+.price{
+    margin-left: 1rem;
 }
 
 
