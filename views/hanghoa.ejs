@@ -28,65 +28,65 @@
                     <div class="header_address">
                         <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
                     </div>
-                     <div class="header_user">
-                            <i class="header_user-icon header_user-icon-separate">
+                    <div class="header_user">
+                        <i class="header_user-icon header_user-icon-separate">
                                 <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66215009_1250396935121477_8504600403646611456_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=cWVO-OfII8IAX9Vny1e&_nc_ht=scontent.fsgn5-6.fna&oh=06fd167ccdf34a923e8ee04a3f4e7ca8&oe=5EFCE24D" alt="Avatar" class="header_avatar">
                                 <span class="header_user-name">
                                     thanhlenguyen
                                 </span>
                             </i>
 
-                            <div class="user_drop">
-                                <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
-                                <li class="user_drop-item" ><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
-                            </div>
+                        <div class="user_drop">
+                            <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
+                            <li class="user_drop-item"><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-                <div class="header_container-2">
-                    <!-- header container 2-->
-                    <nav class="header_navbar">
-                        <ul class="header_navbar-list">
-                            <li class="header_navbar-item ">
-                                <div class="header_container-item">
-                                    <a href="/dashboard" class="header__navbar-item-link">
-                                        <i class="far fa-eye"></i> Tổng quan
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item header_navbar-item-select">
-                                <div class="header_container-item">
-                                    <a href="/hanghoa" class="header__navbar-item-link">
-                                        <i class="fas fa-cube"></i> Hàng hoá
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/daily" class="header__navbar-item-link">
-                                        <i class="fas fa-store-alt"></i> Đại lí
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/account" class="header__navbar-item-link">
-                                        <i class="fas fa-user"></i> Tài khoản
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/baocao" class="header__navbar-item-link">
-                                        <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div id="header_container">               
-                </div>
+            </div>
+            <div class="header_container-2">
+                <!-- header container 2-->
+                <nav class="header_navbar">
+                    <ul class="header_navbar-list">
+                        <li class="header_navbar-item ">
+                            <div class="header_container-item">
+                                <a href="/dashboard" class="header__navbar-item-link">
+                                    <i class="far fa-eye"></i> Tổng quan
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item header_navbar-item-select">
+                            <div class="header_container-item">
+                                <a href="/hanghoa" class="header__navbar-item-link">
+                                    <i class="fas fa-cube"></i> Hàng hoá
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/daily" class="header__navbar-item-link">
+                                    <i class="fas fa-store-alt"></i> Đại lí
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/account" class="header__navbar-item-link">
+                                    <i class="fas fa-user"></i> Tài khoản
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/baocao" class="header__navbar-item-link">
+                                    <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="header_container">
+            </div>
             </div>
         </header>
         <div class="container">
@@ -288,7 +288,7 @@
         <div class="modal modal_edit-product">
             <div class="modal_overlay"></div>
             <div class="modal_body">
-                <form action="/hanghoa/update" autocomplete="off" method="POST">
+                <form action="/hanghoa/update" id="form-edit-product" autocomplete="off" method="POST">
                     <div class="auth-form">
 
                         <div class="auth-form_header">
@@ -323,7 +323,6 @@
                                     </div>
                                     <div class="add-category">
                                         <i class="auth-form_plus-icon fas fa-plus"></i>
-
                                     </div>
                                 </div>
                                 <div class="auth-form_group">
@@ -382,7 +381,7 @@
 
                         </div>
                         <div class="auth-form_controls">
-                            <button class="btn btn-add-category-cancel btn-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn-add-category-cancel" type="reset">Huỷ bỏ</button>
                             <button class="btn btn--primary " type="submit">Lưu</button>
                         </div>
                     </div>
@@ -403,7 +402,7 @@
                             </div>
                         </div>
                         <div class="auth-form_controls-edit">
-                            <button class="btn btn-edit-category-cancel btn-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn-edit-category-cancel" type="reset">Huỷ bỏ</button>
                             <a class="btn btn--primary" href="/hanghoa/updateCate/">Lưu</a>
                             <a class="btn btn--delete" href="/hanghoa/DeleteCate/">Xoá</a>
                         </div>
@@ -422,7 +421,7 @@
                     <%});%>
                         <% } %>
 
-                            <% if(message != '') {%>
+                            <% if(message) {%>
                                 <div class="alert_success">
                                     <%= message %>
                                 </div>

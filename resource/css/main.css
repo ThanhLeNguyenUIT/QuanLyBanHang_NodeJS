@@ -34,7 +34,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.report-table{
+.report-table {
     display: none;
 }
 
@@ -228,10 +228,11 @@ body {
     background-color: #0078b6;
 }
 
-.order-btn{
+.order-btn {
     position: relative;
     margin-left: 158px;
 }
+
 
 /* body */
 
@@ -345,6 +346,7 @@ body {
     z-index: 0;
     margin: 0;
     line-height: 1.3rem;
+    width: 130px;
 }
 
 .category-item-icon {
@@ -354,6 +356,7 @@ body {
     margin-right: 12px;
     cursor: pointer;
     display: none;
+    margin: 0 5px 0 5px;
 }
 
 .category-item:hover {
@@ -362,6 +365,11 @@ body {
 
 .category-item:hover .category-item-icon {
     display: block;
+}
+
+.confirm_address {
+    position: relative;
+    left: 70%;
 }
 
 
@@ -384,7 +392,7 @@ body {
 }
 
 .agency_group {
-    margin: 0;
+    margin: 0 0 32px 0;
     background-color: #fff;
     position: relative;
     padding: 10px 0;
@@ -393,6 +401,10 @@ body {
     border: 1px solid rgba(0, 0, 0, .2);
     list-style: none;
     padding-bottom: 15px;
+}
+
+.agency_group-list {
+    outline: none;
 }
 
 .agency_group-header {
@@ -415,12 +427,20 @@ body {
     font-size: 12px;
 }
 
-.agency_group-list {
+.select-wrap {}
+
+.agency-list {
     margin-bottom: 13px;
 }
 
-#agency_group-lis {
+.agency-list {
+    width: 150px;
+    height: 20px;
+}
+
+#agency_group-list {
     margin-top: 7px;
+    margin-left: 20px;
 }
 
 #agency_group-place {
@@ -632,7 +652,8 @@ body {
 .modal.modal_edit-account,
 .modal.modal_edit-product,
 .modal.modal_bill-details,
-.modal.modal_edit-agency {
+.modal.modal_edit-agency,
+.modal.modal_edit-group {
     display: none;
 }
 
@@ -798,6 +819,15 @@ body {
 
 /* form agency */
 
+#auth-form_add-group-agency,
+#auth-form_edit-group-agency,
+#auth-form_add-area-agency,
+#auth-form_edit-area-agency,
+#auth-form_add_agency,
+#auth-form_edit_agency {
+    display: none;
+}
+
 
 /* body left*/
 
@@ -873,13 +903,15 @@ body {
     border-radius: 2px;
 }
 
+
 /* Auth form Báo cáo*/
-.auth-form_body-report{
+
+.auth-form_body-report {
     display: flex;
     flex-direction: column;
 }
 
-.id-bill-container{
+.id-bill-container {
     margin: 0 auto;
     margin-top: 2%;
     font-family: 'Montserrat', sans-serif;
@@ -887,24 +919,24 @@ body {
     font-weight: 400;
 }
 
-.table-report{
+.table-report {
     margin: 0 auto;
     margin-top: 3%;
 }
 
-.final-price-container{
-   display: flex;
-   width: 100%;
-   justify-content: flex-end;
-   right: 0;
-   margin: 3rem 3rem 3rem -7rem;
-   font-size: 2rem;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 600;
-   color: rgb(60, 199, 83);
+.final-price-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    right: 0;
+    margin: 3rem 3rem 3rem -7rem;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: rgb(60, 199, 83);
 }
 
-.price{
+.price {
     margin-left: 1rem;
 }
 

@@ -94,6 +94,8 @@ $(document).ready(function() {
                 $('#priceOProUpdate').val(product.ogn_price)
                 $('#priceProUpdate').val(product.price)
                 $('#exitProUpdate').val(product.exit)
+                var temp = '/hanghoa/update/' + product._id;
+                $('#form-edit-product').attr('action', temp)
 
             },
             error: function() {

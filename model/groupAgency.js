@@ -3,6 +3,6 @@ var groupAgencySchema = mongoose.Schema({
     name_groupAgency: String
 })
 
-var groupAgency = mongoose.model('groupAgency', groupAgencySchema);
+var groupAgency = mongoose.model('groupAgencies', groupAgencySchema);
 
 module.exports = groupAgency;

@@ -89,12 +89,12 @@ html {
     padding-right: 12px;
     width: 33.33333334%;
 }
-.grid__column-11-12{
+
+.grid__column-11-12 {
     padding-left: 12px;
     padding-right: 12px;
     width: 16.6666666%;
 }
-
 
 
 /* Animation */
@@ -169,16 +169,16 @@ html {
     line-height: 1.4rem;
 }
 
-.btn-confirm{
+.btn-confirm {
     margin-right: 4rem;
 }
 
-.btn-cancel{
+.btn-cancel {
     background-color: (var(--white-color));
     margin-right: 1rem;
 }
 
-.btn-cancel:hover{
+.btn-cancel:hover {
     background-color: rgb(211, 209, 206);
 }
 

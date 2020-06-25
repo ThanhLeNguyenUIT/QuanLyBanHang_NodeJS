@@ -36,12 +36,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/resource", express.static('resource'));
 
-
-// app.use(expressValidator({
-//     errorFormatter: function(param, msg, value) {
-//         var namespace = param.split('.'),
-//             root = namespace.shift(),
-//             formParam = root;
+app.use(session({
+    secret: 'secret',
+    cookie: { maxAge: 60000 },
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(flash());
+app.use(expressValidator({
+    errorFormatter: function(param, msg, value) {
+        var namespace = param.split('.'),
+            root = namespace.shift(),
+            formParam = root;
 
         while (namespace.length) {
             formParam += '[' + namespace.shift() + ']';

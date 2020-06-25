@@ -67,5 +67,4 @@ router.post('/dashboard', async(req, res) => {
     res.render('dashboard', { username: user.name });
 })
 
-module.exports.userName = userName;
 module.exports = router;

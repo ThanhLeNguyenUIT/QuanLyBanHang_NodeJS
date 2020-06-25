@@ -17,7 +17,7 @@ var agencySchema = mongoose.Schema({
         require: true
     },
     group_agency: {
-        type: Number,
+        type: String,
         require: true
     },
     address_agency: {
@@ -25,8 +25,8 @@ var agencySchema = mongoose.Schema({
         require: true
     },
     date_agency: {
-        type: Date,
-        default: Date.now()
+        type: String,
+
     },
     debt_agency: {
         type: Number,

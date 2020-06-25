@@ -4,9 +4,11 @@ const product = require("../model/product")
 const { findByIdAndUpdate } = require('../model/product');
 const category = require('../model/category');
 
-const isEmpty = v => {
-    return Object.keys(v).length === 0;
-};
+// const isEmpty = v => {
+//     return Object.keys(v).length === 0;
+// };
+
+//tim kiem
 router.post('/hanghoa/search', function(req, res) {
     product.find({ 'id_product': req.body.searchPro }).then(function(prod) {
         category.find().then((cate) => {
@@ -15,7 +17,7 @@ router.post('/hanghoa/search', function(req, res) {
     })
 })
 
-let getError = '';
+let getError = ''; // lấy lỗi từ các action 
 router.get('/hanghoa', function(req, res) {
     product.find().sort({ id_product: 1 }).limit(20).then(function(num) {
         product.find().sort({ id_product: 1 }).limit(5).then(function(pro) {
@@ -27,18 +29,20 @@ router.get('/hanghoa', function(req, res) {
     })
 })
 
+// trang hàng hoá
 router.get('/hanghoa/page:id', function(req, res) {
+    product.find().sort({ id_product: 1 }).limit(20).then(function(num) {
+        product.find().sort({ id_product: 1 }).skip((req.params.id - 1) * 5).limit(5).then(function(pro) {
+            category.find().then((cate) => {
+                res.render('hanghoa', { product: pro, page: num, cate: cate, errors: null, message: null });
 
-        product.find().sort({ id_product: 1 }).limit(20).then(function(num) {
-            product.find().sort({ id_product: 1 }).skip((req.params.id - 1) * 5).limit(5).then(function(pro) {
-                category.find().then((cate) => {
-                    res.render('hanghoa', { product: pro, page: num, cate: cate, errors: null, message: null });
-
-                })
             })
         })
     })
-    //product
+})
+
+
+//product
 router.post('/hanghoa/them-hang', async(req, res) => {
     getError = '';
     req.checkBody('id_product', 'ID phải là số').isInt();
@@ -50,7 +54,6 @@ router.post('/hanghoa/them-hang', async(req, res) => {
     req.checkBody('price', 'Giá bán phải là số').isInt();
     req.checkBody('ogn_price', 'Giá gốc phải là số').isInt();
     req.checkBody('exit', 'Tồn kho phải là số').isInt();
-
     getError = req.validationErrors();
     if (getError) {
         res.redirect('/hanghoa');
@@ -73,6 +76,7 @@ router.post('/hanghoa/them-hang', async(req, res) => {
     }
 })
 
+//xoá hàng
 router.get("/hanghoa/deletePro/:id/", function(req, res) {
     product.findById(req.params.id, function(err, data) {
         data.remove(function() {
@@ -81,8 +85,16 @@ router.get("/hanghoa/deletePro/:id/", function(req, res) {
         })
     })
 })
-router.post('/hanghoa/update', (req, res) => {
-    var filter = { 'id_product': req.body.id_product };
+
+//đưa data product cần sửa qua jquery
+router.get('/hanghoa/update/:id', (req, res) => {
+    product.findById(req.params.id).then((data) => {
+        res.send(data);
+    })
+})
+
+//update hàng hoá bằng id
+router.post('/hanghoa/update/:id', (req, res) => {
     req.checkBody('price', 'Giá bán phải là số').isInt();
     req.checkBody('ogn_price', 'Giá gốc phải là số').isInt();
     req.checkBody('exit', 'Tồn kho phải là số').isInt();
@@ -99,7 +111,7 @@ router.post('/hanghoa/update', (req, res) => {
             'type_product': req.body.type_product,
             'exit': req.body.exit
         })
-        product.findOneAndUpdate(filter, pro, { new: true, upsert: true }).then(() => {
+        product.findByIdAndUpdate(req.params.id, pro, { new: true, upsert: true }).then(() => {
             req.flash('message', "Sửa sản phẩm thành công");
             res.redirect('/hanghoa');
         });
@@ -107,11 +119,7 @@ router.post('/hanghoa/update', (req, res) => {
 
 
 })
-router.get('/hanghoa/update/:id', (req, res) => {
-    product.findById(req.params.id).then((data) => {
-        res.send(data);
-    })
-})
+
 router.get('/hanghoa/nhom:id', function(req, res) {
     product.find({ 'category': req.params.id }).then((data) => {
         category.find().then((cate) => {
@@ -152,15 +160,15 @@ router.get('/hanghoa/updateCate/:id', (req, res) => {
     })
 })
 
-var cateNow;
+var cateNow; // xac nhan xem khi sửa có sửa lại đúng cate ban đầu
 router.post('/hanghoa/edit-cate/:id', async(req, res) => {
     if (req.body.name_category == cateNow) {
         res.redirect('/hanghoa');
     } else {
-        const findCate = await category.find({ 'name_category': req.body.name_category });
-        if (isEmpty(findCate) == false) {
-            var temp = findCate[0].name_category;
-            req.checkBody('name_category', "đã tồn tại loại hàng '" + temp + "'").not().equals(temp);
+        const findCate = await category.findOne({ 'name_category': req.body.name_category });
+        if (findCate) {
+            var temp = findCate.name_category;
+            req.checkBody('name_category', "Đã tồn tại loại hàng '" + temp + "'").not().equals(temp);
             getError = req.validationErrors();
         }
 

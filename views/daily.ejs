@@ -28,65 +28,65 @@
                     <div class="header_address">
                         <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
                     </div>
-                     <div class="header_user">
-                            <i class="header_user-icon header_user-icon-separate">
+                    <div class="header_user">
+                        <i class="header_user-icon header_user-icon-separate">
                                 <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66215009_1250396935121477_8504600403646611456_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=cWVO-OfII8IAX9Vny1e&_nc_ht=scontent.fsgn5-6.fna&oh=06fd167ccdf34a923e8ee04a3f4e7ca8&oe=5EFCE24D" alt="Avatar" class="header_avatar">
                                 <span class="header_user-name">
                                     thanhlenguyen
                                 </span>
                             </i>
 
-                            <div class="user_drop">
-                                <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
-                                <li class="user_drop-item" ><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
-                            </div>
+                        <div class="user_drop">
+                            <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
+                            <li class="user_drop-item"><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-                <div class="header_container-2">
-                    <!-- header container 2-->
-                    <nav class="header_navbar">
-                        <ul class="header_navbar-list">
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/dashboard" class="header__navbar-item-link">
-                                        <i class="far fa-eye"></i> Tổng quan
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/hanghoa" class="header__navbar-item-link">
-                                        <i class="fas fa-cube"></i> Hàng hoá
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item header_navbar-item-select">
-                                <div class="header_container-item">
-                                    <a href="/daily" class="header__navbar-item-link">
-                                        <i class="fas fa-store-alt"></i> Đại lí
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/account" class="header__navbar-item-link">
-                                        <i class="fas fa-user"></i> Tài khoản
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/baocao" class="header__navbar-item-link">
-                                        <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div id="header_container">               
-                </div>
+            </div>
+            <div class="header_container-2">
+                <!-- header container 2-->
+                <nav class="header_navbar">
+                    <ul class="header_navbar-list">
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/dashboard" class="header__navbar-item-link">
+                                    <i class="far fa-eye"></i> Tổng quan
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/hanghoa" class="header__navbar-item-link">
+                                    <i class="fas fa-cube"></i> Hàng hoá
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item header_navbar-item-select">
+                            <div class="header_container-item">
+                                <a href="/daily" class="header__navbar-item-link">
+                                    <i class="fas fa-store-alt"></i> Đại lí
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/account" class="header__navbar-item-link">
+                                    <i class="fas fa-user"></i> Tài khoản
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/baocao" class="header__navbar-item-link">
+                                    <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="header_container">
+            </div>
             </div>
         </header>
         <div class="container">
@@ -95,40 +95,94 @@
                     <div class="grid__column-2">
                         <nav class="agency_navbar">
                             <h1 class="agency_heading">ĐẠI LÝ</h1>
+                            <form action="/daily/boloc" method="post">
+                                <div class="agency_group">
+                                    <h3 class="agency_group-header">Bộ lọc</h3>
+                                    <div class="select-wrap">
+                                        <label for="agency_group-list" class="agency_group-label">nhóm:</label>
+                                        <br>
+                                        <select class="agency-list" name="group_agency" id="agency_group-list">
+                                            <% for(var i = 0; i < groupA.length;i++) {%>
+                                                <option value="<%= groupA[i].name_groupAgency %>"><%= groupA[i].name_groupAgency %></option>
+                                                <% } %>
+                                        </select>
+                                    </div>
+
+                                    <div class="select-wrap">
+                                        <label for="agency_group-place" class="agency_group-label">Khu vực:</label>
+                                        <br>
+                                        <select class="agency-list" name="area_agency" id="agency_group-place">
+                                            <% for(var i = 0; i < areaA.length;i++) {%>
+                                                <option value="<%= areaA[i].name_areaAgency %>"><%= areaA[i].name_areaAgency %></option>
+                                                <% } %>
+                                        </select>
+                                    </div>
+                                    <button class="confirm_address">
+                                        lọc
+                                    </button>
+                                </div>
+                            </form>
+
                             <div class="agency_group">
-                                <h3 class="agency_group-header">Nhóm Đại lí</h3>
-                                <label for="agency_group-lis" class="agency_group-label">Chọn nhóm:</label>
-                                <input list="agency_group-lis" name="agency_datalist" class="agency_input">
-                                <datalist class="agency_group-list" id="agency_group-lis">
-                                        <option value="Nhóm 1"></option>
-                                        <option value="Nhóm 2"></option>
-                                        <option value="Nhóm 3"></option>
-                                </datalist>
+                                <div class="category-wrap-item">
+                                    <h3 class="category-list_header">Nhóm đại lý</h3>
+                                    <div class="add-group-agency">
+                                        <i class="auth-form_plus-icon fas fa-plus"></i>
+                                    </div>
+                                </div>
+
+                                <ul class="category-list">
+                                    <% for(var i = 0; i < groupA.length;i++) {%>
+                                        <li class="category-item">
+                                            <a href="/daily/group/<%= groupA[i].name_groupAgency %>" class="category-item_link">
+                                                <%= groupA[i].name_groupAgency %>
+                                            </a>
+                                            <i data-id="<%= groupA[i]._id %>" class="category-item-icon edit-group-agency far fa-edit"></i>
+                                        </li>
+                                        <% } %>
 
 
-                                <label for="agency_group-place" class="agency_group-label">Khu vực:</label>
-                                <input list="agency_group-place" name="agency_datalist" class="agency_input agency_input-group">
-                                <datalist class="agency_group-list" id="agency_group-place">
-                                        <option value="Quận 1"></option>
-                                        <option value="Quận 2"></option>
-                                        <option value="Quận 3"></option>
-                                </datalist>
-                                <button class="confirm_address">
-                                    lọc
-                                </button>
+                                </ul>
                             </div>
+                            <div class="agency_group">
+                                <div class="category-wrap-item">
+                                    <h3 class="category-list_header">Khu vực</h3>
+                                    <div class="add-area-agency">
+                                        <i class="auth-form_plus-icon fas fa-plus "></i>
+                                    </div>
+                                </div>
 
+                                <ul class="category-list">
+                                    <% for(var i = 0; i < areaA.length;i++) {%>
+                                        <li class="category-item">
+                                            <a href="/daily/area/<%= areaA[i].name_areaAgency %>" class="category-item_link">
+                                                <%= areaA[i].name_areaAgency %>
+                                            </a>
+                                            <i data-id="<%= areaA[i]._id %>" class="category-item-icon far fa-edit edit-area-agency"></i>
+                                        </li>
+                                        <% } %>
+
+                                </ul>
+                            </div>
                         </nav>
+
+
                     </div>
                     <div class="grid__column-10">
                         <div class="search">
-                            <div class="search-wrap">
-                                <input type="text" class="search-input" name="searchAgencyByID" placeholder="Tìm tên, mã Đại lý">
-                                <button class="search-btn">
-                                        <i class="search-btn-icon fas fa-search"></i>
-                                    </button>
-                            </div>
+                            <form action="/daily/search" method="post">
+                                <div class="search-wrap">
+                                    <input type="text" class="search-input" name="searchAgencyByID" placeholder="Tìm tên, mã Đại lý">
+                                    <button class="reset-search-btn" type="reset">
+                                        <i class="search-btn-icon-refresh fas fa-times"></i>
+                                </button>
+                                    <button class="search-btn" type="submit">
+                                    <i class="search-btn-icon fas fa-search"></i>
+                                </button>
+                                </div>
+                            </form>
                             <button class="btn btn--primary btn-add">Thêm mới</button>
+
                         </div>
                         <div class="grid__row">
                             <div class="grid__column-10-1">
@@ -174,11 +228,11 @@
                                                     <%= agency[i].debt_agency %>
                                                 </td>
                                                 <td class="table-container_body-edit">
-                                                    <button class="edit-product-btn">
-                                                            <a dataid="/daily/sua-daily/ <%= agency[i]._id %>" class="editPro edit-product">Sửa</a> 
-                                                        </button>
-                                                    <button class="delete-product-btn">
-                                                            <a href="/daily/xoa-daily/ <%= agency[i]._id %>" class="editPro delete-product">Xoá</a>
+                                                    <button class="edit-agency-btn" data-id="<%= agency[i]._id %>">
+                                                          Sửa
+                                                    </button>
+                                                    <button class="delete-agency-btn">
+                                                            <a href="/daily/xoa-daily/<%= agency[i]._id %>" class="editPro delete-product">Xoá</a>
                                                         </button>
                                                 </td>
                                             </tr>
@@ -192,11 +246,11 @@
             </div>
         </div>
 
-        <div class="modal modal_add-agency">
+        <div class="modal modal_edit-agency">
             <div class="modal_overlay"></div>
             <div class="modal_body">
                 <form action="/daily/them-daily" method="post">
-                    <div class="auth-form">
+                    <div class="auth-form" id="auth-form_add_agency">
                         <div class="auth-form_header">
                             <h1 class="auth-form_heading">Thêm Đại Lý</h1>
                         </div>
@@ -205,32 +259,33 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Mã Đại lý</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="number" class="auth-form_input" id="auth_agency_code" name="id_agency" placeholder="Mã Đại lý" required>
+                                    <input type="number" class="auth-form_input" name="id_agency" placeholder="Mã Đại lý" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên Đại lý</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input" id="auth_agency-name" name="name_agency" placeholder="Tên Đại lý" required>
+                                    <input type="text" class="auth-form_input" name="name_agency" placeholder="Tên Đại lý" required>
                                 </div>
 
                                 <div class="auth_agency_selection">
                                     <div class="auth-form_group">
                                         <label for="auth-form_group" class="auth-form_info">Nhóm</label>
                                         <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                        <select name="authGroup" class="auth_agency-group" name="group_agency" id="auth_group" required>
-                                        <option value="nhom1">Nhóm 1</option>
-                                        <option value="nhom2">Nhóm 2</option>
-                                        <option value="nhom3">Nhóm 3</option>
-                                    </select>
+                                        <select class="auth_agency-group" name="group_agency" required>
+                                            <% for(var i = 0; i < groupA.length;i++) {%>
+                                                <option value="<%= groupA[i].name_groupAgency %>"><%= groupA[i].name_groupAgency %></option>
+                                                <% } %>
+                                        </select>
                                     </div>
+
                                     <div class="auth-form_group">
                                         <label for="auth_district" class="auth-form_info">Khu vực</label>
                                         <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                        <select class="auth_agency-district" name="area_agency" id="auth_district" required>
-                                        <option value="quan1">Quận 1</option>
-                                        <option value="quan2">Quận 2</option>
-                                        <option value="quan3">Quận 3</option>
-                                    </select>
+                                        <select class="auth_agency-district" name="area_agency" required>
+                                            <% for(var i = 0; i < areaA.length;i++) {%>
+                                                <option value="<%= areaA[i].name_areaAgency %>"><%= areaA[i].name_areaAgency %></option>
+                                                <% } %>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -243,57 +298,59 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Địa chỉ</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input" id="auth_agency_adress" name="address_agency" placeholder="" required>
+                                    <input type="text" class="auth-form_input" name="address_agency" placeholder="" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <label for="auth_date" class="auth-form_info">Ngày tiếp nhận</label>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="date" class="auth-form_input auth_agency_date" name="date-agency" placeholder="1/12/2000" id="auth_date" required>
+                                    <input type="date" class="auth-form_input auth_agency_date" name="date_agency" placeholder="2000-05-11" required>
                                 </div>
                             </div>
                         </div>
 
                         <div class="auth-form_controls">
-                            <button class="btn btn-agency-cancel">Trở lại</button>
-                            <button class="btn btn--primary">Đồng ý </button>
+                            <button class="btn btn-agency-cancel" type="reset">Trở lại</button>
+                            <button class="btn btn--primary" type="submit">Đồng ý </button>
                         </div>
                     </div>
                 </form>
-                <form action="" method="post">
-                    <div class="auth-form">
+                <form id="form-edit-agency" action="" method="post">
+                    <div class="auth-form" id="auth-form_edit-agency">
                         <div class="auth-form_header">
                             <h1 class="auth-form_heading">Sửa Đại Lý</h1>
                         </div>
                         <div class="auth-form_body">
                             <div class="auth-form_body-left">
                                 <div class="auth-form_group">
-                                    <span class="auth-form_info">Tên Đại lý</span>
-                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input auth_agency-name" placeholder="Tên Đại lý" required>
-                                </div>
-                                <div class="auth-form_group">
                                     <span class="auth-form_info">Mã Đại lý</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="number" class="auth-form_input auth_agency_code" placeholder="Mã Đại lý" required>
+                                    <input type="number" class="auth-form_input" id="auth_agency_code" name="id_agency" placeholder="Mã Đại lý" readonly>
                                 </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Tên Đại lý</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input" id="auth_agency-name" name="name_agency" placeholder="Tên Đại lý" required>
+                                </div>
+
                                 <div class="auth_agency_selection">
                                     <div class="auth-form_group">
                                         <label for="auth-form_group" class="auth-form_info">Nhóm</label>
                                         <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                        <select name="authGroup" class="auth_agency-group" id="" required>
-                                        <option value="nhom1">Nhóm 1</option>
-                                        <option value="nhom2">Nhóm 2</option>
-                                        <option value="nhom3">Nhóm 3</option>
-                                    </select>
+                                        <select class="auth_agency-group" name="group_agency" id="auth_group" required>
+                                            <% for(var i = 0; i < groupA.length;i++) {%>
+                                                <option value="<%= groupA[i].name_groupAgency %>"><%= groupA[i].name_groupAgency %></option>
+                                                <% } %>
+                                        </select>
                                     </div>
+
                                     <div class="auth-form_group">
                                         <label for="auth_district" class="auth-form_info">Khu vực</label>
                                         <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                        <select class="auth_agency-district" name="authDistrict" id="" required>
-                                        <option value="quan1">Quận 1</option>
-                                        <option value="quan2">Quận 2</option>
-                                        <option value="quan3">Quận 3</option>
-                                    </select>
+                                        <select class="auth_agency-district" name="area_agency" id="auth_district" required>
+                                            <option value="Quận 1">Quận 1</option>
+                                            <option value="Quận 2">Quận 2</option>
+                                            <option value="Quận 3">Quận 3</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -301,44 +358,36 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Số điện thoại</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="number" class="auth-form_input auth_agency_number" placeholder="" required>
+                                    <input type="number" class="auth-form_input" id="auth_agency_number" name="phone_agency" placeholder="" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Địa chỉ</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input auth_agency_adress" placeholder="" required>
+                                    <input type="text" class="auth-form_input" id="auth_agency_address" name="address_agency" placeholder="" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <label for="auth_date" class="auth-form_info">Ngày tiếp nhận</label>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="date" class="auth-form_input auth_agency_date" placeholder="01/12/2000" id="" required>
+                                    <input type="date" class="auth-form_input auth_agency_date" name="date_agency" placeholder="2000-05-11" id="auth_date" required>
                                 </div>
                             </div>
                         </div>
 
-<<<<<<< HEAD
                         <div class="auth-form_controls">
-                            <button class="btn btn-agency-cancel">Trở lại</button>
-                            <button class="btn btn--primary">Đồng ý</button>
+                            <button class="btn btn-agency-cancel" type="reset">Trở lại</button>
+                            <button class="btn btn--primary" type="submit">Đồng ý </button>
                         </div>
-=======
-                    <div class="auth-form_controls">
-                        <button class="btn btn-agency-cancel btn-cancel">Trở lại</button>
-                        <button class="btn btn--primary">Đồng ý </button>
->>>>>>> e98624b6f35662c542e08b26b9e70841373c220a
                     </div>
                 </form>
 
             </div>
         </div>
 
-        <div class="modal modal_edit-agency">
+        <div class="modal modal_edit-group">
             <div class="modal_overlay"></div>
             <div class="modal_body">
-
-
-                <form action="" autocomplete="off" method="post">
-                    <div class="auth-form_min auth-form_min-add">
+                <form action="/daily/them-group" autocomplete="off" method="post">
+                    <div class="auth-form_min" id="auth-form_add-group-agency">
                         <div class="auth-form_header">
                             <h3 class="auth-form_heading">Thêm loại đại lý</h3>
                         </div>
@@ -347,19 +396,18 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên loại đại lý</span>
                                     <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
-                                    <input type="text" name="name_category" class="auth-form_input" id="nameCateAdd" required placeholder="tên nhóm hàng">
+                                    <input type="text" name="name_groupAgency" class="auth-form_input" id="nameGroupAdd" required placeholder="tên nhóm hàng">
                                 </div>
                             </div>
-
                         </div>
                         <div class="auth-form_controls">
-                            <button class="btn btn-add-category-cancel" type="reset">Huỷ bỏ</button>
-                            <button class="btn btn--primary btn-add-category" type="submit">Lưu</button>
+                            <button class="btn btn-min-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn--primary" type="submit">Lưu</button>
                         </div>
                     </div>
                 </form>
-                <form action="" autocomplete="off" method="post">
-                    <div class="auth-form_min auth-form_min-add">
+                <form action="/daily/them-area" autocomplete="off" method="post">
+                    <div class="auth-form_min" id="auth-form_add-area-agency">
                         <div class="auth-form_header">
                             <h3 class="auth-form_heading">Thêm khu vực</h3>
                         </div>
@@ -368,19 +416,19 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên khu vực</span>
                                     <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
-                                    <input type="text" name="name_category" class="auth-form_input" id="nameCateAdd" required placeholder="tên nhóm hàng">
+                                    <input type="text" name="name_areaAgency" class="auth-form_input" id="nameAreaAdd" required placeholder="tên nhóm hàng">
                                 </div>
                             </div>
 
                         </div>
                         <div class="auth-form_controls">
-                            <button class="btn btn-add-category-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn-min-cancel" type="reset">Huỷ bỏ</button>
                             <button class="btn btn--primary btn-add-category" type="submit">Lưu</button>
                         </div>
                     </div>
                 </form>
-                <form action="/hanghoa/edit-cate" id="edit-cate-form" autocomplete="off" method="post">
-                    <div class="auth-form_min auth-form_min-edit">
+                <form action="" id="edit-group-form" autocomplete="off" method="post">
+                    <div class="auth-form_min" id="auth-form_edit-group-agency">
                         <div class="auth-form_header">
                             <h3 class="auth-form_heading">Sửa loại đại lý</h3>
                         </div>
@@ -389,20 +437,19 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên loại đại lý</span>
                                     <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
-                                    <input type="text" name="name_category" id="nameCateUpdate" class="auth-form_input edit-name-cate" required placeholder="tên nhóm hàng">
+                                    <input type="text" name="name_groupAgency" id="nameGroupEdit" class="auth-form_input edit-name-cate" required placeholder="tên nhóm hàng">
                                 </div>
                             </div>
                         </div>
                         <div class="auth-form_controls-edit">
-                            <button class="btn btn-edit-category-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn-min-cancel" type="reset">Huỷ bỏ</button>
                             <button class="btn btn--primary btn-edit-category" type="submit ">Lưu</button>
-                            <a class="btn btn--delete " href="/hanghoa/deleteCate">Xoá</a>
+                            <a class="btn btn--delete" href="">Xoá</a>
                         </div>
                     </div>
-<<<<<<< HEAD
                 </form>
-                <form action="/hanghoa/edit-cate" id="edit-cate-form" autocomplete="off" method="post">
-                    <div class="auth-form_min auth-form_min-edit">
+                <form action="" id="edit-area-form" autocomplete="off" method="post">
+                    <div class="auth-form_min" id="auth-form_edit-area-agency">
                         <div class="auth-form_header">
                             <h3 class="auth-form_heading">Sửa khu vực</h3>
                         </div>
@@ -411,24 +458,34 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên khu vực</span>
                                     <i class="auth-form_info-icon ten-hang fa fa-info-circle"></i>
-                                    <input type="text" name="name_category" id="nameCateUpdate" class="auth-form_input edit-name-cate" required placeholder="tên nhóm hàng">
+                                    <input type="text" name="name_areaAgency" id="nameAreaEdit" class="auth-form_input edit-name-cate" required placeholder="tên nhóm hàng">
                                 </div>
                             </div>
                         </div>
                         <div class="auth-form_controls-edit">
-                            <button class="btn btn-edit-category-cancel" type="reset">Huỷ bỏ</button>
+                            <button class="btn btn-min-cancel" type="reset">Huỷ bỏ</button>
                             <button class="btn btn--primary btn-edit-category" type="submit ">Lưu</button>
-                            <a class="btn btn--delete " href="/hanghoa/deleteCate">Xoá</a>
+                            <a class="btn btn--delete " href="">Xoá</a>
                         </div>
-=======
-
-                    <div class="auth-form_controls">
-                        <button class="btn btn-agency-cancel btn-cancel">Trở lại</button>
-                        <button class="btn btn--primary">Đồng ý</button>
->>>>>>> e98624b6f35662c542e08b26b9e70841373c220a
                     </div>
                 </form>
             </div>
+        </div>
+
+        <div class="alert">
+            <% if (errors){ %>
+                <% errors.forEach(function(e){ %>
+                    <div class="alert_errors">
+                        <%= e.msg %>
+                    </div>
+                    <%});%>
+                        <% } %>
+
+                            <% if(message) {%>
+                                <div class="alert_success">
+                                    <%= message %>
+                                </div>
+                                <% } %>
         </div>
     </main>
 
