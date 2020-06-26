@@ -1,92 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Agency Management</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../resource/css/main.css">
-        <link rel="stylesheet" href="../resource/css/base.css">
-        <link rel="stylesheet" href="../resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
-        <link rel="stylesheet" href="../routes/authentication.js">
-        <link rel="stylesheet" href="../resource/css/authentication.css">
-        <link rel="stylesheet" href="../resource/css/util.css">
-        <link rel="stylesheet" type="text/css" href="../resource/vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../resource/font/font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="../resource/font/Linearicons-Free-v1.0.0/icon-font.min.css">
-        <link rel="stylesheet" type="text/css" href="../resource/vendor/animate/animate.css">	
-        <link rel="stylesheet" type="text/css" href="../resource/vendor/css-hamburgers/hamburgers.min.css">
-        <link rel="stylesheet" type="text/css" href="../resource/vendor/animsition/css/animsition.min.css">
-        <link rel="stylesheet" type="text/css" href="../resource/vendor/select2/select2.min.css">	
-        <link rel="stylesheet" type="text/css" href="../resource/vendor/daterangepicker/daterangepicker.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        <script>
-            
-        </script>
-    </head>
-    <body style="background-color: #666666;">
-        <div class="limiter">
-            <div class="container-login100">
-                <div class="wrap-login100">
-                    <form class="login100-form validate-form" method="POST" action="/dashboard">
-                        <span class="login100-form-title p-b-43">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agency Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../resource/css/main.css">
+    <link rel="stylesheet" href="../resource/css/base.css">
+    <link rel="stylesheet" href="../resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../routes/authentication.js">
+    <link rel="stylesheet" href="../resource/css/authentication.css">
+    <link rel="stylesheet" href="../resource/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../resource/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../resource/font/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../resource/font/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="../resource/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="../resource/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="../resource/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="../resource/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../resource/vendor/daterangepicker/daterangepicker.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+    </script>
+</head>
+
+<body style="background-color: #666666;">
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" method="POST" action="/dashboard">
+                    <span class="login100-form-title p-b-43">
                             Đăng nhập 
                         </span>
 
-                        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                            <input class="input100" type="text" name="email">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Email</span>
-                        </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Email</span>
+                    </div>
 
-                        <div class="wrap-input100 validate-input" data-validate="Password is required">
-                            <input class="input100" type="password" name="password">
-                            <span class="focus-input100"></span>
-                            <span class="label-input100">Password</span>
-                        </div>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="password">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">Password</span>
+                    </div>
 
-                        <div class="flex-sb-m w-full p-t-3 p-b-32">
-                            <div class="contact100-form-checkbox">
-                                <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                                <label class="label-checkbox100" for="ckb1">
+                    <div class="flex-sb-m w-full p-t-3 p-b-32">
+                        <div class="contact100-form-checkbox">
+                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <label class="label-checkbox100" for="ckb1">
                                     Ghi nhớ
                                 </label>
-                            </div>
+                        </div>
 
-                            <div>
-                                <a href="#" class="txt1">
+                        <div>
+                            <a href="#" class="txt1">
                                     Quên mật khẩu
                                 </a>
-                            </div>
                         </div>
+                    </div>
 
-                        <div class="container-login100-form-btn">
-                            <button class="login100-form-btn" type="submit">
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" type="submit">
                                 Đăng nhập
                             </button>
-                        </div>
-                        
-                        <% if( mess != null && mess != ''){ %>
-                        <div class="error-message-box"  style="display: flex;">
-                            <%= mess %>
-                         </div>
-                         <% } %>
-                    </form>
-                    <div class="login100-more" style="background-image: url('../resource/img/mo-siu-thi-mini-co-lai-khong-min.jpeg');">
                     </div>
+                    <% if( messages != null && messages != ''){ %>
+                        <div class="error-message-box" style="display: flex;">
+                            <%= messages %>
+                        </div>
+                        <% } %>
+                            <% if( errors != null && errors != ''){ %>
+                                <div class="error-message-box" style="display: flex;">
+                                    <%= errors %>
+                                </div>
+                                <% } %>
+                </form>
+
+                <div class="login100-more" style="background-image: url('../resource/img/mo-siu-thi-mini-co-lai-khong-min.jpeg');">
                 </div>
             </div>
         </div>
-        <script src="../resource/vendor/jquery/jquery-3.2.1.min.js"></script>
-        <script src="../resource/vendor/animsition/js/animsition.min.js"></script>
-        <script src="../resource/vendor/bootstrap/js/popper.js"></script>
-        <script src="../resource/vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../resource/vendor/select2/select2.min.js"></script>
-        <script src="../resource/vendor/daterangepicker/moment.min.js"></script>
-        <script src="../resource/vendor/daterangepicker/daterangepicker.js"></script>
-        <script src="../resource/vendor/countdowntime/countdowntime.js"></script>
-        <script src="../resource/js/authentication.js"></script>
-    </body>
-    </html>
+    </div>
+    <script src="../resource/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../resource/vendor/animsition/js/animsition.min.js"></script>
+    <script src="../resource/vendor/bootstrap/js/popper.js"></script>
+    <script src="../resource/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../resource/vendor/select2/select2.min.js"></script>
+    <script src="../resource/vendor/daterangepicker/moment.min.js"></script>
+    <script src="../resource/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="../resource/vendor/countdowntime/countdowntime.js"></script>
+    <script src="../resource/js/authentication.js"></script>
+</body>
+
+</html>

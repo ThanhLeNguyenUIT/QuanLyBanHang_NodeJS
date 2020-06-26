@@ -93,3 +93,8 @@ td {
     font-size: 1.2rem;
     font-weight: 400;
 }
+
+#report_CN_DT,
+#report_HD {
+    display: none;
+}

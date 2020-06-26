@@ -13,28 +13,35 @@ $(document).ready(function() {
             calendar.option("value", data.value);
         }
     }).dxDateBox("instance");
-
     var radioGroup = $("#radio-group-with-selection").dxRadioGroup({
         items: selections,
-        onValueChanged: function(e) {
-            $each(task, function(i, item) {
-                if (item.selection == e.value) {
-                    $("#report-table_header-title").text(task[i].title);
+        onOptionChanged: function(e) {
+            $.each(task, function(i, item) {
+                if (item.selection === e.value) {
+                    $('#report_CN_DT').show();
+                    $('#report_HD').hide();
+                    $(".report-table_header-title").text(task[i].title);
                     $("#column_2-header").text(task[i].column_2);
                     $("#column_3-header").text(task[i].column_3);
                     $("#column_4-header").text(task[i].column_4);
                 }
             })
+            if (e.value == "Hoá đơn") {
+                $('#report_HD').show();
+                $('#report_CN_DT').hide();
+
+            }
         }
+
     }).dxRadioGroup("instance");
-    radioGroup.option("value", selections[1]);
+    radioGroup.option("value", selections[0]);
 
     $(".view-bill-btn").click(function() {
-        $(".modal_bill-details").css("display","flex");
+        $(".modal_bill-details").css("display", "flex");
         $(".auth-form").css("display", "block");
     })
     $(".btn-cancel").click(() => {
-        $(".modal_bill-details").css("display","none");
+        $(".modal_bill-details").css("display", "none");
         $(".auth-form").css("display", "none");
     })
 })
@@ -50,5 +57,5 @@ var task = [{
     column_2: "Nợ Đầu",
     column_3: "Phát Sinh",
     column_4: "Nợ cuối",
-    selection: "Công nợ"
+    selection: "Công nợ"
 }]

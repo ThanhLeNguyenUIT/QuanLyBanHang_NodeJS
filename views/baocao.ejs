@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.light.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.2/jszip.min.js"></script>
     <script src="https://cdn3.devexpress.com/jslib/19.2.7/js/dx.all.js"></script>
-    <script src="../resource/js/baocao.js"></script>
+
 </head>
 <!-- Body -->
 
@@ -38,65 +38,65 @@
                     <div class="header_address">
                         <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
                     </div>
-                     <div class="header_user">
-                            <i class="header_user-icon header_user-icon-separate">
+                    <div class="header_user">
+                        <i class="header_user-icon header_user-icon-separate">
                                 <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66215009_1250396935121477_8504600403646611456_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=cWVO-OfII8IAX9Vny1e&_nc_ht=scontent.fsgn5-6.fna&oh=06fd167ccdf34a923e8ee04a3f4e7ca8&oe=5EFCE24D" alt="Avatar" class="header_avatar">
                                 <span class="header_user-name">
                                     <%= username %>
                                 </span>
                             </i>
 
-                            <div class="user_drop">
-                                <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
-                                <li class="user_drop-item" ><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
-                            </div>
+                        <div class="user_drop">
+                            <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
+                            <li class="user_drop-item"><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-                <div class="header_container-2">
-                    <!-- header container 2-->
-                    <nav class="header_navbar">
-                        <ul class="header_navbar-list">
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/dashboard" class="header__navbar-item-link">
-                                        <i class="far fa-eye"></i> Tổng quan
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/hanghoa" class="header__navbar-item-link">
-                                        <i class="fas fa-cube"></i> Hàng hoá
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/daily" class="header__navbar-item-link">
-                                        <i class="fas fa-store-alt"></i> Đại lí
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item">
-                                <div class="header_container-item">
-                                    <a href="/account" class="header__navbar-item-link">
-                                        <i class="fas fa-user"></i> Tài khoản
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item header_navbar-item-select">
-                                <div class="header_container-item">
-                                    <a href="/baocao" class="header__navbar-item-link">
-                                        <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div id="header_container">               
-                </div>
+            </div>
+            <div class="header_container-2">
+                <!-- header container 2-->
+                <nav class="header_navbar">
+                    <ul class="header_navbar-list">
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/dashboard" class="header__navbar-item-link">
+                                    <i class="far fa-eye"></i> Tổng quan
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/hanghoa" class="header__navbar-item-link">
+                                    <i class="fas fa-cube"></i> Hàng hoá
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/daily" class="header__navbar-item-link">
+                                    <i class="fas fa-store-alt"></i> Đại lí
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item">
+                            <div class="header_container-item">
+                                <a href="/taikhoan" class="header__navbar-item-link">
+                                    <i class="fas fa-user"></i> Tài khoản
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header_navbar-item header_navbar-item-select">
+                            <div class="header_container-item">
+                                <a href="/baocao" class="header__navbar-item-link">
+                                    <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="header_container">
+            </div>
             </div>
         </header>
         <div class="container_report">
@@ -129,7 +129,7 @@
                     <div class="grid__column-10">
                         <div class="grid_form-report">
 
-                            <table class="report-table">
+                            <table class="table_container" id="report_CN_DT">
 
                                 <thead class="report-table-header">
                                     <tr>
@@ -141,9 +141,9 @@
                                     <tr>
                                         <td class="stt">STT</td>
                                         <td class="name_agency" id="name_agency-header">Đại Lý</td>
-                                        <td class="column_2" id="column_2-header">a</td>
-                                        <td class="column_3" id="column_3-header">b </td>
-                                        <td class="column_4" id="column_4-header">c</td>
+                                        <td class="column_2" id="column_2-header"></td>
+                                        <td class="column_3" id="column_3-header"></td>
+                                        <td class="column_4" id="column_4-header"></td>
                                     </tr>
                                 </thead>
                                 <tbody class="report-table-body">
@@ -171,7 +171,7 @@
                                 </tbody>
                             </table>
 
-                            <table class="table_container">
+                            <table class="table_container" id="report_HD">
                                 <thead>
                                     <tr class="table-container_header">
                                         <th class="table-container_header-item code-bill">Mã hoá đơn</th>
@@ -197,6 +197,7 @@
                                         </td>
                                     </tr>
                                 </tbody>
+
                             </table>
 
                             <div class="modal modal_bill-details">
@@ -236,7 +237,7 @@
                                                 <span class="price">2000</span>
                                             </div>
                                         </div>
-                    
+
                                         <div class="auth-form_controls">
                                             <button class="btn btn-account-cancel btn-cancel">Trở lại</button>
                                             <button class="btn btn--primary btn-confirm">Đồng ý </button>
@@ -296,11 +297,11 @@
         <script>
             $(document).ready(() => {
                 $(".view-bill-btn").click(function() {
-                    $(".modal_bill-details").css("display","flex");
+                    $(".modal_bill-details").css("display", "flex");
                     $(".auth-form").css("display", "block");
                 })
                 $(".btn-cancel").click(() => {
-                    $(".modal_bill-details").css("display","none");
+                    $(".modal_bill-details").css("display", "none");
                     $(".auth-form").css("display", "none");
                 })
             })

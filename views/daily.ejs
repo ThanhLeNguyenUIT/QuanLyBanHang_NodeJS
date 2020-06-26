@@ -11,8 +11,13 @@
     <link rel="stylesheet" href="../resource/css/base.css">
     <link rel="stylesheet" href="../resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $('.header_navbar-item').click(function() {
+            $(this).attr('css', 'background-color: #0078b6')
+        })
+    </script>
+    <!-- Body -->
 </head>
-<!-- Body -->
 
 <body>
     <main>
@@ -32,7 +37,7 @@
                         <i class="header_user-icon header_user-icon-separate">
                                 <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66215009_1250396935121477_8504600403646611456_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=cWVO-OfII8IAX9Vny1e&_nc_ht=scontent.fsgn5-6.fna&oh=06fd167ccdf34a923e8ee04a3f4e7ca8&oe=5EFCE24D" alt="Avatar" class="header_avatar">
                                 <span class="header_user-name">
-                                    thanhlenguyen
+                                    
                                 </span>
                             </i>
 
@@ -42,51 +47,59 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="header_container-2">
-                <!-- header container 2-->
-                <nav class="header_navbar">
-                    <ul class="header_navbar-list">
-                        <li class="header_navbar-item">
-                            <div class="header_container-item">
-                                <a href="/dashboard" class="header__navbar-item-link">
-                                    <i class="far fa-eye"></i> Tổng quan
-                                </a>
-                            </div>
-                        </li>
-                        <li class="header_navbar-item">
-                            <div class="header_container-item">
-                                <a href="/hanghoa" class="header__navbar-item-link">
-                                    <i class="fas fa-cube"></i> Hàng hoá
-                                </a>
-                            </div>
-                        </li>
-                        <li class="header_navbar-item header_navbar-item-select">
-                            <div class="header_container-item">
-                                <a href="/daily" class="header__navbar-item-link">
-                                    <i class="fas fa-store-alt"></i> Đại lí
-                                </a>
-                            </div>
-                        </li>
-                        <li class="header_navbar-item">
-                            <div class="header_container-item">
-                                <a href="/account" class="header__navbar-item-link">
-                                    <i class="fas fa-user"></i> Tài khoản
-                                </a>
-                            </div>
-                        </li>
-                        <li class="header_navbar-item">
-                            <div class="header_container-item">
-                                <a href="/baocao" class="header__navbar-item-link">
-                                    <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div id="header_container">
-            </div>
+                <div class="header_container-2">
+                    <!-- header container 2-->
+                    <nav class="header_navbar">
+                        <ul class="header_navbar-list">
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/dashboard" class="header__navbar-item-link">
+                                        <i class="far fa-eye"></i> Tổng quan
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/hanghoa" class="header__navbar-item-link">
+                                        <i class="fas fa-cube"></i> Hàng hoá
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/daily" class="header__navbar-item-link">
+                                        <i class="fas fa-store-alt"></i> Đại lí
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/taikhoan" class="header__navbar-item-link">
+                                        <i class="fas fa-user"></i> Tài khoản
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="header_navbar-item">
+                                <div class="header_container-item">
+                                    <a href="/baocao" class="header__navbar-item-link">
+                                        <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="header_navbar-item order-btn">
+                                <div class="header_container-item">
+                                    <a href="/order" class="header__navbar-item-link">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <span class="add">Đặt hàng</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="header_container">
+                </div>
             </div>
         </header>
         <div class="container">
@@ -241,6 +254,21 @@
                                 </table>
                             </div>
                         </div>
+                        <div class="alert">
+                            <% if (errors){ %>
+                                <% errors.forEach(function(e){ %>
+                                    <div class="alert_errors">
+                                        <%= e.msg %>
+                                    </div>
+                                    <%});%>
+                                        <% } %>
+
+                                            <% if(message) {%>
+                                                <div class="alert_success">
+                                                    <%= message %>
+                                                </div>
+                                                <% } %>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -347,9 +375,9 @@
                                         <label for="auth_district" class="auth-form_info">Khu vực</label>
                                         <i class="auth-form_info-icon  fa fa-info-circle"></i>
                                         <select class="auth_agency-district" name="area_agency" id="auth_district" required>
-                                            <option value="Quận 1">Quận 1</option>
-                                            <option value="Quận 2">Quận 2</option>
-                                            <option value="Quận 3">Quận 3</option>
+                                            <% for(var i = 0; i < areaA.length;i++) {%>
+                                                <option value="<%= areaA[i].name_areaAgency %>"><%= areaA[i].name_areaAgency %></option>
+                                                <% } %>
                                         </select>
                                     </div>
                                 </div>
@@ -470,22 +498,6 @@
                     </div>
                 </form>
             </div>
-        </div>
-
-        <div class="alert">
-            <% if (errors){ %>
-                <% errors.forEach(function(e){ %>
-                    <div class="alert_errors">
-                        <%= e.msg %>
-                    </div>
-                    <%});%>
-                        <% } %>
-
-                            <% if(message) {%>
-                                <div class="alert_success">
-                                    <%= message %>
-                                </div>
-                                <% } %>
         </div>
     </main>
 
