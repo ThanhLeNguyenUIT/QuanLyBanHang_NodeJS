@@ -97,6 +97,187 @@ html {
 }
 
 
+/* Header Container 1*/
+
+.header_container-1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 48px;
+}
+
+.header_brand {
+    display: flex;
+    font-size: 12px;
+    padding-right: 30px;
+    padding-left: 110px;
+}
+
+.header_brand-agency {
+    color: #0776B0;
+}
+
+.header_brand-company {
+    color: #49CC3F;
+}
+
+.header_user {
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 8px 8px 4px 8px;
+    margin-right: 115px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.header_user-link {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.header_user-icon {
+    margin-right: 2px;
+    font-size: 15px;
+}
+
+.header_user:hover .user_drop {
+    display: block;
+}
+
+.header_avatar {
+    vertical-align: middle;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.header_user-name {
+    text-align: center;
+    margin-top: 4px;
+    margin-left: 7px;
+    font-style: normal;
+}
+
+.header_address {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-height: 1.5rem;
+    word-wrap: unset;
+}
+
+.header_container-item:hover {
+    background-color: #0776B0;
+}
+
+.user_drop {
+    display: none;
+    list-style: none;
+    z-index: 2;
+    top: 5.5%;
+    position: absolute;
+    width: 170px;
+    height: 82px;
+    background-color: var(--white-color);
+    margin-top: 1rem;
+    animation: fadeIn ease-in 0.1s;
+    border-radius: 2px;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, .2);
+}
+
+.user_drop::before {
+    position: absolute;
+    left: 0;
+    top: -16px;
+    width: 100%;
+    height: 20px;
+    content: "";
+    display: block;
+}
+
+.user_drop-item {
+    padding: 8px;
+    font-family: 'Roboto', sans-serif;
+    color: #616060;
+}
+
+.user_drop-item:hover {
+    background-color: #c8e5f3;
+    color: var(--black-color);
+}
+
+
+/* Header Container 2*/
+
+.header_container-2 {
+    background-color: #029FE3;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 45px;
+    align-items: center;
+    padding: 0 65px;
+}
+
+.header_navbar {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_navbar-list {
+    position: relative;
+    display: flex;
+}
+
+.header_navbar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 3px;
+    width: 135px;
+    height: 45px;
+}
+
+.header_navbar-item.header_navbar-item-select {
+    background-color: #0078b6;
+}
+
+.header__navbar-item-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+}
+
+.header__navbar-item-icon {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.header_navbar-item:hover {
+    cursor: pointer;
+    background-color: #0078b6;
+}
+
+.order-btn {
+    position: relative;
+    margin-left: 158px;
+}
+
+
 /* Animation */
 
 @keyframes fadeIn {
@@ -224,4 +405,46 @@ html {
     position: relative;
     z-index: 1;
     animation: growth linear 0.1s;
+}
+
+
+/* alert  */
+
+.alert_success {
+    cursor: pointer;
+    display: flex;
+    border-radius: 3px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3rem;
+    height: 60px;
+    padding: 4px;
+    margin: 5px;
+    color: #8ee791;
+}
+
+.alert_errors {
+    cursor: pointer;
+    display: flex;
+    border-radius: 3px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3rem;
+    height: 60px;
+    padding: 4px;
+    margin: 5px;
+    color: #df431c;
+}
+
+.alert {
+    position: relative;
+    height: auto;
+    width: 200px;
+    right: -90%;
 }

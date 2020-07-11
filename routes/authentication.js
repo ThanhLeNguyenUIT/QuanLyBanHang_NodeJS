@@ -1,67 +1,33 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../model/User');
-const bcrypt = require('bcryptjs');
-const { registerValidation, loginValidation } = require('../resource/js/validation');
+const User = require('../model/user');
+const { loginValidation } = require('../resource/js/validation');
 
 let messages = '';
 let userName = '';
 router.get('/', function(req, res) {
-    res.render('authentication', { mess: messages });
+    res.redirect('/authentication');
 })
 router.get('/authentication', function(req, res) {
-        res.render('authentication', { mess: messages });
-    })
-    //router
-router.post('/register', async(req, res) => {
-    // validate
-    const { error } = registerValidation(req.body);
-    if (error) {
-        return res.status(400).send(error.details[0].message);
-    }
-    // check user if exist
-    const emailExist = await User.findOne({ email: req.body.email });
-    if (emailExist) {
-        return res.status(400).send('Email has already exist')
-    }
-    // hash the password
-    const salt = await bcrypt.genSalt(10);
-    const hashPassword = await bcrypt.hash(req.body.password, salt);
-    // create a new user
-    const user = new User({
-        name: req.body.name,
-        email: req.body.email,
-        password: hashPassword
-    });
-    try {
-        const savedUser = await user.save();
-        res.render('/');
-    } catch (err) {
-        res.status(400).send(err);
-    }
+    res.render('authentication', { messages: req.flash('message'), errors: checkEmail });
 })
-
 router.post('/dashboard', async(req, res) => {
-    // validate the data
+
     const { error } = loginValidation(req.body);
     if (error) {
-        messages = error.details[0].message;
-        console.log(messages);
-        return res.render('authentication', { mess: messages })
+        req.flash('message', error.details[0].message)
+        return res.redirect('/authentication')
     }
     //check if email is exist
     const user = await User.findOne({ email: req.body.email });
     if (!user) {
-        messages = "Email không tồn tại";
-        console.log(messages);
-        return res.render('authentication', { mess: messages })
+        req.flash('message', "Email không tồn tại")
+        return res.redirect('/')
     }
-    // check the password if email is exist
-    const validPassword = await bcrypt.compare(req.body.password, user.password);
-    if (!validPassword) {
-        messages = "Sai mật khẩu";
-        console.log(messages);
-        return res.render('authentication', { mess: messages })
+
+    if (req.body.password != user.password) {
+        req.flash('message', "Sai mật khẩu")
+        return res.redirect('/')
     }
     console.log(user.name);
     messages = '';

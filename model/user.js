@@ -4,25 +4,39 @@ const userSchema = mongoose.Schema({
     name: {
         type: String,
         require: true,
-        min: 5,
-        max: 255
+
     },
     email: {
         type: String,
         require: true,
-        min: 6,
-        max: 255
+
     },
     password: {
         type: String,
         require: true,
-        min: 1,
-        max: 255
+    },
+    category_account: {
+        type: String,
+        require: true
+    },
+    sexual: {
+        type: String,
+        require: true
+    },
+    address_account: {
+        type: String,
+        require: true
     },
     date: {
-        type: Date,
-        default: Date.now
+        type: String
+    },
+    phone_account: {
+        type: String,
+    },
+    salary: {
+        type: Number,
+        default: 0
     }
 });
-
-module.exports = mongoose.model('User', userSchema);
+var user = mongoose.model('users', userSchema);
+module.exports = user;

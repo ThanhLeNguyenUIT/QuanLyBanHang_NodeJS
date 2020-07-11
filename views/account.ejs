@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<!-- head -->
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Agency Management</title>
-    <link rel="stylesheet" href="../resource/js/account.js">
     <link rel="stylesheet" href="./resource/css/main.css">
     <link rel="stylesheet" href="./resource/css/base.css">
     <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
@@ -28,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.common.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.light.css" />
     <script src="https://cdn3.devexpress.com/jslib/19.2.7/js/dx.all.js"></script>
+
 </head>
 <!-- Body -->
 
@@ -45,155 +44,200 @@
                     <div class="header_address">
                         <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
                     </div>
-                     <div class="header_user">
-                            <i class="header_user-icon header_user-icon-separate">
+                    <div class="header_user">
+                        <i class="header_user-icon header_user-icon-separate">
                                 <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66215009_1250396935121477_8504600403646611456_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=cWVO-OfII8IAX9Vny1e&_nc_ht=scontent.fsgn5-6.fna&oh=06fd167ccdf34a923e8ee04a3f4e7ca8&oe=5EFCE24D" alt="Avatar" class="header_avatar">
                                 <span class="header_user-name">
-                                    thanhlenguyen
+                                    
                                 </span>
                             </i>
 
-                            <div class="user_drop">
-                                <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
-                                <li class="user_drop-item" ><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
-                            </div>
+                        <div class="user_drop">
+                            <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
+                            <li class="user_drop-item"><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div class="header_container-2">
                     <!-- header container 2-->
                     <nav class="header_navbar">
                         <ul class="header_navbar-list">
-                            <li class="header_navbar-item ">
+                            <li class="header_navbar-item " id="header1">
                                 <div class="header_container-item">
                                     <a href="/dashboard" class="header__navbar-item-link">
                                         <i class="far fa-eye"></i> Tổng quan
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item">
+                            <li class="header_navbar-item" id="header2">
                                 <div class="header_container-item">
                                     <a href="/hanghoa" class="header__navbar-item-link">
                                         <i class="fas fa-cube"></i> Hàng hoá
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item">
+                            <li class="header_navbar-item" id="header3">
                                 <div class="header_container-item">
                                     <a href="/daily" class="header__navbar-item-link">
                                         <i class="fas fa-store-alt"></i> Đại lí
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item header_navbar-item-select">
+                            <li class="header_navbar-item" id="header4">
                                 <div class="header_container-item">
-                                    <a href="/account" class="header__navbar-item-link">
+                                    <a href="/taikhoan" class="header__navbar-item-link">
                                         <i class="fas fa-user"></i> Tài khoản
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item">
+                            <li class="header_navbar-item" id="header5">
                                 <div class="header_container-item">
                                     <a href="/baocao" class="header__navbar-item-link">
                                         <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
                                     </a>
                                 </div>
                             </li>
+
+                            <li class="header_navbar-item order-btn">
+                                <div class="header_container-item">
+                                    <a href="/order" class="header__navbar-item-link">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <span class="add">Đặt hàng</span>
+                                    </a>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>
-                <div id="header_container">               
+                <div id="header_container">
                 </div>
-            
+            </div>
         </header>
-        
-        <body>
-            <div class="container">
-                <div class="grid">
-                    <div class="grid__row body_content">
-                        <div class="grid__column-2">
-                            <nav class="agency_navbar">
-                                <h1 class="agency_heading">Tài khoản</h1>
-                                <div class="agency_group">
-                                    <h3 class="agency_group-header">Loại tài khoản</h3>
-                                    <label for="agency_group-lis" class="agency_group-label">Chọn nhóm:</label>
-                                    <input list="agency_group-lis" name="agency_datalist" class="agency_input">
-                                    <datalist class="agency_group-list" id="agency_group-lis">
-                                            <option value="Admin"></option>
-                                            <option value="Nhân viên"></option>
-                                    </datalist>
-    
-    
-                                    <!-- <label for="agency_group-place" class="agency_group-label">Khu vực:</label>
-                                    <input list="agency_group-place" name="agency_datalist" class="agency_input agency_input-group">
-                                    <datalist class="agency_group-list" id="agency_group-place">
-                                            <option value="Quận 1"></option>
-                                            <option value="Quận 2"></option>
-                                            <option value="Quận 3"></option>
-                                    </datalist> -->
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="grid__column-10">
-                            <div class="search">
-                                <div class="search-wrap">
-                                    <input type="text" class="search-input" name="searchAccountByID" placeholder="Tìm email, mã tài khoản">
-                                    <button class="search-btn">
-                                            <i class="search-btn-icon fas fa-search"></i>
-                                        </button>
-                                </div>
-                                <button class="btn btn--primary btn-add">Thêm mới</button>
+
+        <div class="container">
+            <div class="grid">
+                <div class="grid__row body_content">
+                    <div class="grid__column-2">
+                        <nav class="agency_navbar">
+                            <h1 class="agency_heading">Tài khoản</h1>
+                            <div class="agency_group">
+                                <h3 class="agency_group-header">Loại tài khoản</h3>
+                                <ul class="category-list">
+
+                                    <li class="category-item">
+                                        <a href="/accountAdmin" class="category-item_link">
+                                                    Admin
+                                                </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/accountNV" class="category-item_link">
+                                                    Nhân viên
+                                                </a>
+                                    </li>
+
+                                </ul>
                             </div>
-                            <div class="grid__row">
-                                <div class="grid__column-10-1">
-                                    <table class="table_container">
-                                        <thead>
-                                            <tr class="table-container_header">
-                                                <th class="table-container_header-item code-account">Mã tài khoản</th>
-                                                <th class="table-container_header-item name-account">Tên tài khoản</th>
-                                                <th class="table-container_header-item email-account">Email</th>
-                                                <th class="table-container_header-item phone-account">Điện thoại</th>
-                                                <th class="table-container_header-item address-account">Địa chỉ</th>
-                                                <th class="table-container_header-item birth-account">Ngày sinh</th>
-                                                <th class="table-container_header-item sex-account">Giới tính</th>
-                                                <th class="table-container_header-item date-account">Ngày lập</th>
-                                                <th class="table-container_header-item salary-account">Lương</th>
-                                                <th class="table-container_header-item edit-account"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                        </nav>
+                    </div>
+                    <div class="grid__column-10">
+                        <div class="search">
+                            <form action="/searchAccount" method="post">
+                                <div class="search-wrap">
+                                    <input type="text" class="search-input" name="searchAccount" placeholder="Tìm theo Email">
+                                    <button class="reset-search-btn" type="reset">
+                                            <i class="search-btn-icon-refresh fas fa-times"></i>
+                                        </button>
+                                    <button class="search-btn" type="submit">
+                                        <i class="search-btn-icon fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <button class="btn btn--primary btn-add">Thêm mới</button>
+
+                        </div>
+                        <div class="grid__row">
+                            <div class="grid__column-10-1">
+                                <table class="table_container">
+                                    <thead>
+                                        <tr class="table-container_header">
+                                            <th class="table-container_header-item code-account">Mã tài khoản</th>
+                                            <th class="table-container_header-item name-account">Tên tài khoản</th>
+                                            <th class="table-container_header-item email-account">Email</th>
+                                            <th class="table-container_header-item phone-account">Điện thoại</th>
+                                            <th class="table-container_header-item address-account">Địa chỉ</th>
+                                            <th class="table-container_header-item sex-account">Giới tính</th>
+                                            <th class="table-container_header-item date-account">Ngày vào làm</th>
+                                            <th class="table-container_header-item salary-account">Lương</th>
+                                            <th class="table-container_header-item edit-account"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i = 0; i < acc.length; i++ ) { %>
                                             <tr class="table-container_body table-container_body_between">
-                                                <td class="table-container_body-item">001</td>
-                                                <td class="table-container_body-item">NguyenLeThanh</td>
-                                                <td class="table-container_body-item">thanhnguyenvn2000@gmail.com</td>
-                                                <td class="table-container_body-item">0794560642</td>
-                                                <td class="table-container_body-item">số 10 đường 1B, tp Buôn Ma Thuột</td>
-                                                <td class="table-container_body-item">01/10/2000</td>
-                                                <td class="table-container_body-item">Nam</td>
-                                                <td class="table-container_body-item">09/06/1999</td>
-                                                <td class="table-container_body-item">100000</td>
+                                                <td class="table-container_body-item">
+                                                    <%= acc[i]._id %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= acc[i].name %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= acc[i].email %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= acc[i].phone_account %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= acc[i].address_account %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= acc[i].sexual %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= acc[i].date %>
+                                                </td>
+                                                <td class="table-container_body-item">
+                                                    <%= acc[i].salary %>
+                                                </td>
                                                 <td class="table-container_body-edit">
-                                                    <button class="edit-account-btn">
-                                                            <a href="#" class="editPro edit-product">Sửa</a> 
-                                                        </button>
+                                                    <button data-id="<%= acc[i]._id %>" class="edit-account-btn">
+                                                                Sửa 
+                                                            </button>
                                                     <button class="delete-account-btn">
-                                                            <a href="#" class="editPro delete-product">Xoá</a>
-                                                        </button>
+                                                                <a href="/taikhoan/xoa-taikhoan/<%= acc[i]._id %>" class="editPro delete-product">Xoá</a>
+                                                            </button>
                                                 </td>
                                             </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                            <% } %>
+
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
+                        <div class="alert">
+                            <% if (errors){ %>
+                                <% errors.forEach(function(e){ %>
+                                    <div class="alert_errors">
+                                        <%= e.msg %>
+                                    </div>
+                                    <%});%>
+                                        <% } %>
+
+                                            <% if(message) {%>
+                                                <div class="alert_success">
+                                                    <%= message %>
+                                                </div>
+                                                <% } %>
                         </div>
                     </div>
                 </div>
             </div>
-    
-            <div class="modal modal_add-account">
-                <div class="modal_overlay"></div>
-                <div class="modal_body">
-                    <div class="auth-form">
+        </div>
+
+        <div class="modal modal_add-account">
+            <div class="modal_overlay"></div>
+            <div class="modal_body">
+                <form action="/taikhoan/them-taikhoan" method="post">
+                    <div class="auth-form" id="auth-add-account">
                         <div class="auth-form_header">
                             <h1 class="auth-form_heading">Thêm Tài khoản</h1>
                         </div>
@@ -202,68 +246,79 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên Tài khoản</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input auth_account-name" placeholder="Tên Tài khoản" required>
+                                    <input type="text" class="auth-form_input auth_account-name" name="name_account" placeholder="Tên Tài khoản" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Email</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input auth_account_email" placeholder="Email" required>
+                                    <input type="text" class="auth-form_input auth_account_email" name="email" placeholder="Email" required>
                                 </div>
-                                <div class="auth_account_selection">
-                                    <div class="auth-form_group">
-                                        <label for="auth-form_group" class="auth-form_info">Nhóm</label>
-                                        <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                        <select name="authGroup" class="auth_account-group" id="auth_group" required>
-                                            <option value="admin">Admin</option>
-                                            <option value="nhanvien">Nhân viên</option>
-                                        </select>
-                                    </div>
-                                    <div class="auth-form_group">
-                                        <label for="auth_sex" class="auth-form_info">Khu vực</label>
-                                        <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                        <select class="auth_account-sex" name="authDistrict" id="auth_sex" required>
-                                        <option value="nam">Nam</option>
-                                        <option value="nu">Nữ</option>
-                                    </select>
-                                    </div>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Mật khẩu</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input auth_account_email" name="password" id="passwordAccount" placeholder="Password" required>
                                 </div>
+
+                                <div class="auth-form_group">
+                                    <div class="wrap-select">
+                                        <label for="auth-form_group" class="auth-form_info">Loại tài khoản</label>
+                                        <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                        <select class="auth_account-group" name="category_account" required>
+                                                    <option value="Admin">Admin</option>
+                                                    <option value="Nhân viên">Nhân viên</option>
+                                            </select>
+                                    </div>
+                                    <div class="wrap-select">
+                                        <label for="auth_sex" class="auth-form_info">Giới tính</label>
+                                        <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                        <select class="authGroup" name="sexual" required>
+                                                <option value="Nam">Nam</option>
+                                                <option value="Nữ">Nữ</option>
+                                            </select>
+                                    </div>
+
+                                </div>
+
+
                             </div>
                             <div class="auth-form_body-right">
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Số điện thoại</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="number" class="auth-form_input auth_account_number" placeholder="" required>
+                                    <input type="number" class="auth-form_input auth_account_number" name="phone_account" placeholder="" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Địa chỉ</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input auth_account_address" placeholder="" required>
+                                    <input type="text" class="auth-form_input auth_account_address" name="address_account" placeholder="" required>
                                 </div>
                                 <div class="auth-form_group">
-                                    <label for="auth_date" class="auth-form_info">Ngày lập</label>
+                                    <label for="auth_date" class="auth-form_info">Ngày vào làm</label>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="date" class="auth-form_input auth_account_date" placeholder="1-12-2000" id="auth_date" required>
+                                    <input type="date" class="auth-form_input auth_account_date" name="dateBegin" placeholder="1-12-2000" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <label for="auth_salary" class="auth-form_info">Lương</label>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="number" class="auth-form_input auth_account_salary" placeholder="10000" id="auth_salary" required>
+                                    <input type="number" class="auth-form_input auth_account_salary" placeholder="10000" name="salary" required>
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="auth-form_controls">
-                            <button class="btn btn-account-cancel btn-cancel">Trở lại</button>
+                            <button class="btn btn-account-cancel ">Trở lại</button>
                             <button class="btn btn--primary">Đồng ý </button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-    
-            <div class="modal modal_edit-account">
-                <div class="modal_overlay"></div>
-                <div class="modal_body">
-                    <div class="auth-form">
+        </div>
+
+        <div class="modal modal_edit-account">
+            <div class="modal_overlay"></div>
+            <div class="modal_body">
+                <form action="" id="form-edit-account" method="post">
+                    <div class="auth-form" id="auth-edit-account">
                         <div class="auth-form_header">
                             <h1 class="auth-form_heading">Sửa Tài khoản</h1>
                         </div>
@@ -272,86 +327,76 @@
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Tên Tài khoản</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input auth_account-name" placeholder="Tên Tài khoản" required>
+                                    <input type="text" class="auth-form_input auth_account-name" name="name_account" id="nameAccount" placeholder="Tên Tài khoản" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Email</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input auth_account_email" placeholder="Email" required>
+                                    <input type="text" class="auth-form_input auth_account_email" name="email" id="emailAccount" placeholder="Email" required>
                                 </div>
-                                <div class="auth_account_selection">
-                                    <div class="auth-form_group">
-                                        <label for="auth-form_group" class="auth-form_info">Nhóm</label>
+                                <div class="auth-form_group">
+                                    <span class="auth-form_info">Mật khẩu</span>
+                                    <i class="auth-form_info-icon  fa fa-info-circle"></i>
+                                    <input type="text" class="auth-form_input auth_account_pass" name="password" id="passAccount" placeholder="Password" required>
+                                </div>
+
+                                <div class="auth-form_group">
+                                    <div class="wrap-select">
+                                        <label class="auth-form_info">Loại tài khoản</label>
                                         <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                        <select name="authGroup" class="auth_account-group" id="auth_group" required>
-                                            <option value="admin">Admin</option>
-                                            <option value="nhanvien">Nhân viên</option>
-                                        </select>
+                                        <select class="authGroup" name="category_account" id="cateAccount" required>
+                                                    <option value="Admin">Admin</option>
+                                                    <option value="Nhân viên">Nhân viên</option>
+                                            </select>
                                     </div>
-                                    <div class="auth-form_group">
-                                        <label for="auth_sex" class="auth-form_info">Khu vực</label>
+
+                                    <div class="wrap-select">
+                                        <label class="auth-form_info">Giới tính</label>
                                         <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                        <select class="auth_account-sex" name="authDistrict" id="auth_sex" required>
-                                        <option value="nam">Nam</option>
-                                        <option value="nu">Nữ</option>
-                                    </select>
+                                        <select class="authGroup" name="sexual" id="sexual" required>
+                                                <option value="Nam">Nam</option>
+                                                <option value="Nữ">Nữ</option>
+                                            </select>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="auth-form_body-right">
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Số điện thoại</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="number" class="auth-form_input auth_account_number" placeholder="" required>
+                                    <input type="number" class="auth-form_input auth_account_number" name="phone_account" id="phoneNumber" placeholder="" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <span class="auth-form_info">Địa chỉ</span>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="text" class="auth-form_input auth_account_address" placeholder="" required>
+                                    <input type="text" class="auth-form_input auth_account_address" name="address_account" id="addressAccount" placeholder="" required>
                                 </div>
                                 <div class="auth-form_group">
-                                    <label for="auth_date" class="auth-form_info">Ngày lập</label>
+                                    <label for="auth_date" class="auth-form_info">Ngày vào làm</label>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="date" class="auth-form_input auth_account_date" placeholder="1-12-2000" id="auth_date" required>
+                                    <input type="date" class="auth-form_input auth_account_date" name="dateBegin" id="dateBegin" placeholder="1-12-2000" required>
                                 </div>
                                 <div class="auth-form_group">
                                     <label for="auth_salary" class="auth-form_info">Lương</label>
                                     <i class="auth-form_info-icon  fa fa-info-circle"></i>
-                                    <input type="number" class="auth-form_input auth_account_salary" placeholder="10000" id="auth_salary" required>
+                                    <input type="number" class="auth-form_input auth_account_salary" placeholder="" id="salary" name="salary" required>
                                 </div>
                             </div>
                         </div>
-    
+
+
                         <div class="auth-form_controls">
-                            <button class="btn btn-account-cancel btn-cancel">Trở lại</button>
+                            <button class="btn btn-account-cancel">Trở lại</button>
                             <button class="btn btn--primary">Đồng ý </button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </body>
-<script>
-    $(document).ready(() => {
-        $(".btn-add").click(() => {
-            $(".modal_add-account").css("display","flex");
-            $(".auth-form").show();
-        })
-        $(".btn-account-cancel").click(() => {
-            $(".modal_add-account").hide();
-            $(".auth-form").hide();
-        })
-        $(".edit-account-btn").click(() => {
-            $(".modal_edit-account").css("display","flex");
-            $(".auth-form").show();
-        })
-        $(".btn-account-cancel").click(() => {
-            $(".modal_edit-account").hide()
-            $(".auth-form").hide();
-        })
-    })
-</script>
+                </form>
 
+            </div>
+        </div>
     </main>
+    <script src="../resource/js/account.js"></script>
 </body>
 
 </html>
