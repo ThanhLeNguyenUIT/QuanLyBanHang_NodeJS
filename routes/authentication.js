@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const { registerValidation, loginValidation } = require('../resource/js/validation');
 
 let messages = '';
+let userName = '';
 router.get('/', function(req, res) {
     res.render('authentication', { mess: messages });
 })
@@ -64,7 +65,12 @@ router.post('/dashboard', async(req, res) => {
     }
     console.log(user.name);
     messages = '';
+    userName = user.name;
     res.render('dashboard', { username: user.name });
 })
+
+exports.getUser = () => {
+    return userName;
+}
 
 module.exports = router;

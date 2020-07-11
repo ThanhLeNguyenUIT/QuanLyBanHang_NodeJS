@@ -5,5 +5,5 @@ var userName = 'thanh';
 router.get('/dashboard', function(req, res) {
     res.render('dashboard', {username: userName});
 })
-module.exports.userName = userName;
+
 module.exports = router;

@@ -17,7 +17,7 @@ $(document).ready(function() {
     var radioGroup = $("#radio-group-with-selection").dxRadioGroup({
         items: selections,
         onValueChanged: function(e) {
-            $each(task, function(i, item) {
+            $.each(task, function(i, item) {
                 if (item.selection == e.value) {
                     $("#report-table_header-title").text(task[i].title);
                     $("#column_2-header").text(task[i].column_2);
@@ -37,6 +37,9 @@ $(document).ready(function() {
         $(".modal_bill-details").css("display","none");
         $(".auth-form").css("display", "none");
     })
+
+    //append hoá đơn vào table
+   
 })
 var selections = ["Báo cáo", "Công nợ", "Hoá đơn"];
 var task = [{
