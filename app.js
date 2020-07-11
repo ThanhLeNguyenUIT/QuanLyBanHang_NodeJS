@@ -35,6 +35,13 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, () =>
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/resource", express.static('resource'));
+app.use(session({
+    secret: 'secret',
+    cookie: {maxAge: 60000},
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(flash());
 
 app.use(session({
     secret: 'secret',

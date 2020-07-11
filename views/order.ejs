@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../resource/js/order.js"></script>
     <script src="../routes/order.js"></script>
+    <script type="text/javascript" src="../database/product.json"></script>
 </head>
 
 <body>
@@ -24,32 +25,32 @@
                     <form action="/order/search" method="post">
                         <div class="order_header-search_product">
                             <!-- có thể bị trùng-->
-                            <input type="text" class="search_product-input" placeholder="Tìm kiếm" name="searchProduct" autocomplete="off">
+                            <input type="text" class="search_product-input" id="searchProduct" placeholder="Tìm kiếm" name="searchProduct" autocomplete="off">
                             <button class="search_product-button"><i class="search_product-button-icon fas fa-search"></i></button>
                         </div>
                     
                     <ul class="order-search-dropdown">
-                        <% for ( var i=0; i < product.length; i++ ) { %>
+                        <!-- <template id="dropdown-item-template">
                         <li class="search-dropdown-item">
                             <div class="search-line-1">
                                 <span class="search-product-name">
-                                    <%= product[i].name_product %>
+                                    {{ value.name }}
                                 </span>
                                 <span class="search-product-unit">lon</span>
                             </div>
                             <div class="search-line-2">
                                 <span>
-                                    <%= product[i].id_product %>
+                                    {{ value.id }}
                                 </span>
                                 <span class="search-product-price">
-                                    Giá: <%= product[i].price_product %> 
+                                    Giá: {{ value.price }}
                                 </span>
                             </div>
                             <div class="search-line-3">
                                 <span>Tồn kho: 20</span>
                             </div>
                         </li>
-                        <% } %>
+                        </template> -->
                     </ul>
                     </form>
                 </div>
@@ -80,7 +81,6 @@
             <div class="grid__row">
                 <div class="grid__column-8">
                     <div class="container_order-list">
-                        <!-- <% for(var i = 0; i < $("#billContainer").length; i++){ %> -->
                         <table class="order_table" id="tab1">
                             <thead>
                                 <tr class="order_table-head">
@@ -117,7 +117,6 @@
                                 </tr>
                             </tbody>
                         </table>
-
                         <table class="order_table" id="tab2">
                             <thead>
                                 <tr class="order_table-head">
@@ -190,6 +189,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

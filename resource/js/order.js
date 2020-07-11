@@ -1,12 +1,32 @@
 $(document).ready(() => {
     let i = 0;
-    $(".order-search-dropdown").css("display","none");
-    if($('.order-search-dropdown').length < 1 ){
-        $('.order-search-dropdown').css("display","none");
-    }
-    else{
-        $('.order-search-dropdown').css("display","block");
-    }
+    var dropdownItemTemplate = $('#dropdown-item-template'); 
+    
+    $.ajax({
+        type: 'GET',
+        url: '/order',
+        success: function(data){
+            console.log('success', data);
+        }
+    })
+    // function addProduct(product){
+    //     $('.order-search-dropdown').append(Mustache.render(dropdownItemTemplate,product));
+    // }
+    // Tìm hàng hoá
+//    $('#searchProduct').click(() => {
+//        $('#searchProduct').html('');
+//        var searchField = $('#searchProduct').val();
+//        var expression = new RegExp(searchField, 'i');
+//        $.getJSON('product.json', (data) => {
+//            console.log(data);
+//            $.each(data, (key,value) => {
+//                if(value.id.search(expression) != 1 || value.name.search(expression)){
+//                    $('.order-search-dropdown').append('<li class="search-dropdown-item"> <div class="search-line-1"> <span class="search-product-name">+ value.name  + </span>  </div>   </li>')
+//                }
+//            })
+//        })
+//    })
+    // thêm hoá đơn
     $('#addIcon').click(() =>{
         i++;
         console.log($('.order-search-dropdown').length);
@@ -17,8 +37,9 @@ $(document).ready(() => {
             alert('Đã đạt tối đa hoá đơn');
         }
     })
-    $('#closeIcon').click(() => {
-        $('#tabButton').remove();
+    $('#billContainer').delegate('.close-icon','click', function(){
+        var $button = $(this).closet('button');
+        $button.remove();
     })
 
     // $('.search_product-input').mousedown(() =>{

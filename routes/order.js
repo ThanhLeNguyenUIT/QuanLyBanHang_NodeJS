@@ -4,9 +4,8 @@ var product = require("../model/product")
 var cate = require('../model/category')
 
 router.get('/order',(req,res) => {
-    // res.render('order', {product: product});
     product.find().sort({id_product: req.body.searchProduct}).then((data) => {
-        res.render('order', {product: data})
+        res.render('order',{product: data});
     })
 })
 
