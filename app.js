@@ -23,13 +23,41 @@ var path = require('path');
 
 var expressValidator = require('express-validator');
 const { use } = require('passport');
+const category = require('./model/category');
+const product = require('./model/product');
 var app = express();
 
 // view engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 const url = 'mongodb://127.0.0.1:27017/agency_data';
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, db) => {
+    const col = db.collection('products');
+    col.aggregate([{
+        $lookup: {
+            from: 'categories',
+            localField: 'category',
+            foreignField: 'name_category',
+            as: 'categoryJoin'
+        }
+    }]).toArray(function(err, res) {
+        if (err) throw err;
+        console.log(JSON.stringify(res));
+    });
+    const cate = db.collection('categories')
+    cate.aggregate([{
+        $lookup: {
+            from: 'products',
+            localField: 'name_category',
+            foreignField: 'category',
+            as: 'productList'
+        }
+    }], function(err, res) {
+        if (err) throw err;
+        console.log(res);
+    });
+    category.find().then((data) => { console.log(data) })
+
     console.log("connect to database");
 });
 app.use(bodyParser.json());
