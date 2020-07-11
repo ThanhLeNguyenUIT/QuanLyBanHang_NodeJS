@@ -29,7 +29,7 @@
 .order-search-dropdown{
     display: none;
     padding: 0;
-    width: 502px;
+    width: 500px;
     height: auto;
     min-height: 0;
     max-height: 300px;
@@ -72,6 +72,7 @@
     border: none;
     border-radius: 0 3px 3px 0;
     outline: none;
+    cursor: pointer;
 }
 
 .search-dropdown-item{
@@ -132,9 +133,7 @@
     outline: none;
 }
 
-#tab1,#tab2{
-    display: none;
-}
+
 
 .tab_button:hover{
     background-color: rgb(148, 191, 231);
@@ -326,4 +325,68 @@ td {
 }
 .bill_confirm:hover{
     background-color: rgb(39, 134, 39);
+}
+
+/* css lựa chọn đại lí trong bill*/
+
+.agency-dropdown{
+    padding: 0;
+    width: 321px;
+    height: auto;
+    min-height: 0;
+    max-height: 170px;
+    list-style: none;
+    z-index: 2;
+    top: 26%;
+    position: absolute;
+    background-color: var(--white-color);
+    margin-top: 1rem;
+    animation: fadeIn ease-in 0.1s;
+    border-radius: 2px;
+    box-shadow: 1px 5px 6px rgba(0, 0, 0, .2);
+    font-size: 1.3rem;
+    overflow: scroll;
+    display: none;
+}
+
+.agency-dropdown::before{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    content: "";
+    display: block;
+}
+
+.agency-dropdown-item{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.agency-dropdown-item:hover{
+    width: 100%;
+    background-color: rgb(122, 173, 202);
+}
+
+.agency-line-1, .agency-line-2, .agency-line-3{
+    margin-left: 2rem;
+}
+
+.agency-name{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+}
+
+.agency-id{
+
+}
+
+.agency-group{
+    margin-left: 1rem;
+}
+
+.agency-area{
+
 }

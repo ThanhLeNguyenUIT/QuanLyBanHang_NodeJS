@@ -44,6 +44,9 @@ $(document).ready(function() {
         $(".modal_bill-details").css("display", "none");
         $(".auth-form").css("display", "none");
     })
+
+    //append hoá đơn vào table
+   
 })
 var selections = ["Báo cáo", "Công nợ", "Hoá đơn"];
 var task = [{

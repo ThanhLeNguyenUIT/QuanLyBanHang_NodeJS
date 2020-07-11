@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../resource/js/order.js"></script>
-    <script src="../routes/order.js"></script>
 </head>
 
 <body>
@@ -21,56 +20,26 @@
         <div class="grid">
             <div class="order_header_container">
                 <div class="order-search-container">
-                    <form action="/order/search" method="post">
                         <div class="order_header-search_product">
                             <!-- có thể bị trùng-->
-                            <input type="text" class="search_product-input" placeholder="Tìm kiếm" name="searchProduct" autocomplete="off">
+                            <input type="text" class="search_product-input" id="searchProduct" placeholder="Tìm kiếm" name="searchProduct" autocomplete="off">
                             <button class="search_product-button"><i class="search_product-button-icon fas fa-search"></i></button>
                         </div>
-                    
                     <ul class="order-search-dropdown">
-                        <% for ( var i=0; i < product.length; i++ ) { %>
-                        <li class="search-dropdown-item">
-                            <div class="search-line-1">
-                                <span class="search-product-name">
-                                    <%= product[i].name_product %>
-                                </span>
-                                <span class="search-product-unit">lon</span>
-                            </div>
-                            <div class="search-line-2">
-                                <span>
-                                    <%= product[i].id_product %>
-                                </span>
-                                <span class="search-product-price">
-                                    Giá: <%= product[i].price_product %> 
-                                </span>
-                            </div>
-                            <div class="search-line-3">
-                                <span>Tồn kho: 20</span>
-                            </div>
-                        </li>
-                        <% } %>
                     </ul>
-                    </form>
                 </div>
 
                 <div class="bill_container" id="billContainer">
-                    <button class="tab_button" onclick="openTab(event, 'tab1')">
-                        <span>Hoá đơn 1</span>
-                        <i class="fas fa-times close-icon"></i>
-                    </button>
-                    <button class="tab_button" onclick="openTab(event, 'tab2')">
-                        <span>Hoá đơn 2</span>
-                        <i class="fas fa-times close-icon"></i>
-                    </button>
                     <i class="fas fa-plus add-icon" id="addIcon"></i>
                 </div>
 
                 <div class="bill-function">
-                    <i class="fas fa-undo function"></i>
+                    <a href="dashboard"><i class="fas fa-undo function"></i></a>
                     <i class="fas fa-map-marker-alt function"></i>
                     <i class="fas fa-print function"></i>
-                    <span class="function">0794560642</span>
+                    <span class="function accountName">
+                        ThanhLeNguyen
+                    </span>
                 </div>
             </div>
         </div>
@@ -80,71 +49,6 @@
             <div class="grid__row">
                 <div class="grid__column-8">
                     <div class="container_order-list">
-                        <!-- <% for(var i = 0; i < $("#billContainer").length; i++){ %> -->
-                        <table class="order_table" id="tab1">
-                            <thead>
-                                <tr class="order_table-head">
-                                    <th class="order_table-head-item order-num">STT</th>
-                                    <th class="order_table-head-item order-delete"></th>
-                                    <th class="order_table-head-item order-id">Mã</th>
-                                    <th class="order_table-head-item order-name">Tên hàng</th>
-                                    <th class="order_table-head-item order-kind">Loại</th>
-                                    <th class="order_table-head-item order-amount">Số lượng</th>
-                                    <th class="order_table-head-item order-price">Đơn giá</th>
-                                    <th class="order_table-head-item order-totalPrice">Tổng tiền</th>
-                                </tr>
-                            </thead>
-                            <tbody class="order_table-body">
-                                <tr class="order_table-row">
-                                    <td class="order_table-body-item">1</td>
-                                    <td class="order_table-body-item"><i class="fas fa-trash-alt delete-icon order_item"></i></td>
-                                    <td class="order_table-body-item">001</td>
-                                    <td class="order_table-body-item">Nước uống tăng lực Number one</td>
-                                    <td class="order_table-body-item">Hộp</td>
-                                    <td class="order_table-body-item">1</td>
-                                    <td class="order_table-body-item">11,000</td>
-                                    <td class="order_table-body-item">11,000</td>
-                                </tr>
-                                <tr class="order_table-row">
-                                    <td class="order_table-body-item">2</td>
-                                    <td class="order_table-body-item"><i class="fas fa-trash-alt delete-icon order_item"></i></td>
-                                    <td class="order_table-body-item">002</td>
-                                    <td class="order_table-body-item">Phô mai con bò cười</td>
-                                    <td class="order_table-body-item">Hộp</td>
-                                    <td class="order_table-body-item">2</td>
-                                    <td class="order_table-body-item">5,000</td>
-                                    <td class="order_table-body-item">10,000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <table class="order_table" id="tab2">
-                            <thead>
-                                <tr class="order_table-head">
-                                    <th class="order_table-head-item order-num">STT</th>
-                                    <th class="order_table-head-item order-delete"></th>
-                                    <th class="order_table-head-item order-id">Mã</th>
-                                    <th class="order_table-head-item order-name">Tên hàng</th>
-                                    <th class="order_table-head-item order-kind">Loại</th>
-                                    <th class="order_table-head-item order-amount">Số lượng</th>
-                                    <th class="order_table-head-item order-price">Đơn giá</th>
-                                    <th class="order_table-head-item order-totalPrice">Tổng tiền</th>
-                                </tr>
-                            </thead>
-                            <tbody class="order_table-body">
-                                <tr class="order_table-row">
-                                    <td class="order_table-body-item">1</td>
-                                    <td class="order_table-body-item"><i class="fas fa-trash-alt delete-icon order_item"></i></td>
-                                    <td class="order_table-body-item">003</td>
-                                    <td class="order_table-body-item">Khẩu trang y tế</td>
-                                    <td class="order_table-body-item">Hộp</td>
-                                    <td class="order_table-body-item">2</td>
-                                    <td class="order_table-body-item">20,000</td>
-                                    <td class="order_table-body-item">40,000</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
                     </div>
                 </div>
 
@@ -156,18 +60,20 @@
                                 <span>0794560642</span>
                             </div>
                             <div class="bill_info-head-right">
-                                <span>05/04/2020</span>
+                                <span class="date" name="dateCheckIn">05/04/2020</span>
                                 <span>19:20</span>
                             </div>
                         </div>
 
                         <div class="bill_info-input">
-                            <input class="bill-agency-input" type="text" placeholder="Đại lý">
+                            <input class="bill-agency-input" id="searchAgency" type="text" placeholder="Đại lý" name="agencyName">
+                            <ul class="agency-dropdown">
+                            </ul>
                         </div>
 
                         <div class="bill_price">
                             <span>Tổng tiền hàng</span>
-                            <span>21,000</span>
+                            <span class="totalPrice">0</span>
                         </div>
 
                         <div class="bill_discount">
@@ -177,19 +83,20 @@
 
                         <div class="bill_finalPrice">
                             <span class="finalPrice_label">Đại lý cần trả</span>
-                            <span class="finalPrice">21,000</span>
+                            <span class="finalPrice" id="finalPrice" name="finalPrice">0</span>
                         </div>
 
                         <div class="bill_note">
                             <input type="text" class="note-input" placeholder="Ghi chú">
                         </div>
 
-                        <button class="bill_confirm" onclick="window.location.href='/dashboard'">Thanh Toán</button>
+                        <button class="bill_confirm">Thanh Toán</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

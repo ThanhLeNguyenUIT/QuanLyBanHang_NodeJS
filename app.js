@@ -31,6 +31,7 @@ var app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 const url = 'mongodb://127.0.0.1:27017/agency_data';
+<<<<<<< HEAD
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, db) => {
     const col = db.collection('products');
     col.aggregate([{
@@ -59,10 +60,31 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err,
     category.find().then((data) => { console.log(data) })
 
     console.log("connect to database");
+=======
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err,db) => {
+    // if(err) throw err;
+    // const bill = db.collection('bill');
+    // bill.aggregate([
+    //     {$lookup: {
+    //         from: 'billInfo',
+    //         localField: '_id',
+    //         foreignField: 'id_bill',
+    //         as: 'billList'
+    //     }}
+    // ])
+    console.log('Connect to database');
+>>>>>>> faa9cbd37906b5baf10f96c290a6366eb9e47861
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/resource", express.static('resource'));
+app.use(session({
+    secret: 'secret',
+    cookie: {maxAge: 60000},
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(flash());
 
 app.use(session({
     secret: 'secret',

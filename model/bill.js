@@ -1,11 +1,10 @@
 var mongoose = require('mongoose')
 var billSchema = mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-    id_bill: {
-        type: Number,
+    name_account: {
+        type: String,
         require: true
     },
-    name: {
+    name_agency: {
         type: String,
         require: true
     },

@@ -38,9 +38,9 @@
                     <div class="header_address">
                         <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
                     </div>
-                    <div class="header_user">
-                        <i class="header_user-icon header_user-icon-separate">
-                                <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66215009_1250396935121477_8504600403646611456_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=cWVO-OfII8IAX9Vny1e&_nc_ht=scontent.fsgn5-6.fna&oh=06fd167ccdf34a923e8ee04a3f4e7ca8&oe=5EFCE24D" alt="Avatar" class="header_avatar">
+                     <div class="header_user">
+                            <i class="header_user-icon header_user-icon-separate">
+                                <img src="#" alt="Avatar" class="header_avatar">
                                 <span class="header_user-name">
                                     
                                 </span>
@@ -184,26 +184,40 @@
                                     <tr class="table-container_header">
                                         <th class="table-container_header-item code-bill">Mã hoá đơn</th>
                                         <th class="table-container_header-item name-account">Tên tài khoản</th>
-                                        <th class="table-container_header-item date-bill">Ngày bán</th>
+                                        <th class="table-container_header-item name-agency">Tên đại lý</th>
+                                        <th class="table-container_header-item date-bill">Ngày lập</th>
                                         <th class="table-container_header-item total-bill">Tổng tiền</th>
                                         <th class="table-container_header-item edit-account"></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="table-body-container">
+                                    <% for (var i = 0; i < bill.length ; i++) { %>
                                     <tr class="table-container_body table-container_body_between">
-                                        <td class="table-container_body-item">001</td>
-                                        <td class="table-container_body-item">NguyenLeThanh</td>
-                                        <td class="table-container_body-item">01/10/2000</td>
-                                        <td class="table-container_body-item">100000</td>
+                                        <td class="table-container_body-item">
+                                            <%= bill[i]._id %>
+                                        </td>
+                                        <td class="table-container_body-item">
+                                            <%= bill[i].name_account %>
+                                        </td>
+                                        <td class="table-container_body-item">
+                                            <%= bill[i].name_agency %>
+                                        </td>
+                                        <td class="table-container_body-item">
+                                            <%= bill[i].date %>
+                                        </td>
+                                        <td class="table-container_body-item">
+                                            <%= bill[i].total_money %>
+                                        </td>
                                         <td class="table-container_body-edit table-container_body-item">
                                             <button class="view-bill-btn">
                                                     <a href="#" class="editPro view-bill">Xem</a> 
                                                 </button>
                                             <button class="delete-bill-btn">
-                                                    <a href="#" class="editPro delete-bill">Xoá</a>
-                                                </button>
+                                                    <a href="/baocao/deleteBill/<%= bill[i]._id %>" class="editPro delete-bill">Xoá</a>
+                                            </button>
                                         </td>
                                     </tr>
+                                    <% } %>
                                 </tbody>
 
                             </table>
@@ -302,6 +316,7 @@
                 </div>
             </div>
         </div>
+    
         <script>
             $(document).ready(() => {
                 $(".view-bill-btn").click(function() {
