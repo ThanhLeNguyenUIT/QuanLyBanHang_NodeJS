@@ -1,33 +1,33 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../model/user');
-var user = require('./authentication')
+var authentication = require('./authentication')
 
 let getErrors = '';
 router.post('/searchAccount', (req, res) => {
     User.find({ 'email': req.body.searchAccount }).then((data) => {
         console.log(data)
-        res.render('account', { acc: data, errors: null, message: null, username: user.nameUser });
+        res.render('account', { acc: data, errors: null, message: null, username: authentication.User.name });
     })
 })
 
 router.get('/accountAdmin', function(req, res) {
 
     User.find({ 'category_account': 'Admin' }).sort({ name: 1 }).then((data) => {
-        res.render('account', { acc: data, errors: null, message: null, username: user.nameUser })
+        res.render('account', { acc: data, errors: null, message: null, username: authentication.User.name })
     })
 })
 router.get('/accountNV', function(req, res) {
 
     User.find({ 'category_account': 'Nhân viên' }).sort({ name: 1 }).then((data) => {
-        res.render('account', { acc: data, errors: null, message: null, username: user.nameUser })
+        res.render('account', { acc: data, errors: null, message: null, username: authentication.User.name })
     })
 
 })
 
 router.get('/taikhoan', (req, res) => {
     User.find().sort({ name: 1 }).then((data) => {
-        res.render('account', { acc: data, errors: getErrors, message: req.flash('message'), username: user.nameUser })
+        res.render('account', { acc: data, errors: getErrors, message: req.flash('message'), username: authentication.User.name })
     })
 })
 

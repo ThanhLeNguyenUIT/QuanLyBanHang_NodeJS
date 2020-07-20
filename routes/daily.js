@@ -6,13 +6,13 @@ var areaAgency = require("../model/areaAgency");
 const { render } = require('ejs');
 const { get } = require('mongoose');
 const { find } = require('../model/agency');
-var user = require('./authentication')
+var authentication = require('./authentication')
 
 router.post('/daily/search', function(req, res) {
     agency.find({ 'id_agency': req.body.searchAgencyByID }).then(function(agencyFilter) {
         groupAgency.find().sort({ name_groupAgency: 1 }).then(function(groupAgency) {
             areaAgency.find().sort({ name_areaAgency: 1 }).then(function(areaAgency) {
-                res.render('daily', { agency: agencyFilter, errors: getErrors, message: req.flash('message'), groupA: groupAgency, areaA: areaAgency, username: user.nameUser });
+                res.render('daily', { agency: agencyFilter, errors: getErrors, message: req.flash('message'), groupA: groupAgency, areaA: areaAgency, username: authentication.User.name });
             })
         })
     })
@@ -22,7 +22,7 @@ router.post('/daily/boloc', async(req, res) => {
 
         groupAgency.find().sort({ name_groupAgency: 1 }).then(function(groupAgency) {
             areaAgency.find().sort({ name_areaAgency: 1 }).then(function(areaAgency) {
-                res.render('daily', { agency: agencyFilter, errors: getErrors, message: req.flash('message'), groupA: groupAgency, areaA: areaAgency, username: user.nameUser });
+                res.render('daily', { agency: agencyFilter, errors: getErrors, message: req.flash('message'), groupA: groupAgency, areaA: areaAgency, username: authentication.User.name });
             })
         })
     })
@@ -35,7 +35,7 @@ router.get('/daily', function(req, res) {
     agency.find().sort({ id_agency: 1 }).then(function(agency) {
         groupAgency.find().sort({ name_groupAgency: 1 }).then(function(groupAgency) {
             areaAgency.find().sort({ name_areaAgency: 1 }).then(function(areaAgency) {
-                res.render('daily', { agency: agency, errors: getErrors, message: req.flash('message'), groupA: groupAgency, areaA: areaAgency, username: user.nameUser });
+                res.render('daily', { agency: agency, errors: getErrors, message: req.flash('message'), groupA: groupAgency, areaA: areaAgency, username: authentication.User.name });
             })
         })
 

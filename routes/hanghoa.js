@@ -3,7 +3,7 @@ const router = express.Router();
 const product = require("../model/product")
 const { findByIdAndUpdate } = require('../model/product');
 const category = require('../model/category');
-var user = require('./authentication')
+var authentication = require('./authentication')
     // const isEmpty = v => {
     //     return Object.keys(v).length === 0;
     // };
@@ -12,7 +12,7 @@ var user = require('./authentication')
 router.post('/hanghoa/search', function(req, res) {
     product.find({ 'id_product': req.body.searchPro }).then(function(prod) {
         category.find().then((cate) => {
-            res.render('hanghoa', { product: prod, page: prod, cate: cate, errors: null, message: null, username: user.nameUser });
+            res.render('hanghoa', { product: prod, page: prod, cate: cate, errors: null, message: null, username: authentication.User.name });
         })
     })
 })
@@ -22,7 +22,7 @@ router.get('/hanghoa', function(req, res) {
     product.find().sort({ id_product: 1 }).limit(20).then(function(num) {
         product.find().sort({ id_product: 1 }).limit(5).then(function(pro) {
             category.find().then((cate) => {
-                res.render('hanghoa', { product: pro, page: num, cate: cate, errors: getError, message: req.flash('message'), username: user.nameUser });
+                res.render('hanghoa', { product: pro, page: num, cate: cate, errors: getError, message: req.flash('message'), username: authentication.User.name });
                 getError = '';
             })
         })
@@ -34,7 +34,7 @@ router.get('/hanghoa/page:id', function(req, res) {
     product.find().sort({ id_product: 1 }).limit(20).then(function(num) {
         product.find().sort({ id_product: 1 }).skip((req.params.id - 1) * 5).limit(5).then(function(pro) {
             category.find().then((cate) => {
-                res.render('hanghoa', { product: pro, page: num, cate: cate, errors: null, message: null, username: user.nameUser });
+                res.render('hanghoa', { product: pro, page: num, cate: cate, errors: null, message: null, username: authentication.User.name });
 
             })
         })
@@ -123,7 +123,7 @@ router.post('/hanghoa/update/:id', (req, res) => {
 router.get('/hanghoa/nhom:id', function(req, res) {
     product.find({ 'category': req.params.id }).then((data) => {
         category.find().then((cate) => {
-            res.render('hanghoa', { product: data, page: data, cate: cate, errors: null, message: null, username: user.nameUser });
+            res.render('hanghoa', { product: data, page: data, cate: cate, errors: null, message: null, username: authentication.User.name });
         })
     })
 })

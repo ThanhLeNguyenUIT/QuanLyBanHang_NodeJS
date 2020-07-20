@@ -4,13 +4,13 @@ var product = require("../model/product");
 var bill = require('../model/bill');
 var billInfo = require('../model/billInfo');
 var cate = require('../model/category');
-var user = require('./authentication')
+var authentication = require('./authentication')
 
 var UserName;
 router.get('/baocao', function(req, res) {
     product.find().sort({ id_product: 1 }).then((data) => {
         bill.find().then((billItem) => {
-            res.render('baocao', { product: data, username: UserName, bill: billItem, username: user.nameUser });
+            res.render('baocao', { product: data, username: UserName, bill: billItem, username: authentication.User.name });
         })
     })
 })

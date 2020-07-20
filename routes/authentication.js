@@ -32,7 +32,7 @@ router.post('/dashboard', async(req, res) => {
 
     messages = '';
     NameUser = user.name;
-    module.exports.nameUser = user.name;
+    module.exports.User = user;
     res.render('dashboard', { username: user.name });
 })
 
