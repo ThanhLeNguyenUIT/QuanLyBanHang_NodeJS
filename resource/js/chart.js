@@ -1,6 +1,5 @@
-
-   // chart column
-$(function(){
+// chart column
+$(function() {
     $("#chart").dxChart({
         dataSource: saleData,
         legend: {
@@ -8,6 +7,9 @@ $(function(){
         },
         series: {
             type: "bar"
+        },
+        "export": {
+            enabled: true
         },
         argumentAxis: {
             tickInterval: 10,
@@ -20,7 +22,7 @@ $(function(){
         title: "Doanh thu của Đại lý trong tháng này"
     });
 });
-$(function(){
+$(function() {
     $("#chart_good").dxChart({
         rotated: true,
         dataSource: saleDaily,
@@ -38,7 +40,7 @@ $(function(){
         argumentAxis: {
             label: {
                 customizeText: function() {
-                    return  this.valueText;
+                    return this.valueText;
                 }
             }
         },
@@ -84,21 +86,21 @@ var saleData = [{
 
 var saleDaily = [
     { "day": "Nước rửa tay", "sales": 4 },
-	{ "day": "Khẩu trang y tế", "sales": 4 },
-	{ "day": "Giấy vệ sinh", "sales": 5 },
-	{ "day": "Bò húc", "sales": 5 },
-	{ "day": "Vinamilk", "sales": 6 },
-	{ "day": "Coolgate", "sales": 6 },
-	{ "day": "Bột giặt", "sales": 7 },
-	{ "day": "Sửa rửa mặt", "sales": 7 },
-	{ "day": "Dầu ăn trường an", "sales": 8 },
-	{ "day": "Mì Hảo Hảo", "sales": 9 }
+    { "day": "Khẩu trang y tế", "sales": 4 },
+    { "day": "Giấy vệ sinh", "sales": 5 },
+    { "day": "Bò húc", "sales": 5 },
+    { "day": "Vinamilk", "sales": 6 },
+    { "day": "Coolgate", "sales": 6 },
+    { "day": "Bột giặt", "sales": 7 },
+    { "day": "Sửa rửa mặt", "sales": 7 },
+    { "day": "Dầu ăn trường an", "sales": 8 },
+    { "day": "Mì Hảo Hảo", "sales": 9 }
 ]
 
 
-   // chart circle
+// chart circle
 
-   $(function(){
+$(function() {
     $("#pie").dxPieChart({
         type: "doughnut",
         palette: "Soft Pastel",
@@ -107,13 +109,13 @@ var saleDaily = [
         tooltip: {
             enabled: true,
             format: "millions",
-            customizeTooltip: function (arg) {
-                var percentText = Globalize.formatNumber(arg.percent, {  
+            customizeTooltip: function(arg) {
+                var percentText = Globalize.formatNumber(arg.percent, {
                     style: "percent",
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2
                 });
-    
+
                 return {
                     text: arg.valueText + " - " + percentText
                 };
@@ -127,7 +129,7 @@ var saleDaily = [
         "export": {
             enabled: true
         },
-        series: [{        
+        series: [{
             argumentField: "agency",
             label: {
                 visible: true,

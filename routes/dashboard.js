@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
-//const  userName  = require('../routes/authentication').userName;
-var userName = 'thanh';
+var user = require('./authentication')
+
 router.get('/dashboard', function(req, res) {
-    res.render('dashboard', {username: userName});
+    res.render('dashboard', { username: user.nameUser });
 })
+
 
 module.exports = router;

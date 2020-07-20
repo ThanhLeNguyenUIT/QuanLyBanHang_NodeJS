@@ -4,12 +4,13 @@ var product = require("../model/product");
 var bill = require('../model/bill');
 var billInfo = require('../model/billInfo');
 var cate = require('../model/category');
-var { userName }  = require('../routes/dashboard');
+var user = require('./authentication')
 
+var UserName;
 router.get('/baocao', function(req, res) {
-    product.find().sort({id_product: 1}).then((data) => {
+    product.find().sort({ id_product: 1 }).then((data) => {
         bill.find().then((billItem) => {
-            res.render('baocao', {product: data, username: userName, bill: billItem});
+            res.render('baocao', { product: data, username: UserName, bill: billItem, username: user.nameUser });
         })
     })
 })
@@ -22,4 +23,5 @@ router.get("/baocao/deleteBill/:id/", function(req, res) {
         })
     })
 })
+
 module.exports = router;

@@ -1,197 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- head -->
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Agency Management</title>
-    <link rel="stylesheet" href="../resource/css/main.css">
-    <link rel="stylesheet" href="../resource/css/base.css">
-    <link rel="stylesheet" href="../resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../resource/css/baocao.css">
-    <script>
-        window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.common.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.7/css/dx.light.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.2/jszip.min.js"></script>
-    <script src="https://cdn3.devexpress.com/jslib/19.2.7/js/dx.all.js"></script>
-
-</head>
-<!-- Body -->
-
-<body>
-    <main>
-        <!-- header-->
-        <header class="header">
-            <div class="grid">
-                <div class="header_container-1">
-                    <!--place-->
-                    <div class="header_brand">
-                        <h1 class="header_brand-agency">Agency</h1>
-                        <h1 class="header_brand-company">Company</h1>
-                    </div>
-                    <div class="header_address">
-                        <span>Địa chỉ: KTX khu B, Đại học quốc gia TP HCM</span>
-                    </div>
-                     <div class="header_user">
-                            <i class="header_user-icon header_user-icon-separate">
-                                <img src="#" alt="Avatar" class="header_avatar">
-                                <span class="header_user-name">
-                                    
-                                </span>
-                            </i>
-
-                        <div class="user_drop">
-                            <li class="user_drop-item"> <i class="fas fa-user user_drop-icon"></i> Thông tin tài khoản</li>
-                            <li class="user_drop-item"><a href="/" style="color: #616060;"><i class="fas fa-sign-out-alt user_drop-icon"></i> Đăng xuất</a> </li>
-                        </div>
-                    </div>
-                </div>
-                <div class="header_container-2">
-                    <!-- header container 2-->
-                    <nav class="header_navbar">
-                        <ul class="header_navbar-list">
-                            <li class="header_navbar-item " id="header1">
-                                <div class="header_container-item">
-                                    <a href="/dashboard" class="header__navbar-item-link">
-                                        <i class="far fa-eye"></i> Tổng quan
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item" id="header2">
-                                <div class="header_container-item">
-                                    <a href="/hanghoa" class="header__navbar-item-link">
-                                        <i class="fas fa-cube"></i> Hàng hoá
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item" id="header3">
-                                <div class="header_container-item">
-                                    <a href="/daily" class="header__navbar-item-link">
-                                        <i class="fas fa-store-alt"></i> Đại lí
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item" id="header4">
-                                <div class="header_container-item">
-                                    <a href="/taikhoan" class="header__navbar-item-link">
-                                        <i class="fas fa-user"></i> Tài khoản
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="header_navbar-item" id="header5">
-                                <div class="header_container-item">
-                                    <a href="/baocao" class="header__navbar-item-link">
-                                        <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="header_navbar-item order-btn">
-                                <div class="header_container-item">
-                                    <a href="/order" class="header__navbar-item-link">
-                                        <i class="fas fa-shopping-basket"></i>
-                                        <span class="add">Đặt hàng</span>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div id="header_container">
-                </div>
-            </div>
-        </header>
-        <div class="container_report">
-            <div class="grid">
-                <div class="grid__row body_content">
-                    <div class="grid__column-2">
-                        <div class="report">
-                            <h1 class="report_heading-page">Báo cáo</h1>
-                            <div class="report_select-wrap">
-                                <div class="report-form">
-                                    <div class="report-form-label">Mối quan tâm</div>
-                                    <div class="report-form-value">
-                                        <div id="radio-group-with-selection"></div>
-                                    </div>
+<%- include('../views/header.ejs') %>
+    <div class="container_report">
+        <div class="grid">
+            <div class="grid__row body_content">
+                <div class="grid__column-2">
+                    <div class="report">
+                        <h1 class="report_heading-page">Báo cáo</h1>
+                        <div class="report_select-wrap">
+                            <div class="report-form">
+                                <div class="report-form-label">Mối quan tâm</div>
+                                <div class="report-form-value">
+                                    <div id="radio-group-with-selection"></div>
                                 </div>
                             </div>
-                            <div class="report_select-wrap">
-                                <div class="report-form">
-                                    <div class="report-form-label">Thời gian</div>
-                                    <span class="selected-date-label">Từ</span>
-                                    <div id="selected-date-from"></div>
-                                    <span class="selected-date-label">Đến</span>
-                                    <div id="selected-date-to"></div>
-                                    <button class="create-report">Tạo báo cáo</button>
-                                </div>
-                            </div>
-
                         </div>
+                        <div class="report_select-wrap">
+                            <div class="report-form">
+                                <div class="report-form-label">Thời gian</div>
+                                <span class="selected-date-label">Từ</span>
+                                <div id="selected-date-from"></div>
+                                <span class="selected-date-label">Đến</span>
+                                <div id="selected-date-to"></div>
+                                <button class="create-report">Tạo báo cáo</button>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="grid__column-10">
-                        <div class="grid_form-report">
+                </div>
+                <div class="grid__column-10">
+                    <div class="grid_form-report">
 
-                            <table class="table_container" id="report_CN_DT">
+                        <table class="table_container" id="report_CN_DT">
 
-                                <thead class="report-table-header">
-                                    <tr>
-                                        <td colspan="7" class="report-table_header-title">Doanh thu</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="7" class="report-table_header-time">Tháng: 1/2019</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="stt">STT</td>
-                                        <td class="name_agency" id="name_agency-header">Đại Lý</td>
-                                        <td class="column_2" id="column_2-header"></td>
-                                        <td class="column_3" id="column_3-header"></td>
-                                        <td class="column_4" id="column_4-header"></td>
-                                    </tr>
-                                </thead>
-                                <tbody class="report-table-body">
-                                    <tr>
-                                        <td class="stt">1</td>
-                                        <td class="name_agency">Quan 1</td>
-                                        <td class="column_2">25</td>
-                                        <td class="column_3">8888888</td>
-                                        <td class="column_4">40</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="stt">1</td>
-                                        <td class="name_agency">Quan 1</td>
-                                        <td class="column_2">25</td>
-                                        <td class="column_3">8888888</td>
-                                        <td class="column_4">40</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="stt">1</td>
-                                        <td class="name_agency">Quan 1</td>
-                                        <td class="column_2">25</td>
-                                        <td class="column_3">8888888</td>
-                                        <td class="column_4">40</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <thead class="report-table-header">
+                                <tr>
+                                    <td colspan="7" class="report-table_header-title">Doanh thu</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" class="report-table_header-time">Tháng: 1/2019</td>
+                                </tr>
+                                <tr>
+                                    <td class="stt">STT</td>
+                                    <td class="name_agency" id="name_agency-header">Đại Lý</td>
+                                    <td class="column_2" id="column_2-header"></td>
+                                    <td class="column_3" id="column_3-header"></td>
+                                    <td class="column_4" id="column_4-header"></td>
+                                </tr>
+                            </thead>
+                            <tbody class="report-table-body">
+                                <tr>
+                                    <td class="stt">1</td>
+                                    <td class="name_agency">Quan 1</td>
+                                    <td class="column_2">25</td>
+                                    <td class="column_3">8888888</td>
+                                    <td class="column_4">40</td>
+                                </tr>
+                                <tr>
+                                    <td class="stt">1</td>
+                                    <td class="name_agency">Quan 1</td>
+                                    <td class="column_2">25</td>
+                                    <td class="column_3">8888888</td>
+                                    <td class="column_4">40</td>
+                                </tr>
+                                <tr>
+                                    <td class="stt">1</td>
+                                    <td class="name_agency">Quan 1</td>
+                                    <td class="column_2">25</td>
+                                    <td class="column_3">8888888</td>
+                                    <td class="column_4">40</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                            <table class="table_container" id="report_HD">
-                                <thead>
-                                    <tr class="table-container_header">
-                                        <th class="table-container_header-item code-bill">Mã hoá đơn</th>
-                                        <th class="table-container_header-item name-account">Tên tài khoản</th>
-                                        <th class="table-container_header-item name-agency">Tên đại lý</th>
-                                        <th class="table-container_header-item date-bill">Ngày lập</th>
-                                        <th class="table-container_header-item total-bill">Tổng tiền</th>
-                                        <th class="table-container_header-item edit-account"></th>
-                                    </tr>
-                                </thead>
-                                <tbody class="table-body-container">
-                                    <% for (var i = 0; i < bill.length ; i++) { %>
+                        <table class="table_container" id="report_HD">
+                            <thead>
+                                <tr class="table-container_header">
+                                    <th class="table-container_header-item code-bill">Mã hoá đơn</th>
+                                    <th class="table-container_header-item name-account">Tên tài khoản</th>
+                                    <th class="table-container_header-item name-agency">Tên đại lý</th>
+                                    <th class="table-container_header-item date-bill">Ngày lập</th>
+                                    <th class="table-container_header-item total-bill">Tổng tiền</th>
+                                    <th class="table-container_header-item edit-account"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body-container">
+                                <% for (var i = 0; i < bill.length ; i++) { %>
                                     <tr class="table-container_body table-container_body_between">
                                         <td class="table-container_body-item">
                                             <%= bill[i]._id %>
@@ -218,57 +110,57 @@
                                         </td>
                                     </tr>
                                     <% } %>
-                                </tbody>
+                            </tbody>
 
-                            </table>
+                        </table>
 
-                            <div class="modal modal_bill-details">
-                                <div class="modal_overlay"></div>
-                                <div class="modal_body">
-                                    <div class="auth-form">
-                                        <div class="auth-form_header">
-                                            <h1 class="auth-form_heading">Chi tiết hoá đơn</h1>
+                        <div class="modal modal_bill-details">
+                            <div class="modal_overlay"></div>
+                            <div class="modal_body">
+                                <div class="auth-form">
+                                    <div class="auth-form_header">
+                                        <h1 class="auth-form_heading">Chi tiết hoá đơn</h1>
+                                    </div>
+                                    <div class="auth-form_body-report">
+                                        <div class="id-bill-container">
+                                            <span>MHD: </span>
+                                            <span>001</span>
                                         </div>
-                                        <div class="auth-form_body-report">
-                                            <div class="id-bill-container">
-                                                <span>MHD: </span>
-                                                <span>001</span>
-                                            </div>
-                                            <table class="table_container table-report">
-                                                <thead>
-                                                    <tr class="table-container_header">
-                                                        <th class="table-container_header-item code-product">Mã hàng</th>
-                                                        <th class="table-container_header-item name-product">Tên hàng</th>
-                                                        <th class="table-container_header-item price-product">Đơn giá</th>
-                                                        <th class="table-container_header-item amount-product">Số lượng</th>
-                                                        <th class="table-container_header-item total-price">Thành tiền</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="table-container_body table-container_body_between">
-                                                        <td class="table-container_body-item">001</td>
-                                                        <td class="table-container_body-item">Bò húc</td>
-                                                        <td class="table-container_body-item">1000</td>
-                                                        <td class="table-container_body-item">2</td>
-                                                        <td class="table-container_body-item">2000</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="final-price-container">
-                                                <span>Tổng tiền : </span>
-                                                <span class="price">2000</span>
-                                            </div>
+                                        <table class="table_container table-report">
+                                            <thead>
+                                                <tr class="table-container_header">
+                                                    <th class="table-container_header-item code-product">Mã hàng</th>
+                                                    <th class="table-container_header-item name-product">Tên hàng</th>
+                                                    <th class="table-container_header-item price-product">Đơn giá</th>
+                                                    <th class="table-container_header-item amount-product">Số lượng</th>
+                                                    <th class="table-container_header-item total-price">Thành tiền</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="table-container_body table-container_body_between">
+                                                    <td class="table-container_body-item">001</td>
+                                                    <td class="table-container_body-item">Bò húc</td>
+                                                    <td class="table-container_body-item">1000</td>
+                                                    <td class="table-container_body-item">2</td>
+                                                    <td class="table-container_body-item">2000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="final-price-container">
+                                            <span>Tổng tiền : </span>
+                                            <span class="price">2000</span>
                                         </div>
+                                    </div>
 
-                                        <div class="auth-form_controls">
-                                            <button class="btn btn-account-cancel btn-cancel">Trở lại</button>
-                                            <button class="btn btn--primary btn-confirm">Đồng ý </button>
-                                        </div>
+                                    <div class="auth-form_controls">
+                                        <button class="btn btn-account-cancel btn-cancel">Trở lại</button>
+                                        <button class="btn btn--primary btn-confirm">Đồng ý </button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- <table class="bill-table">
+                        <!-- <table class="bill-table">
                                 <thead>
                                     <tr class="bill-table_header">
                                         <th class="bill-table_header-item code-product">Mã hàng</th>
@@ -311,25 +203,27 @@
 
                                 </tbody>
                             </table> -->
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    
-        <script>
-            $(document).ready(() => {
-                $(".view-bill-btn").click(function() {
-                    $(".modal_bill-details").css("display", "flex");
-                    $(".auth-form").css("display", "block");
-                })
-                $(".btn-cancel").click(() => {
-                    $(".modal_bill-details").css("display", "none");
-                    $(".auth-form").css("display", "none");
-                })
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            $(".view-bill-btn").click(function() {
+                $(".modal_bill-details").css("display", "flex");
+                $(".auth-form").css("display", "block");
             })
-        </script>
-        <script src="../resource/js/baocao.js"></script>
+            $(".btn-cancel").click(() => {
+                $(".modal_bill-details").css("display", "none");
+                $(".auth-form").css("display", "none");
+            })
+            $('#report').css('background-color', '#0078b6');
+        })
+    </script>
+    <script src="../resource/js/baocao.js"></script>
+    <link rel="stylesheet" href="../resource/css/baocao.css">
 
     </main>
-</body> 
+    </body>

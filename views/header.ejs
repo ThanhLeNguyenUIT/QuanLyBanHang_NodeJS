@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!-- head -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Agency Management</title>
-    <link rel="stylesheet" href="../resource/js/account.js">
+    <link rel="icon" href="../resource/img/aa.png" type="image/png">
+    <link rel="stylesheet" href="../resource/js/dashboard.js">
+    <link rel="stylesheet" href="../routes/authentication.js">
     <link rel="stylesheet" href="./resource/css/main.css">
     <link rel="stylesheet" href="./resource/css/base.css">
     <link rel="stylesheet" href="./resource/font/fontawesome-free-5.12.1-web/css/all.min.css">
@@ -47,9 +50,9 @@
                     </div>
                     <div class="header_user">
                         <i class="header_user-icon header_user-icon-separate">
-                                <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66215009_1250396935121477_8504600403646611456_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=cWVO-OfII8IAX9Vny1e&_nc_ht=scontent.fsgn5-6.fna&oh=06fd167ccdf34a923e8ee04a3f4e7ca8&oe=5EFCE24D" alt="Avatar" class="header_avatar">
+                                <!-- <img src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66215009_1250396935121477_8504600403646611456_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=cWVO-OfII8IAX9Vny1e&_nc_ht=scontent.fsgn5-6.fna&oh=06fd167ccdf34a923e8ee04a3f4e7ca8&oe=5EFCE24D" alt="Avatar" class="header_avatar"> -->
                                 <span class="header_user-name">
-                                    
+                                    <%= username %>
                                 </span>
                             </i>
 
@@ -63,35 +66,35 @@
                     <!-- header container 2-->
                     <nav class="header_navbar">
                         <ul class="header_navbar-list">
-                            <li class="header_navbar-item " id="header1">
-                                <div class="header_container-item">
+                            <li class="header_navbar-item " id="dashboard">
+                                <div class="header_container-item ">
                                     <a href="/dashboard" class="header__navbar-item-link">
                                         <i class="far fa-eye"></i> Tổng quan
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item" id="header2">
+                            <li class="header_navbar-item" id="product">
                                 <div class="header_container-item">
                                     <a href="/hanghoa" class="header__navbar-item-link">
                                         <i class="fas fa-cube"></i> Hàng hoá
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item" id="header3">
+                            <li class="header_navbar-item" id="agency">
                                 <div class="header_container-item">
                                     <a href="/daily" class="header__navbar-item-link">
                                         <i class="fas fa-store-alt"></i> Đại lí
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item" id="header4">
+                            <li class="header_navbar-item" id="account">
                                 <div class="header_container-item">
                                     <a href="/taikhoan" class="header__navbar-item-link">
                                         <i class="fas fa-user"></i> Tài khoản
                                     </a>
                                 </div>
                             </li>
-                            <li class="header_navbar-item" id="header5">
+                            <li class="header_navbar-item" id="report">
                                 <div class="header_container-item">
                                     <a href="/baocao" class="header__navbar-item-link">
                                         <i class="fas fa-chart-line" style="font-size: 18px;"></i> Báo cáo

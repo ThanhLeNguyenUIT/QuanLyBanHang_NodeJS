@@ -3,14 +3,14 @@ const router = express.Router();
 const User = require('../model/user');
 const { loginValidation } = require('../resource/js/validation');
 
-let messages = '';
-let userName = '';
+let checkEmail = '';
 router.get('/', function(req, res) {
     res.redirect('/authentication');
 })
 router.get('/authentication', function(req, res) {
     res.render('authentication', { messages: req.flash('message'), errors: checkEmail });
 })
+let NameUser = '1';
 router.post('/dashboard', async(req, res) => {
 
     const { error } = loginValidation(req.body);
@@ -29,14 +29,12 @@ router.post('/dashboard', async(req, res) => {
         req.flash('message', "Sai mật khẩu")
         return res.redirect('/')
     }
-    console.log(user.name);
+
     messages = '';
-    userName = user.name;
+    NameUser = user.name;
+    module.exports.nameUser = user.name;
     res.render('dashboard', { username: user.name });
 })
 
-exports.getUser = () => {
-    return userName;
-}
 
 module.exports = router;
